@@ -13,7 +13,7 @@
   "online_editor": {
     "indent_style": "space",
     "indent_size": 2,
-    "ace_editor_language": "unknown",
+    "ace_editor_language": "wren",
     "highlightjs_language": "wren"
   },
   "exercises": {
@@ -42,7 +42,7 @@
           "strings",
           "text_formatting"
         ]
-      },
+      }
     ]
   },
   "concepts": [],
