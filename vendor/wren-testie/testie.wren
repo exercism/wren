@@ -71,6 +71,14 @@ class Expect {
             Fiber.abort("Expected error '%(err)' but got none")
         }
     }
+    toBeGreaterThanOrEqual(v) {
+        if (_value >= v) return
+        Fiber.abort("Expected %(v) to be greater than or equal to %(_value)")
+    }
+    toBeLessThanOrEqual(v) {
+        if (_value <= v) return
+        Fiber.abort("Expected %(v) to be less than or equal to %(_value)")
+    }
     toBe(v) {
         if (_value is List && v is List) {
             if (!equalLists_(v)) {
