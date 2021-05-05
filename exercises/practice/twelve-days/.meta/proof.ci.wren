@@ -39,7 +39,7 @@ class TwelveDays {
   }
   static toSentence(items) {
     var day = items.count
-    if (day == 1) return items[0]
+    if (day == 1) return "%(items[0])."
     return (day..2).map {|x| items[x-1] }.join(", ") + ", and %(items[0])."
   }
   static giftsOn(day) {
