@@ -15,9 +15,10 @@ do
     mkdir -p .tmp
     cd .tmp
     cp ../*.wren .
+    sed -i'' -e 's/skip.test/do.test/' $TEST
     cp ../$EXAMPLE $SOLUTION
     ln -s ../../../../vendor vendor
-    ls -l
+    # ls -l
     wren_cli $TEST
     cd ..
     rm -rf .tmp

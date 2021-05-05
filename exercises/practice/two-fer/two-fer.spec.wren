@@ -1,5 +1,5 @@
 import "./two-fer" for TwoFer
-import "./testie/testie" for Testie, Assert
+import "./vendor/wren-testie/testie" for Testie, Assert
 
 Testie.test("TwoFer") { |it|
 

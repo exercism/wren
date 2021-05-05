@@ -13,13 +13,13 @@ class Triangle {
   isEquilateral {
     if (!isValid) return false
 
-    return _s1 === _s2 && _s2 === _s3 && _s1 === _s3
+    return _s1 == _s2 && _s2 == _s3 && _s1 == _s3
   }
 
   isIsosceles {
     if (!isValid) return false
 
-    return _s1 === _s2 || _s1 === _s3 || _s2 === _s3
+    return _s1 == _s2 || _s1 == _s3 || _s2 == _s3
   }
 
   isScalene {
