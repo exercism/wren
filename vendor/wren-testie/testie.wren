@@ -9,6 +9,7 @@ class Testie {
         _shoulds = []
         _skips = []
         _name = name
+        _fails = 0
         fn.call(this, Skipper.new(this))
     }
 
@@ -29,6 +30,7 @@ class Testie {
             var fiber = Fiber.new(fn)
             fiber.try()
             if (fiber.error) {
+                _fails = _fails + 1
                 r.fail(name, fiber.error)
             } else {
                 r.success(name)
@@ -39,6 +41,7 @@ class Testie {
             r.skip(name)
         }
         r.done()
+        if (_fails > 0) Fiber.abort("Failing test")
     }
 }
 
@@ -53,6 +56,13 @@ class Expect {
 
 
         return true
+    }
+    abortsWith(err) {
+        var f = Fiber.new { _value.call() }
+        var result = f.try()
+        if (result!=err) {
+            Fiber.abort("Expected error '%(err)' but got none")
+        }
     }
     toBe(v) {
         if (v is Map && _value is Map) {
