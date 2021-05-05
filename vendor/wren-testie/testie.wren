@@ -86,7 +86,24 @@ class Expect {
         if (_value <= v) return
         Fiber.abort("Expected %(v) to be less than or equal to %(_value)")
     }
+    printValue(v) {
+        if (v is String) {
+            return "\n`%(v)`\n"
+        } else {
+            return "%(v)"
+        }
+    }
     toBe(v) {
+        if (_value is String || v is String) {
+            if (_value == v) return
+
+            var err=""
+            err = err + "\rReceived: "
+            err = err + printValue(_value) + "\n"
+            err = err + "\nExpected: "
+            err = err + printValue(v)
+            Fiber.abort("%(err)\nShould match.")
+        }
         if (_value is List && v is List) {
             if (!equalLists_(v)) {
                 Fiber.abort("Expected %(_value) to be %(v)")

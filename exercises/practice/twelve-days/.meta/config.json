@@ -1,0 +1,12 @@
+{
+  "blurb": "Output the lyrics to 'The Twelve Days of Christmas'",
+  "authors": ["joshgoebel"],
+  "contributors": [],
+  "files": {
+    "solution": ["twelve-days.wren"],
+    "test": ["twelve-days.spec.wren"],
+    "example": [".meta/proof.ci.wren"]
+  },
+  "source": "Wikipedia",
+  "source_url": "http://en.wikipedia.org/wiki/The_Twelve_Days_of_Christmas_(song)"
+}
