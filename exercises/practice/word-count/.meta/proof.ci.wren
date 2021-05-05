@@ -23,6 +23,9 @@ class Strings {
     }
 }
 
+var LOWERCASE = (97..122)
+var NUMBERS = (48..57)
+
 class Words {
   static count(sentence) {
     var count = {}
@@ -32,10 +35,18 @@ class Words {
     }
     return count
   }
+  static apostrophe(l) { l == 39 }
+  static lowercase(l) { LOWERCASE.contains(l) }
+  static numeric(l) { NUMBERS.contains(l) }
+  static clean(word) {
+    // return word.trim(",").trim("'").trim(".").trim(":")
+    return word.bytes.where { |x| lowercase(x) || numeric(x) || apostrophe(x) }.map { |x| String.fromByte(x) }.join("")
+  }
   static words(s) {
-    return Strings.split(s, [" ",","]).
-      map {|x| x.trim(",").trim("'").trim(".") }.
+    return Strings.split(s, [" ",",","\n"]).
       map {|x| Strings.downcase(x) }.
+      map {|x| x.trim("'") }.
+      map {|x| clean(x) }.
       where { |x| x.trim() != "" }
   }
 }
