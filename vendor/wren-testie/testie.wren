@@ -53,8 +53,15 @@ class Expect {
     toEqual(v) { toBe(v) }
     equalMaps_(v) {
         if (_value.count != v.count) return false
-
-
+        for (k in _value.keys) {
+            if (_value[k] != v[k]) return false
+        }
+        return true
+    }
+    equalLists_(v) {
+        for (i in 0...v.count) {
+            if (_value[i] != v[i]) return false
+        }
         return true
     }
     abortsWith(err) {
@@ -65,6 +72,12 @@ class Expect {
         }
     }
     toBe(v) {
+        if (_value is List && v is List) {
+            if (!equalLists_(v)) {
+                Fiber.abort("Expected %(_value) to be %(v)")
+            }
+            return
+        }
         if (v is Map && _value is Map) {
             if (!equalMaps_(v)) {
                 Fiber.abort("Expected %(_value) to be %(v)")
