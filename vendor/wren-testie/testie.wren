@@ -8,15 +8,14 @@ class Testie {
         _shoulds = []
         _skips = []
         _name = name
-        _fails = 0
         fn.call(this, Skipper.new(this))
     }
     test(name, fn) { _shoulds.add([name, fn]) }
-    should(name, fn) { _shoulds.add([name, fn]) }
+    should(name, fn) { test(name,fn) }
     skip(name, fn) { _skips.add([name,fn]) }
     reporter=(v){ _reporter = v }
     reporter { _reporter || Reporter }
-    static test(name, fn) { Testie.new(name, fn).run() }
+    static test(name, fn) { Testie.new(name,fn).run() }
     run() {
         var r = reporter.new(_name)
         r.start()
@@ -27,7 +26,6 @@ class Testie {
             var fiber = Fiber.new(fn)
             fiber.try()
             if (fiber.error) {
-                _fails = _fails + 1
                 r.fail(name, fiber.error)
             } else {
                 r.success(name)
@@ -38,7 +36,6 @@ class Testie {
             r.skip(name)
         }
         r.done()
-        if (_fails > 0) Fiber.abort("Failing tests.")
     }
 }
 
@@ -72,11 +69,7 @@ class Skipper {
     construct new(that) {
         _that = that
     }
-    should(a,b) {
-        _that.skip(a,b)
-    }
-    test(a,b) {
-        _that.skip(a,b)
-    }
+    test(a,b) { _that.skip(a,b) }
+    should(a,b) { _that.skip(a,b) }
 }
 

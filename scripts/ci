@@ -1,0 +1,25 @@
+#!/bin/bash
+EXERCISES=$(ls -1 ./exercises/practice)
+
+set -e
+
+cd exercises/practice
+for dir in $EXERCISES
+do
+    cd $dir
+    echo Running $dir ...
+    SOLUTION=$(jq < .meta/config.json ".files .solution[0]" -r)
+    EXAMPLE=$(jq < .meta/config.json ".files .example[0]" -r)
+    TEST=$(jq < .meta/config.json ".files .test[0]" -r)
+    rm -rf .tmp
+    mkdir -p .tmp
+    cd .tmp
+    cp ../*.wren .
+    cp ../$EXAMPLE $SOLUTION
+    ln -s ../../../../vendor vendor
+    ls -l
+    wren_cli $TEST
+    cd ..
+    rm -rf .tmp
+    cd ..
+done

@@ -1,3 +1,4 @@
+import "./vendor/wren-testie/testie" for Testie, Assert
 import "./triangle" for Triangle
 
 Testie.test("Triangle") { |do, skip|

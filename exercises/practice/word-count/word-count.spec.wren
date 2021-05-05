@@ -4,7 +4,6 @@ import "./testie/testie" for Testie, Assert
 Testie.test("Words") { |do, skip|
   do.test("count one word") {
     var expectedCounts = { "word": 1 }
-    Words.count("word")
     // expect(Words.count("word")).toEqual(expectedCounts)
   }
 

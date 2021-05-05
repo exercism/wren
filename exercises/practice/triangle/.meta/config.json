@@ -12,9 +12,9 @@
     "WebCu"
   ],
   "files": {
-    "solution": ["triangle.js"],
-    "test": ["triangle.spec.js"],
-    "example": [".meta/proof.ci.js"]
+    "solution": ["triangle.wren"],
+    "test": ["triangle.spec.wren"],
+    "example": [".meta/proof.ci.wren"]
   },
   "source": "The Ruby Koans triangle project, parts 1 & 2",
   "source_url": "http://rubykoans.com"
