@@ -1,0 +1,10 @@
+{
+  "blurb": "Simulate a bank account supporting opening/closing, withdraws, and deposits of money. Watch out for concurrent transactions!",
+  "authors": ["joshgoebel"],
+  "contributors": [],
+  "files": {
+    "solution": ["bank-account.wren"],
+    "test": ["bank-account.spec.wren"],
+    "example": [".meta/proof.ci.wren"]
+  }
+}
