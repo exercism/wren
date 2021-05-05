@@ -12,11 +12,36 @@
   "version": 3,
   "online_editor": {
     "indent_style": "space",
-    "indent_size": 4
+    "indent_size": 2
   },
   "exercises": {
     "concept": [],
-    "practice": []
+    "practice": [
+      {
+        "slug": "hello-world",
+        "name": "Hello World",
+        "uuid": "8e9f84b9-f3ac-4bdf-b2be-ad4bded4ea87",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "strings"
+        ]
+      },
+      {
+        "slug": "two-fer",
+        "name": "Two Fer",
+        "uuid": "81b1c5a4-61a2-49ef-a5f2-338b270e7202",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "optional_values",
+          "strings",
+          "text_formatting"
+        ]
+      },
+    ]
   },
   "concepts": [],
   "key_features": [],
