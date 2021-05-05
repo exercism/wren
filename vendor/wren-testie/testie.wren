@@ -58,6 +58,13 @@ class Expect {
         }
         return true
     }
+    toIncludeSameItemsAs(v) {
+        if (_value.count != v.count) return false
+        for (item in _value) {
+            if (!v.contains(item)) return false
+        }
+        return true
+    }
     equalLists_(v) {
         for (i in 0...v.count) {
             if (_value[i] != v[i]) return false
