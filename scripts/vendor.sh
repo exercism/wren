@@ -6,7 +6,7 @@ for dir in $EXERCISES
 do
     echo $dir
     cd $dir
-    # rm -rf vendor
+    rm -rf vendor
     ln -s ../../../vendor vendor
     # mkdir vendor
     # cp -R ../../../vendor/* vendor/
