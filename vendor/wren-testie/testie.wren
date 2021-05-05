@@ -10,9 +10,11 @@ class Testie {
         _skips = []
         _name = name
         _fails = 0
+        _beforeEach = Fn.new {}
         fn.call(this, Skipper.new(this))
     }
 
+    beforeEach(fn) { _beforeEach = fn }
     test(name, fn) { _shoulds.add([name, fn]) }
     should(name, fn) { test(name,fn) }
     skip(name, fn) { _skips.add([name,fn]) }
@@ -27,6 +29,7 @@ class Testie {
         for (test in _shoulds) {
             var name = test[0]
             var fn = test[1]
+            _beforeEach.call()
             var fiber = Fiber.new(fn)
             fiber.try()
             if (fiber.error) {
@@ -66,8 +69,12 @@ class Expect {
         return true
     }
     equalLists_(v) {
+        if (_value.count != v.count) return false
         for (i in 0...v.count) {
-            if (_value[i] != v[i]) return false
+
+            if (_value[i] != v[i]) {
+                return false
+            }
         }
         return true
     }
@@ -88,7 +95,9 @@ class Expect {
     }
     printValue(v) {
         if (v is String) {
-            return "\n`%(v)`\n"
+            return "`%(v)`"
+        } else if (v is List) {
+            return "[" + v.map {|x| printValue(x) }.join(", ") +  "]"
         } else {
             return "%(v)"
         }
@@ -106,7 +115,7 @@ class Expect {
         }
         if (_value is List && v is List) {
             if (!equalLists_(v)) {
-                Fiber.abort("Expected %(_value) to be %(v)")
+                Fiber.abort("Expected list %(printValue(_value)) to be %(printValue(v))")
             }
             return
         }

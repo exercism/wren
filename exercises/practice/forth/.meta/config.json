@@ -1,0 +1,10 @@
+{
+  "blurb": "Implement an evaluator for a very simple subset of Forth",
+  "authors": ["joshgoebel"],
+  "contributors": [],
+  "files": {
+    "solution": ["forth.wren"],
+    "test": ["forth.spec.wren"],
+    "example": [".meta/proof.ci.wren"]
+  }
+}
