@@ -3,6 +3,7 @@ import "random" for Random
 var RND = Random.new()
 var SAD_EMOJI = ["😡","👺","👿","🙀","💩","😰","😤","😬"]
 
+
 class Testie {
     construct new(name, fn) {
         _shoulds = []
@@ -11,12 +12,14 @@ class Testie {
         _fails = 0
         fn.call(this, Skipper.new(this))
     }
+
     test(name, fn) { _shoulds.add([name, fn]) }
-    should(name, fn) { _shoulds.add([name, fn]) }
+    should(name, fn) { test(name,fn) }
     skip(name, fn) { _skips.add([name,fn]) }
     reporter=(v){ _reporter = v }
     reporter { _reporter || Reporter }
-    static test(name, fn) { Testie.new(name, fn).run() }
+    static test(name, fn) { Testie.new(name,fn).run() }
+    describe(name, fn) { fn.call() }
     run() {
         var r = reporter.new(_name)
         r.start()
@@ -38,7 +41,39 @@ class Testie {
             r.skip(name)
         }
         r.done()
-        if (_fails > 0) Fiber.abort("Failing tests.")
+        if (_fails > 0) Fiber.abort("Failing test")
+    }
+}
+
+class Expect {
+    construct new(value) {
+        _value = value
+    }
+    static that(v) { Expect.new(v) }
+    toEqual(v) { toBe(v) }
+    equalMaps_(v) {
+        if (_value.count != v.count) return false
+
+
+        return true
+    }
+    abortsWith(err) {
+        var f = Fiber.new { _value.call() }
+        var result = f.try()
+        if (result!=err) {
+            Fiber.abort("Expected error '%(err)' but got none")
+        }
+    }
+    toBe(v) {
+        if (v is Map && _value is Map) {
+            if (!equalMaps_(v)) {
+                Fiber.abort("Expected %(_value) to be %(v)")
+            }
+            return
+        }
+        if (_value != v) {
+            Fiber.abort("Expected %(_value) to be %(v)")
+        }
     }
 }
 
@@ -72,11 +107,7 @@ class Skipper {
     construct new(that) {
         _that = that
     }
-    should(a,b) {
-        _that.skip(a,b)
-    }
-    test(a,b) {
-        _that.skip(a,b)
-    }
+    test(a,b) { _that.skip(a,b) }
+    should(a,b) { _that.skip(a,b) }
 }
 

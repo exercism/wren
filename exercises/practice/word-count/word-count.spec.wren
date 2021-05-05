@@ -1,16 +1,15 @@
 import "./word-count" for Words
-import "./testie/testie" for Testie, Assert
+import "./vendor/wren-testie/testie" for Testie, Assert, Expect
 
 Testie.test("Words") { |do, skip|
   do.test("count one word") {
     var expectedCounts = { "word": 1 }
-    Words.count("word")
-    // expect(Words.count("word")).toEqual(expectedCounts)
+    Expect.that(Words.count("word")).toEqual(expectedCounts)
   }
 
   skip.test("count one of each word") {
     var expectedCounts = { "one": 1, "of": 1, "each": 1 }
-    // expect(countWords("one of each")).toEqual(expectedCounts)
+    Expect.that(Words.count("one of each")).toEqual(expectedCounts)
   }
 
   skip.test("multiple occurrences of a word") {
@@ -21,9 +20,9 @@ Testie.test("Words") { |do, skip|
       "red": 1,
       "blue": 1,
     }
-    // expect(countWords("one fish two fish red fish blue fish")).toEqual(
-    //   expectedCounts
-    // )
+    Expect.that(Words.count("one fish two fish red fish blue fish")).toEqual(
+      expectedCounts
+    )
   }
 
   skip.test("handles cramped lists") {
@@ -32,7 +31,7 @@ Testie.test("Words") { |do, skip|
       "two": 1,
       "three": 1,
     }
-    // expect(countWords("one,two,three")).toEqual(expectedCounts)
+    Expect.that(Words.count("one,two,three")).toEqual(expectedCounts)
   }
 
   skip.test("handles expanded lists") {
@@ -41,7 +40,7 @@ Testie.test("Words") { |do, skip|
       "two": 1,
       "three": 1,
     }
-    // expect(countWords("one,\ntwo,\nthree")).toEqual(expectedCounts)
+    Expect.that(Words.count("one,\ntwo,\nthree")).toEqual(expectedCounts)
   }
 
   skip.test("ignore punctuation") {
@@ -52,9 +51,9 @@ Testie.test("Words") { |do, skip|
       "java": 1,
       "javascript": 1,
     }
-    // expect(countWords("car: carpet as java: javascript!!&@$%^&")).toEqual(
-    //   expectedCounts
-    // )
+    Expect.that(Words.count("car: carpet as java: javascript!!&@$\%^&")).toEqual(
+      expectedCounts
+    )
   }
 
   skip.test("include numbers") {
@@ -62,8 +61,9 @@ Testie.test("Words") { |do, skip|
       "testing": 2,
       "1": 1,
       "2": 1,
+      "33": 1
     }
-    // expect(countWords("testing, 1, 2 testing")).toEqual(expectedCounts)
+    Expect.that(Words.count("testing, 1, 2, 33 testing")).toEqual(expectedCounts)
   }
 
   skip.test("normalize case") {
@@ -71,7 +71,7 @@ Testie.test("Words") { |do, skip|
       "go": 3,
       "stop": 2,
     }
-    // expect(countWords("go Go GO Stop stop")).toEqual(expectedCounts)
+    Expect.that(Words.count("go Go GO Stop stop")).toEqual(expectedCounts)
   }
 
   skip.test("with apostrophes") {
@@ -82,9 +82,9 @@ Testie.test("Words") { |do, skip|
       "then": 1,
       "cry": 1,
     }
-    // expect(countWords("First: don't laugh. Then: don't cry.")).toEqual(
-    //   expectedCounts
-    // )
+    Expect.that(Words.count("First: don't laugh. Then: don't cry.")).toEqual(
+      expectedCounts
+    )
   }
 
   skip.test("with quotations") {
@@ -96,9 +96,9 @@ Testie.test("Words") { |do, skip|
       "large": 2,
       "and": 1,
     }
-    // expect(countWords("Joe can't tell between 'large' and large.")).toEqual(
-    //   expectedCounts
-    // )
+    Expect.that(Words.count("Joe can't tell between 'large' and large.")).toEqual(
+      expectedCounts
+    )
   }
 
   skip.test("substrings from the beginning") {
@@ -112,9 +112,9 @@ Testie.test("Words") { |do, skip|
       "and": 1,
       "a": 1,
     }
-    // expect(countWords("Joe can't tell between app, apple and a.")).toEqual(
-    //   expectedCounts
-    // )
+    Expect.that(Words.count("Joe can't tell between app, apple and a.")).toEqual(
+      expectedCounts
+    )
   }
 
   skip.test("multiple spaces not detected as a word") {
@@ -122,7 +122,7 @@ Testie.test("Words") { |do, skip|
       "multiple": 1,
       "whitespaces": 1,
     }
-    // expect(countWords(" multiple   whitespaces")).toEqual(expectedCounts)
+    Expect.that(Words.count(" multiple   whitespaces")).toEqual(expectedCounts)
   }
 
   skip.test("alternating word separators not detected as a word") {
@@ -131,6 +131,6 @@ Testie.test("Words") { |do, skip|
       "two": 1,
       "three": 1
     }
-    // expect(countWords(",\n,one,\n ,two \n 'three'")).toEqual(expectedCounts)
+    Expect.that(Words.count(",\n,one,\n ,two \n 'three'")).toEqual(expectedCounts)
   }
 }

@@ -15,50 +15,62 @@
 # - scripts/ci-check
 # - scripts/ci
 
-name: <track> / main
+name: wren / main
 
 on:
   push:
-    branches: [main]
+    branches: [main, ci]
   workflow_dispatch:
 
 jobs:
-  precheck:
-    runs-on: <image-name>
+  # precheck:
+  #   runs-on: <image-name>
 
-    steps:
-      - uses: actions/checkout@v2
-      - name: Use <setup tooling>
-        uses: <action to setup tooling>
-        with:
-          # Here, use the LTS/stable version of the track's tooling, e.g.:
-          # node-version: 12.x
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - name: Use <setup tooling>
+  #       uses: <action to setup tooling>
+  #       with:
+  #         # Here, use the LTS/stable version of the track's tooling, e.g.:
+  #         # node-version: 12.x
 
-      - name: Install project dependencies
-        run: <install dependencies>
+  #     - name: Install project dependencies
+  #       run: <install dependencies>
 
-      - name: Run exercism/<track> ci pre-check (checks config, lint code) for all exercises
-        run: scripts/ci-check
+  #     - name: Run exercism/wren ci pre-check (checks config, lint code) for all exercises
+  #       run: scripts/ci-check
 
   ci:
-    runs-on: <image-name>
+    runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
+    # strategy:
+      # matrix:
         # Here, add all SUPPORTED versions only, e.g.:
         # version: [10.x, 12.x, 14.x]
         # Optionally, add more matrix variables, such as os or arch
 
     steps:
       - uses: actions/checkout@v2
-      - name: Use <setup tooling> ${{ matrix.version }}
-        uses: <action to setup tooling>
-        with:
+      - name: Use Wren CLI built from source (main)
+        run: |
+          git clone https://github.com/joshgoebel/wren-cli
+          cd wren-cli
+          git branch -a
+          git checkout fix_file_ext_removal
+          make -j4 -C projects/make/
+          mkdir -p $GITHUB_WORKSPACE/bin
+          cp bin/wren_cli $GITHUB_WORKSPACE/bin
+          echo "$GITHUB_WORKSPACE/bin" >> $GITHUB_PATH
+
+      # - name: Use <setup tooling> ${{ matrix.version }}
+        # uses: <action to setup tooling>
+        # with:
           # Use the ${{ matrix.x }} format to inject variables into commands
           # node-version: ${{ matrix.version }}
 
-      - name: Install project dependencies
-        run: <install dependencies>
+      # no dependencies yet other then Wren CLI
+      # - name: Install project dependencies
+        # run: <install dependencies>
 
-      - name: Run exercism/<track> ci (runs tests) for all exercises
+      - name: Run exercism/wren ci (runs tests) for all exercises
         run: scripts/ci
