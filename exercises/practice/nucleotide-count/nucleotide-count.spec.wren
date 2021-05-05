@@ -1,0 +1,31 @@
+import "./vendor/wren-testie/testie" for Testie, Expect
+import "./nucleotide-count" for Nucleotide
+
+Testie.test("count nucleotides") { |do, skip|
+
+  do.test("empty strand") {
+    Expect.that(Nucleotide.count("")).toEqual({ "A": 0, "C": 0, "G": 0, "T": 0})
+  }
+
+  skip.test("can count one nucleotide in single-character input") {
+    Expect.that(Nucleotide.count("G")).toEqual({ "A": 0, "C": 0, "G": 1, "T": 0})
+  }
+
+  skip.test("strand with repeated nucleotide") {
+    Expect.that(Nucleotide.count("GGGGGGG")).toEqual({ "A": 0, "C": 0, "G": 7, "T": 0})
+  }
+
+  skip.test("strand with multiple nucleotides") {
+    Expect.that(
+      Nucleotide.count(
+        "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC"
+      )
+    ).toEqual({ "A": 20, "C": 12, "G": 17, "T": 21})
+  }
+
+  skip.test("strand with invalid nucleotides") {
+    Expect.that {
+       Nucleotide.count("AGXXACT")
+    }.abortsWith("Invalid nucleotide in strand")
+  }
+}
