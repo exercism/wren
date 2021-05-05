@@ -15,7 +15,6 @@ class Strings {
           last = i + 1
         }
         i = i + 1
-
       }
       if (last !=i ) {
         items.add(s[last..-1])

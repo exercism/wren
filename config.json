@@ -51,6 +51,7 @@
     "platform/windows",
     "platform/linux",
     "platform/mac",
+    "execution_mode/interpreted",
     "paradigm/object_oriented",
     "runtime/standalone_executable",
     "used_for/games",
