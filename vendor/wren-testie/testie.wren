@@ -6,7 +6,7 @@ var SAD_EMOJI = ["😡","👺","👿","🙀","💩","😰","😤","😬"]
 
 class Testie {
     construct new(name, fn) {
-        _shoulds = []
+        _tests = []
         _skips = []
         _name = name
         _fails = 0
@@ -15,18 +15,26 @@ class Testie {
     }
 
     beforeEach(fn) { _beforeEach = fn }
-    test(name, fn) { _shoulds.add([name, fn]) }
+    test(name, fn) { _tests.add([name, fn]) }
     should(name, fn) { test(name,fn) }
     skip(name, fn) { _skips.add([name,fn]) }
     reporter=(v){ _reporter = v }
     reporter { _reporter || Reporter }
     static test(name, fn) { Testie.new(name,fn).run() }
-    describe(name, fn) { fn.call() }
+    describe(name, fn) {
+        _tests.add(name)
+        fn.call()
+    }
     run() {
         var r = reporter.new(_name)
         r.start()
 
-        for (test in _shoulds) {
+        for (test in _tests) {
+            if (test is String) {
+                r.section(test)
+                continue
+            }
+
             var name = test[0]
             var fn = test[1]
             _beforeEach.call()
@@ -136,11 +144,12 @@ class Reporter {
         _name = name
         _fail = _skip = _success = 0
     }
-    start() { System.print(_name + "\n") }
+    start() { System.print(_name) }
     skip(name) {
         _skip = _skip + 1
         System.print("  🔹 [skip] %(name)")
     }
+    section(name) { System.print("\n  %(name)\n") }
     fail(name, error) {
         _fail = _fail + 1
         System.print("  ❌ %(name) \n     %(error)\n")
