@@ -4,7 +4,7 @@
 //
 
 class HighScores {
-  construct new() {
+  construct new(scores) {
     Fiber.abort("Remove this statement and implement this function")
   }
 
