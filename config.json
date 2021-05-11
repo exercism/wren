@@ -20,9 +20,29 @@
     "concept": [],
     "practice": [
       {
-        "slug": "hello-world",
-        "name": "Hello World",
-        "uuid": "8e9f84b9-f3ac-4bdf-b2be-ad4bded4ea87",
+        "slug": "allergies",
+        "name": "Allergies",
+        "uuid": "ae80a54c-5503-410b-a76f-946cec0a95b1",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+        ]
+      },
+      {
+        "slug": "bank-account",
+        "name": "Bank Account",
+        "uuid": "ec8fc0fe-b30b-42ce-9fe9-c6b64c4e4791",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+        ]
+      },
+      {
+        "slug": "bob",
+        "name": "Bob",
+        "uuid": "ebc21ea0-6f53-4262-a21b-8481fda44cf2",
         "practices": [],
         "prerequisites": [],
         "difficulty": 1,
@@ -31,9 +51,174 @@
         ]
       },
       {
+        "slug": "dnd-character",
+        "name": "D&D Character",
+        "uuid": "99b38a7f-dd6c-4daa-bc39-dd285a8ffdd6",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+        ]
+      },
+      {
+        "slug": "forth",
+        "name": "Forth",
+        "uuid": "36a62783-86d7-4c6e-a419-8fbebf54047d",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 10,
+        "topics": [
+        ]
+      },
+      {
+        "slug": "hamming",
+        "name": "Hamming",
+        "uuid": "07b8ddb0-5334-4687-b0c2-2f1414fb7ec1",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "strings",
+        ]
+      },
+      {
+        "slug": "hello-world",
+        "name": "Hello World",
+        "uuid": "00c787bd-8f2d-4759-b87c-e0ff65c5989d",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "strings"
+        ]
+      },
+      {
+        "slug": "high-scores",
+        "name": "High Scores",
+        "uuid": "e445ca5d-539d-4a5a-a3c0-3543c86bef42",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+        ]
+      },
+      {
+        "slug": "leap",
+        "name": "Leap Years",
+        "uuid": "e95f1ade-287a-4391-ae28-82e037f39628",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+        ]
+      },
+      {
+        "slug": "nucleotide-count",
+        "name": "Nucleotide Count",
+        "uuid": "9a681ccf-1909-4776-bd79-94e614f5ef22",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+        ]
+      },
+      {
+        "slug": "raindrops",
+        "name": "Raindrops",
+        "uuid": "6defd225-71e2-431b-b016-e91ada9538ae",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+        ]
+      },
+      {
+        "slug": "resistor-color",
+        "name": "Resistor Color",
+        "uuid": "82cb5edb-7b4c-4d61-8760-9c07848d0ee4",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+        ]
+      },
+      {
+        "slug": "resistor-color-duo",
+        "name": "Resistor Color Duo",
+        "uuid": "fab866b5-70f4-49d1-85e6-7133edc60b4f",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+        ]
+      },
+      {
+        "slug": "reverse-string",
+        "name": "Reverse String",
+        "uuid": "6481a366-fd28-42d6-8594-3c20d87532b5",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+        ]
+      },
+      {
+        "slug": "scrabble-score",
+        "name": "Scrabble Score",
+        "uuid": "13ab45df-40d9-4c4a-9a40-93a4e8f5f9af",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+        ]
+      },
+      {
+        "slug": "space-age",
+        "name": "Space Age",
+        "uuid": "c5de7d07-63ea-41a1-a413-26884f69584c",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+        ]
+      },
+      {
+        "slug": "triangle",
+        "name": "Triangle",
+        "uuid": "bcbc4530-0f10-4fe5-84f1-e95741e6f046",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+        ]
+      },
+      {
+        "slug": "twelve-days",
+        "name": "Twelve Days",
+        "uuid": "3f0a598a-bad5-4a68-a845-ffaa1b1fe51f",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+        ]
+      },
+      {
         "slug": "two-fer",
         "name": "Two Fer",
-        "uuid": "81b1c5a4-61a2-49ef-a5f2-338b270e7202",
+        "uuid": "42e242e7-03c7-4989-a418-770ee5805008",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "optional_values",
+          "strings",
+          "text_formatting"
+        ]
+      },
+      {
+        "slug": "word-count",
+        "name": "Word Count",
+        "uuid": "201df340-0f73-4d0a-b4b9-090ed219d11a",
         "practices": [],
         "prerequisites": [],
         "difficulty": 1,
