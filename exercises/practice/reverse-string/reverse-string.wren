@@ -4,7 +4,7 @@
 //
 
 class StringUtil {
-  static reverse() {
+  static reverse(string) {
     Fiber.abort("Remove this statement and implement this function")
   }
 }

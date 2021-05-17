@@ -1,9 +1,9 @@
 import "./two-fer" for TwoFer
 import "./vendor/wren-testie/testie" for Testie, Expect
 
-Testie.test("TwoFer") { |it|
+Testie.test("TwoFer") { |do, skip|
 
-  it.test("no name given") {
+  do.test("no name given") {
     Expect.that(TwoFer.twoFer()).toEqual("One for you, one for me.")
   }
 

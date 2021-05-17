@@ -3,7 +3,7 @@
 // convenience to get you started writing code faster.
 //
 
-class Spage {
+class Space {
   static age() {
     Fiber.abort("Remove this statement and implement this function")
   }

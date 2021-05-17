@@ -3,6 +3,8 @@
 // convenience to get you started writing code faster.
 //
 
-export const recite = () => {
-  throw new Error('Remove this statement and implement this function');
-};
+class TwelveDays {
+  static recite(verse) {
+    Fiber.abort("Remove this statement and implement this function")
+  }
+}
