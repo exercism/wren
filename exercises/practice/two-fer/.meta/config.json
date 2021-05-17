@@ -1,7 +1,7 @@
 {
   "blurb": "Create a sentence of the form \"One for X, one for me.\"",
   "authors": ["joshgoebel"],
-  "contributors": ["mluisamc", "serixscorpio", "SleeplessByte", "laujormurclar"],
+  "contributors": [],
   "files": {
     "solution": ["two-fer.wren"],
     "test": ["two-fer.spec.wren"],
