@@ -3,6 +3,17 @@ import "random" for Random
 var RND = Random.new()
 var SAD_EMOJI = ["😡","👺","👿","🙀","💩","😰","😤","😬"]
 
+class Test {
+    construct new(name, fn) {
+        _name = name
+        _fn = fn
+        _skip = false
+    }
+    skip { _skip }
+    name { _name }
+    fn { _fn }
+    skip() { _skip = true }
+}
 
 class Testie {
     construct new(name, fn) {
@@ -10,48 +21,59 @@ class Testie {
         _skips = []
         _name = name
         _fails = 0
-        _beforeEach = Fn.new {}
+        _afterEach = _beforeEach = Fn.new {}
         fn.call(this, Skipper.new(this))
     }
-
-    beforeEach(fn) { _beforeEach = fn }
-    test(name, fn) { _tests.add([name, fn]) }
-    should(name, fn) { test(name,fn) }
-    skip(name, fn) { _skips.add([name,fn]) }
-    reporter=(v){ _reporter = v }
-    reporter { _reporter || Reporter }
     static test(name, fn) { Testie.new(name,fn).run() }
-    describe(name, fn) {
+    afterEach(fn) { _afterEach = fn }
+    beforeEach(fn) { _beforeEach = fn }
+    reporter=(v){ _reporter = v }
+    reporter { _reporter || CuteReporter }
+
+    // aliases
+    should(name, fn) { test(name,fn) }
+    describe(name, fn) { context(name,fn) }
+
+    // core API
+    test(name, fn) { _tests.add(Test.new(name, fn)) }
+    skip(name, fn) { test(name,fn).skip() }
+    context(name, fn) {
         _tests.add(name)
         fn.call()
     }
     run() {
+        if (!(_tests[0] is String)) { _name = _name + "\n" }
         var r = reporter.new(_name)
         r.start()
 
+        var i = 0
+        var first_error
         for (test in _tests) {
             if (test is String) {
                 r.section(test)
                 continue
             }
-
-            var name = test[0]
-            var fn = test[1]
-            _beforeEach.call()
-            var fiber = Fiber.new(fn)
-            fiber.try()
-            if (fiber.error) {
-                _fails = _fails + 1
-                r.fail(name, fiber.error)
-            } else {
-                r.success(name)
+            if (test.skip) {
+                r.skip(test.name)
+                continue
             }
-        }
-        for (test in _skips) {
-            var name = test[0]
-            r.skip(name)
+
+            _beforeEach.call()
+            var error = Fiber.new(test.fn).try()
+            if (error) {
+                if (first_error == null) first_error = i
+                _fails = _fails + 1
+                r.fail(test.name, error)
+            } else {
+                r.success(test.name)
+            }
+            _afterEach.call()
+            i = i + 1
         }
         r.done()
+        if (first_error) {
+            Fiber.new(_tests[first_error].fn).call()
+        }
         if (_fails > 0) Fiber.abort("Failing test")
     }
 }
@@ -139,7 +161,7 @@ class Expect {
     }
 }
 
-class Reporter {
+class CuteReporter {
     construct new(name) {
         _name = name
         _fail = _skip = _success = 0
@@ -147,7 +169,7 @@ class Reporter {
     start() { System.print(_name) }
     skip(name) {
         _skip = _skip + 1
-        System.print("  🔹 [skip] %(name)")
+        System.print("  🌀 [skip] %(name)")
     }
     section(name) { System.print("\n  %(name)\n") }
     fail(name, error) {
