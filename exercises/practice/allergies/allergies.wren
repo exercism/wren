@@ -4,7 +4,7 @@
 //
 
 class Allergies {
-  construct new() {
+  construct new(value) {
     Fiber.abort("Remove this statement and implement this function")
   }
 
@@ -12,7 +12,7 @@ class Allergies {
     Fiber.abort("Remove this statement and implement this function")
   }
 
-  allergicTo() {
+  allergicTo(name) {
     Fiber.abort("Remove this statement and implement this function")
   }
 }

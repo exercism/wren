@@ -16,11 +16,11 @@ class BankAccount {
     Fiber.abort("Remove this statement and implement this function")
   }
 
-  deposit() {
+  deposit(amount) {
     Fiber.abort("Remove this statement and implement this function")
   }
 
-  withdraw() {
+  withdraw(amount) {
     Fiber.abort("Remove this statement and implement this function")
   }
 
@@ -28,9 +28,3 @@ class BankAccount {
     Fiber.abort("Remove this statement and implement this function")
   }
 }
-
-// export class ValueError extends Error {
-//   constructor() {
-//     super('Bank account error');
-//   }
-// }

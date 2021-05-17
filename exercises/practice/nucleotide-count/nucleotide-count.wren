@@ -4,7 +4,7 @@
 //
 
 class Nucleotide {
-  static count() {
+  static count(strand) {
     Fiber.abort("Remove this statement and implement this function")
   }
 }
