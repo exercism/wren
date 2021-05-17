@@ -90,9 +90,6 @@ class Testie {
             System.print("%(test.name)\n")
             System.print(Color.BLACK + Color.BOLD + "--- STACKTRACE " + "-" * 60 + Color.RESET)
             Stdout.flush()
-            // with any luck this will print AFTER we crash thanks to
-            // stdout flushing oddities
-            System.print(" ")
             Fiber.new(test.fn).call()
         }
         if (_fails > 0) Fiber.abort("Failing test")
@@ -158,10 +155,10 @@ class Expect {
             if (_value == v) return
 
             var err=""
-            err = err + "\rReceived: "
-            err = err + printValue(_value) + "\n"
-            err = err + "\nExpected: "
-            err = err + printValue(v)
+            err = err + "\nExpected:\n"
+            err = err + printValue(v) + "\n"
+            err = err + "\rReceived:\n"
+            err = err + printValue(_value)
             Fiber.abort("%(err)\nShould match.")
         }
         if (_value is List && v is List) {
