@@ -2,8 +2,10 @@ import "../wren-assert/Assert" for Assert
 import "random" for Random
 import "io" for Stdout
 import "os" for Process
+import "./vendor/colors" for Colors as Color
+import "./src/reporter" for CuteReporter
+import "./src/expect" for Expect
 var RND = Random.new()
-var SAD_EMOJI = ["😡","👺","👿","🙀","💩","😰","😤","😬"]
 
 class Test {
     construct new(name, fn) {
@@ -15,15 +17,6 @@ class Test {
     name { _name }
     fn { _fn }
     skip() { _skip = true }
-}
-
-class Color {
-  // Foreground color for ANSI white.
-    static WHITE { "\u001b[37m" }
-    static RESET { "\u001b[0m" }
-    static BLACK { "\u001b[30m" }
-    static BLACK_B { "\u001b[40m" }
-    static BOLD { "\u001b[1m" }
 }
 
 class Testie {
@@ -62,10 +55,12 @@ class Testie {
         for (test in _tests) {
             if (test is String) {
                 r.section(test)
+                i = i + 1
                 continue
             }
             if (test.skip) {
                 r.skip(test.name)
+                i = i + 1
                 continue
             }
 
@@ -92,119 +87,12 @@ class Testie {
             Stdout.flush()
             Fiber.new(test.fn).call()
         }
-        if (_fails > 0) Fiber.abort("Failing test")
+        if (_fails > 0) Fiber.abort("Failing tests.")
     }
 }
 
-class Expect {
-    construct new(value) {
-        _value = value
-    }
-    static that(v) { Expect.new(v) }
-    toEqual(v) { toBe(v) }
-    equalMaps_(v) {
-        if (_value.count != v.count) return false
-        for (k in _value.keys) {
-            if (_value[k] != v[k]) return false
-        }
-        return true
-    }
-    toIncludeSameItemsAs(v) {
-        if (_value.count != v.count) return false
-        for (item in _value) {
-            if (!v.contains(item)) return false
-        }
-        return true
-    }
-    equalLists_(v) {
-        if (_value.count != v.count) return false
-        for (i in 0...v.count) {
 
-            if (_value[i] != v[i]) {
-                return false
-            }
-        }
-        return true
-    }
-    abortsWith(err) {
-        var f = Fiber.new { _value.call() }
-        var result = f.try()
-        if (result!=err) {
-            Fiber.abort("Expected error '%(err)' but got none")
-        }
-    }
-    toBeGreaterThanOrEqual(v) {
-        if (_value >= v) return
-        Fiber.abort("Expected %(v) to be greater than or equal to %(_value)")
-    }
-    toBeLessThanOrEqual(v) {
-        if (_value <= v) return
-        Fiber.abort("Expected %(v) to be less than or equal to %(_value)")
-    }
-    printValue(v) {
-        if (v is String) {
-            return "`%(v)`"
-        } else if (v is List) {
-            return "[" + v.map {|x| printValue(x) }.join(", ") +  "]"
-        } else {
-            return "%(v)"
-        }
-    }
-    toBe(v) {
-        if (_value is String || v is String) {
-            if (_value == v) return
 
-            var err=""
-            err = err + "\nExpected:\n"
-            err = err + printValue(v) + "\n"
-            err = err + "\rReceived:\n"
-            err = err + printValue(_value)
-            Fiber.abort("%(err)\nShould match.")
-        }
-        if (_value is List && v is List) {
-            if (!equalLists_(v)) {
-                Fiber.abort("Expected list %(printValue(_value)) to be %(printValue(v))")
-            }
-            return
-        }
-        if (v is Map && _value is Map) {
-            if (!equalMaps_(v)) {
-                Fiber.abort("Expected %(_value) to be %(v)")
-            }
-            return
-        }
-        if (_value != v) {
-            Fiber.abort("Expected %(_value) to be %(v)")
-        }
-    }
-}
-
-class CuteReporter {
-    construct new(name) {
-        _name = name
-        _fail = _skip = _success = 0
-    }
-    start() { System.print(_name) }
-    skip(name) {
-        _skip = _skip + 1
-        System.print("  🌀 [skip] %(name)")
-    }
-    section(name) { System.print("\n  %(name)\n") }
-    fail(name, error) {
-        _fail = _fail + 1
-        System.print("  ❌ %(name) \n     %(error)\n")
-    }
-    success(name) {
-        _success = _success + 1
-        System.print("  ✅ %(name)")
-    }
-    sadEmotion { SAD_EMOJI[RND.int(SAD_EMOJI.count)] }
-    done() {
-        var overall = "💯"
-        if (_fail > 0) overall = "❌ %(sadEmotion)"
-        System.print("\n  %(overall) ✓ %(_success) successes, ✕ %(_fail) failures, ☐ %(_skip) skipped\n")
-    }
-}
 
 class Skipper {
     construct new(that) {
