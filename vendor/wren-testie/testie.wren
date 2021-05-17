@@ -1,5 +1,7 @@
 import "../wren-assert/Assert" for Assert
 import "random" for Random
+import "io" for Stdout
+import "os" for Process
 var RND = Random.new()
 var SAD_EMOJI = ["😡","👺","👿","🙀","💩","😰","😤","😬"]
 
@@ -13,6 +15,15 @@ class Test {
     name { _name }
     fn { _fn }
     skip() { _skip = true }
+}
+
+class Color {
+  // Foreground color for ANSI white.
+    static WHITE { "\u001b[37m" }
+    static RESET { "\u001b[0m" }
+    static BLACK { "\u001b[30m" }
+    static BLACK_B { "\u001b[40m" }
+    static BOLD { "\u001b[1m" }
 }
 
 class Testie {
@@ -71,8 +82,18 @@ class Testie {
             i = i + 1
         }
         r.done()
+        Stdout.flush()
+
         if (first_error) {
-            Fiber.new(_tests[first_error].fn).call()
+            var test = _tests[first_error]
+            System.print(Color.BLACK + Color.BOLD + "--- TEST " + "-" * 66 + Color.RESET)
+            System.print("%(test.name)\n")
+            System.print(Color.BLACK + Color.BOLD + "--- STACKTRACE " + "-" * 60 + Color.RESET)
+            Stdout.flush()
+            // with any luck this will print AFTER we crash thanks to
+            // stdout flushing oddities
+            System.print(" ")
+            Fiber.new(test.fn).call()
         }
         if (_fails > 0) Fiber.abort("Failing test")
     }
