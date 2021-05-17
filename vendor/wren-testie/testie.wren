@@ -29,6 +29,7 @@ class Testie {
         fn.call(this, Skipper.new(this))
     }
     static test(name, fn) { Testie.new(name,fn).run() }
+    expect(v) { Expect.that(v) }
     afterEach(fn) { _afterEach = fn }
     beforeEach(fn) { _beforeEach = fn }
     reporter=(v){ _reporter = v }

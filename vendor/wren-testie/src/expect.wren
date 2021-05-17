@@ -14,7 +14,7 @@ class Expect {
     construct new(value) { _value = value }
     raise(message) { ExpectError.throw(message) }
     static that(v) { Expect.new(v) }
-    toEqual(v) { toBe(v) }
+    toBe(v) { toEqual(v) }
     equalMaps_(v) {
         if (_value.count != v.count) return false
         for (k in _value.keys) {
@@ -63,7 +63,7 @@ class Expect {
             return "%(v)"
         }
     }
-    toBe(v) {
+    toEqual(v) {
         if (_value is List && v is List) {
             if (!equalLists_(v)) {
                 raise("Expected list %(printValue(_value)) to be %(printValue(v))")
