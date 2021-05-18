@@ -20,6 +20,14 @@
     "concept": [],
     "practice": [
       {
+        "slug": "accumulate",
+        "name": "Accumulate",
+        "uuid": "7a8cd1a3-6e95-43f6-a98c-53e837557bbb",
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": []
+      },
+      {
         "slug": "allergies",
         "name": "Allergies",
         "uuid": "ae80a54c-5503-410b-a76f-946cec0a95b1",
