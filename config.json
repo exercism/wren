@@ -230,6 +230,16 @@
         ]
       },
       {
+        "slug": "run-length-encoding",
+        "name": "Run Length Encoding",
+        "uuid": "642ddb58-625b-43b8-b7b9-3e0025dbd989",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+        ]
+      },
+      {
         "slug": "scrabble-score",
         "name": "Scrabble Score",
         "uuid": "13ab45df-40d9-4c4a-9a40-93a4e8f5f9af",
