@@ -51,6 +51,16 @@
         ]
       },
       {
+        "slug": "circular-buffer",
+        "name": "Circular Buffer",
+        "uuid": "6050d1e5-f68d-4cf7-b29c-1a07c4b31dda",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+        ]
+      },
+      {
         "slug": "custom-set",
         "name": "Custom Set",
         "uuid": "795a34e3-1515-49a0-b5f8-fba2bf4808ff",
