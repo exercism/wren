@@ -10,6 +10,22 @@ class ExpectError {
     toString { _error }
 }
 
+class DeepEqual {
+    static list(a,b) {
+        if (a.count != b.count) return false
+        for (i in 0...a.count) {
+            var c = a[i]
+            var d = b[i]
+            if (c is List && d is List) {
+                if (!DeepEqual.list(c,d)) return false
+            } else if (c != d) {
+                return false
+            }
+        }
+        return true
+    }
+}
+
 class Expect {
     construct new(value) { _value = value }
     raise(message) { ExpectError.throw(message) }
@@ -30,14 +46,7 @@ class Expect {
         return true
     }
     equalLists_(v) {
-        if (_value.count != v.count) return false
-        for (i in 0...v.count) {
-
-            if (_value[i] != v[i]) {
-                return false
-            }
-        }
-        return true
+        return DeepEqual.list(_value,v)
     }
     abortsWith(err) {
         var f = Fiber.new { _value.call() }

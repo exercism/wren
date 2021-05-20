@@ -1,5 +1,6 @@
 import "random" for Random
 import "../vendor/colors" for Colors as Color
+import "./stacktrace_report" for StackTraceReport
 var RND = Random.new()
 var SAD_EMOJI = ["😡","👺","👿","🙀","💩","😰","😤","😬"]
 
@@ -20,11 +21,11 @@ class CuteReporter {
         _section = name.trim()
         System.print("\n  %(name)\n")
     }
-    fail(name, error) {
+    fail(name, fiber) {
         _fail = _fail + 1
         // System.print("  ❌ %(name) \n     %(error)\n")
         System.print("  ❌ %(name)")
-        _fails.add([_section,name,error])
+        _fails.add([_section,name,fiber])
     }
     success(name) {
         _success = _success + 1
@@ -36,7 +37,8 @@ class CuteReporter {
         for (fail in _fails) {
             var section = fail[0]
             var name = fail[1]
-            var error = fail[2]
+            var fiber = fail[2]
+            var error = fiber.error
             System.print(Color.RED + Color.BOLD + "● %(section) -> %(name)" + Color.RESET + "\n")
             if (error is String) {
                 System.print(error)
@@ -44,6 +46,8 @@ class CuteReporter {
                 System.print(error.error)
             }
             System.print()
+            var s = StackTraceReport.new(fiber)
+            s.print()
         }
     }
     done() {
