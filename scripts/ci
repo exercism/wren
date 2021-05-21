@@ -22,6 +22,8 @@ do
     sed -i'' -e 's/skip.test/do.test/' $TEST
     cp ../$EXAMPLE $SOLUTION
     ln -s ../../../../vendor vendor
+    # cat $TEST
+    # cat $SOLUTION
     # ls -l
     wren_cli $TEST
     cd ..

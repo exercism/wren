@@ -1,7 +1,13 @@
-import "mirror" for Mirror
 import "../vendor/colors" for Colors as Color
 import "io" for File
-import "repl" for Lexer, Token
+import "./capabilities" for Capabilities
+var Mirror = null
+var Lexer = null
+var Token = null
+if (Capabilities.hasMirror) {
+  import "mirror" for Mirror
+  import "repl" for Lexer, Token
+}
 
 class Highlighter {
   construct new(code) {

@@ -1,6 +1,7 @@
 import "random" for Random
 import "../vendor/colors" for Colors as Color
 import "./stacktrace_report" for StackTraceReport
+import "./capabilities" for Capabilities
 var RND = Random.new()
 var SAD_EMOJI = ["😡","👺","👿","🙀","💩","😰","😤","😬"]
 
@@ -46,8 +47,10 @@ class CuteReporter {
                 System.print(error.error)
             }
             System.print()
-            var s = StackTraceReport.new(fiber)
-            s.print()
+            if (Capabilities.hasMirror) {
+                var s = StackTraceReport.new(fiber)
+                s.print()
+            }
         }
     }
     done() {
