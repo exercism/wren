@@ -51,6 +51,16 @@
         ]
       },
       {
+        "slug": "custom-set",
+        "name": "Custom Set",
+        "uuid": "795a34e3-1515-49a0-b5f8-fba2bf4808ff",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+        ]
+      },
+      {
         "slug": "dnd-character",
         "name": "D&D Character",
         "uuid": "99b38a7f-dd6c-4daa-bc39-dd285a8ffdd6",
