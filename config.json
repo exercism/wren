@@ -20,6 +20,127 @@
     "concept": [],
     "practice": [
       {
+        "slug": "hello-world",
+        "name": "Hello World",
+        "uuid": "00c787bd-8f2d-4759-b87c-e0ff65c5989d",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "strings"
+        ]
+      },
+      {
+        "slug": "two-fer",
+        "name": "Two Fer",
+        "uuid": "42e242e7-03c7-4989-a418-770ee5805008",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "optional_values",
+          "strings",
+          "text_formatting"
+        ]
+      },
+      {
+        "slug": "resistor-color",
+        "name": "Resistor Color",
+        "uuid": "82cb5edb-7b4c-4d61-8760-9c07848d0ee4",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "lists",
+          "strings"
+        ]
+      },
+      {
+        "slug": "leap",
+        "name": "Leap Years",
+        "uuid": "e95f1ade-287a-4391-ae28-82e037f39628",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+        ]
+      },
+      {
+        "slug": "high-scores",
+        "name": "High Scores",
+        "uuid": "e445ca5d-539d-4a5a-a3c0-3543c86bef42",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "lists"
+        ]
+      },
+      {
+        "slug": "rna-transcription",
+        "name": "RNA Transcription",
+        "uuid": "91e29b22-5d7f-480a-b9de-28a56bd2638d",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "enumeration",
+          "maps"
+        ]
+      },
+      {
+        "slug": "collatz-conjecture",
+        "name": "Collatz Conjecture",
+        "uuid": "36184a81-d8e7-4057-9a6f-7419026e4f49",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "exceptions",
+          "numbers",
+          "loops",
+          "recursion"
+        ]
+      },
+      {
+        "slug": "hamming",
+        "name": "Hamming",
+        "uuid": "07b8ddb0-5334-4687-b0c2-2f1414fb7ec1",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "strings",
+          "enumeration"
+        ]
+      },
+      {
+        "slug": "triangle",
+        "name": "Triangle",
+        "uuid": "bcbc4530-0f10-4fe5-84f1-e95741e6f046",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "fields",
+          "getters"
+        ]
+      },
+      {
+        "slug": "bank-account",
+        "name": "Bank Account",
+        "uuid": "ec8fc0fe-b30b-42ce-9fe9-c6b64c4e4791",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "classes",
+          "exceptions",
+          "fields"
+        ]
+      },
+
+      {
         "slug": "accumulate",
         "name": "Accumulate",
         "uuid": "7a8cd1a3-6e95-43f6-a98c-53e837557bbb",
@@ -39,16 +160,6 @@
         ]
       },
       {
-        "slug": "bank-account",
-        "name": "Bank Account",
-        "uuid": "ec8fc0fe-b30b-42ce-9fe9-c6b64c4e4791",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": [
-        ]
-      },
-      {
         "slug": "bob",
         "name": "Bob",
         "uuid": "ebc21ea0-6f53-4262-a21b-8481fda44cf2",
@@ -60,91 +171,9 @@
         ]
       },
       {
-        "slug": "circular-buffer",
-        "name": "Circular Buffer",
-        "uuid": "6050d1e5-f68d-4cf7-b29c-1a07c4b31dda",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": [
-        ]
-      },
-      {
-        "slug": "collatz-conjecture",
-        "name": "Collatz Conjecture",
-        "uuid": "36184a81-d8e7-4057-9a6f-7419026e4f49",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": [
-        ]
-      },
-      {
         "slug": "custom-set",
         "name": "Custom Set",
         "uuid": "795a34e3-1515-49a0-b5f8-fba2bf4808ff",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": [
-        ]
-      },
-      {
-        "slug": "dnd-character",
-        "name": "D&D Character",
-        "uuid": "99b38a7f-dd6c-4daa-bc39-dd285a8ffdd6",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": [
-        ]
-      },
-      {
-        "slug": "forth",
-        "name": "Forth",
-        "uuid": "36a62783-86d7-4c6e-a419-8fbebf54047d",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 10,
-        "topics": [
-        ]
-      },
-      {
-        "slug": "hamming",
-        "name": "Hamming",
-        "uuid": "07b8ddb0-5334-4687-b0c2-2f1414fb7ec1",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": [
-          "strings"
-        ]
-      },
-      {
-        "slug": "hello-world",
-        "name": "Hello World",
-        "uuid": "00c787bd-8f2d-4759-b87c-e0ff65c5989d",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": [
-          "strings"
-        ]
-      },
-      {
-        "slug": "high-scores",
-        "name": "High Scores",
-        "uuid": "e445ca5d-539d-4a5a-a3c0-3543c86bef42",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": [
-        ]
-      },
-      {
-        "slug": "leap",
-        "name": "Leap Years",
-        "uuid": "e95f1ade-287a-4391-ae28-82e037f39628",
         "practices": [],
         "prerequisites": [],
         "difficulty": 1,
@@ -172,28 +201,9 @@
         ]
       },
       {
-        "slug": "queen-attack",
-        "name": "Queen Attack",
-        "uuid": "765e3b15-e8a2-46e1-b735-5510bb4ac0e2",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": []
-      },
-      {
         "slug": "raindrops",
         "name": "Raindrops",
         "uuid": "6defd225-71e2-431b-b016-e91ada9538ae",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": [
-        ]
-      },
-      {
-        "slug": "resistor-color",
-        "name": "Resistor Color",
-        "uuid": "82cb5edb-7b4c-4d61-8760-9c07848d0ee4",
         "practices": [],
         "prerequisites": [],
         "difficulty": 1,
@@ -221,26 +231,6 @@
         ]
       },
       {
-        "slug": "rna-transcription",
-        "name": "RNA Transcription",
-        "uuid": "91e29b22-5d7f-480a-b9de-28a56bd2638d",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": [
-        ]
-      },
-      {
-        "slug": "run-length-encoding",
-        "name": "Run Length Encoding",
-        "uuid": "642ddb58-625b-43b8-b7b9-3e0025dbd989",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": [
-        ]
-      },
-      {
         "slug": "scrabble-score",
         "name": "Scrabble Score",
         "uuid": "13ab45df-40d9-4c4a-9a40-93a4e8f5f9af",
@@ -261,9 +251,9 @@
         ]
       },
       {
-        "slug": "triangle",
-        "name": "Triangle",
-        "uuid": "bcbc4530-0f10-4fe5-84f1-e95741e6f046",
+        "slug": "run-length-encoding",
+        "name": "Run Length Encoding",
+        "uuid": "642ddb58-625b-43b8-b7b9-3e0025dbd989",
         "practices": [],
         "prerequisites": [],
         "difficulty": 1,
@@ -281,17 +271,13 @@
         ]
       },
       {
-        "slug": "two-fer",
-        "name": "Two Fer",
-        "uuid": "42e242e7-03c7-4989-a418-770ee5805008",
+        "slug": "queen-attack",
+        "name": "Queen Attack",
+        "uuid": "765e3b15-e8a2-46e1-b735-5510bb4ac0e2",
         "practices": [],
         "prerequisites": [],
         "difficulty": 1,
-        "topics": [
-          "optional_values",
-          "strings",
-          "text_formatting"
-        ]
+        "topics": []
       },
       {
         "slug": "word-count",
@@ -304,6 +290,36 @@
           "optional_values",
           "strings",
           "text_formatting"
+        ]
+      },
+      {
+        "slug": "dnd-character",
+        "name": "D&D Character",
+        "uuid": "99b38a7f-dd6c-4daa-bc39-dd285a8ffdd6",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+        ]
+      },
+      {
+        "slug": "circular-buffer",
+        "name": "Circular Buffer",
+        "uuid": "6050d1e5-f68d-4cf7-b29c-1a07c4b31dda",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+        ]
+      },
+      {
+        "slug": "forth",
+        "name": "Forth",
+        "uuid": "36a62783-86d7-4c6e-a419-8fbebf54047d",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 10,
+        "topics": [
         ]
       }
     ]
