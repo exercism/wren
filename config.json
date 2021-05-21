@@ -23,6 +23,7 @@
         "slug": "accumulate",
         "name": "Accumulate",
         "uuid": "7a8cd1a3-6e95-43f6-a98c-53e837557bbb",
+        "practices": [],
         "prerequisites": [],
         "difficulty": 1,
         "topics": []
@@ -173,7 +174,7 @@
       {
         "slug": "queen-attack",
         "name": "Queen Attack",
-        "uuid": "6050d1e5-f68d-4cf7-b29c-1a07c4b31dda",
+        "uuid": "765e3b15-e8a2-46e1-b735-5510bb4ac0e2",
         "practices": [],
         "prerequisites": [],
         "difficulty": 1,
