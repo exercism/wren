@@ -3,30 +3,19 @@
 Execute the tests with:
 
 ```bash
-$ wren_cli exercise-name.spec.wren
+$ wrenc exercise-name.spec.wren
 ```
 
 For example for `hello-world`:
 
 ```bash
-$ wren_cli hello-world.spec.wren
+$ wrenc hello-world.spec.wren
 ```
 
-**TODO:** This might be nice, but we need some kind of tooling
-since we likely can't live reload the code inside Wren CLI itself.
-
-You can also run Jest in "watch" mode, which will re-run your tests
-automatically when you save changes to the code or test module:
-
-```bash
-$ npm run watch
-```
 
 ## Understanding Skip Tests
 
-The skip method instructs the test suite to not run a test, this function could
-be used also under the aliases: `it.skip(name, fn)` or `xit(name, fn)` or
-`xtest(name, fn)`
+The `skip` method instructs the test suite to not run a particular test.
 
 - Why they are skipped ?
 
@@ -39,16 +28,16 @@ A skipped test:
 
 ```js
 // this test will be skipped and not run
-it.skip("title cased phrases") {
-    Assert.equal("PNG", Acronyms.parse("Portable Network Graphics"))
+do.skip("title cased phrases") {
+    Assert.equal(Acronyms.parse("Portable Network Graphics"), "PNG")
 }
 ```
 
-Simply change `it.skip` to `it.test`.
+Simply change `do.skip` to `do.test`.
 
 ```js
-it.test("title cased phrases") {
-    Assert.equal("PNG", Acronyms.parse("Portable Network Graphics"))
+do.test("title cased phrases") {
+    Assert.equal(Acronyms.parse("Portable Network Graphics"), "PNG")
 }
 ```
 
