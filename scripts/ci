@@ -25,7 +25,7 @@ do
     # cat $TEST
     # cat $SOLUTION
     # ls -l
-    wren_cli $TEST
+    wrenc $TEST
     cd ..
     rm -rf .tmp
     cd ..
