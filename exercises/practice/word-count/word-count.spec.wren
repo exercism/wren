@@ -1,5 +1,5 @@
 import "./word-count" for Words
-import "./vendor/wren-testie/testie" for Testie, Assert, Expect
+import "./vendor/wren-testie/testie" for Testie, Expect
 
 Testie.test("Words") { |do, skip|
   do.test("count one word") {
