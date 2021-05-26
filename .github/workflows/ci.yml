@@ -55,11 +55,12 @@ jobs:
         run: |
           git clone https://github.com/joshgoebel/wren-cli
           cd wren-cli
-          git branch -a
-          git checkout fix_file_ext_removal
+          cd deps
+          git clone https://github.com/joshgoebel/wren-essentials/
+          cd ..
           make -j4 -C projects/make/
           mkdir -p $GITHUB_WORKSPACE/bin
-          cp bin/wren_cli $GITHUB_WORKSPACE/bin
+          cp bin/wrenc $GITHUB_WORKSPACE/bin
           echo "$GITHUB_WORKSPACE/bin" >> $GITHUB_PATH
 
       # - name: Use <setup tooling> ${{ matrix.version }}
