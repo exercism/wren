@@ -37,6 +37,7 @@ class Testie {
     reporter { _reporter || CuteReporter }
 
     // aliases
+    must(name, fn) { test(name,fn) }
     should(name, fn) { test(name,fn) }
     describe(name, fn) { context(name,fn) }
 
