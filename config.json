@@ -172,6 +172,17 @@
         ]
       },
       {
+        "slug": "darts",
+        "name": "Darts",
+        "uuid": "7a07b5b4-49ea-4ebb-bbe9-a9428548aa84",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "numbers"
+        ]
+      },
+      {
         "slug": "bob",
         "name": "Bob",
         "uuid": "ebc21ea0-6f53-4262-a21b-8481fda44cf2",
