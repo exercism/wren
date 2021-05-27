@@ -286,8 +286,8 @@
         ]
       },
       {
-        "slug": "brackets",
-        "name": "Brackets",
+        "slug": "matching-brackets",
+        "name": "Matching Brackets",
         "uuid": "8a7da033-311e-4ffd-8b69-ce192672564a",
         "practices": [],
         "prerequisites": [],
