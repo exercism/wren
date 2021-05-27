@@ -1,0 +1,12 @@
+{
+  "blurb": "Create an implementation of the atbash cipher, an ancient encryption system created in the Middle East.",
+  "authors": ["joshgoebel"],
+  "contributors": [],
+  "files": {
+    "solution": ["atbash-cipher.wren"],
+    "test": ["atbash-cipher.spec.wren"],
+    "example": [".meta/proof.ci.wren"]
+  },
+  "source": "Wikipedia",
+  "source_url": "http://en.wikipedia.org/wiki/Atbash"
+}

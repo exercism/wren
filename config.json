@@ -306,6 +306,17 @@
         ]
       },
       {
+        "slug": "atbash-cipher",
+        "name": "Atbash Cipher",
+        "uuid": "da64138a-60b4-4bf6-a483-942f56f51b46",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "strings"
+        ]
+      },
+      {
         "slug": "robot-simulator",
         "name": "Robot Simulator",
         "uuid": "567924ea-a84f-445f-9c1f-18649b2fde7e",
