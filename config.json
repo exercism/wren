@@ -343,6 +343,18 @@
         ]
       },
       {
+        "slug": "simple-linked-list",
+        "name": "Simple Linked List",
+        "uuid": "c2f6b48a-0d38-45ac-917f-5a1293d1f0b4",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "classes",
+          "fields"
+        ]
+      },
+      {
         "slug": "queen-attack",
         "name": "Queen Attack",
         "uuid": "765e3b15-e8a2-46e1-b735-5510bb4ac0e2",
