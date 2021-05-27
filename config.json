@@ -296,7 +296,7 @@
           "lists",
           "strings"
         ]
-      }
+      },
       {
         "slug": "run-length-encoding",
         "name": "Run Length Encoding",
