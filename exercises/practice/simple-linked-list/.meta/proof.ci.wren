@@ -21,12 +21,9 @@ class LinkedList {
     each { count = count + 1}
     return count
   }
+  // defer to iterate for iteration
   each(fn) {
-    var n = _head
-    while (n) {
-      fn.call(n.value)
-      n = n.next
-    }
+    for (v in this) fn.call(v)
   }
   toList {
     var list = []
