@@ -1,0 +1,249 @@
+var TurnRight = Fn.new { |robot |
+  robot.evaluate("R")
+}
+
+var TurnLeft = Fn.new { |robot |
+  robot.evaluate("L")
+}
+
+var Advance = Fn.new { |robot |
+  robot.evaluate("A")
+}
+
+import "./robot-simulator" for Robot
+import "./vendor/wren-testie/testie" for Testie, Expect
+
+Testie.test("Robot") { |do, skip|
+
+  do.describe("Create robot") {
+    do.test("facing north by default") {
+      var robot = Robot.new()
+      Expect.that(robot.bearing).toEqual("north")
+    }
+
+    skip.test("facing east") {
+      var robot = Robot.new()
+      robot.place({ "direction": "east", "x": 0, "y": 0 })
+
+      Expect.that(robot.bearing).toEqual("east")
+    }
+
+    skip.test("facing west, at origin") {
+      var robot = Robot.new()
+      robot.place({ "direction": "west", "x": 0, "y": 0 })
+
+      Expect.that(robot.bearing).toEqual("west")
+      Expect.that(robot.coordinates).toEqual([0, 0])
+    }
+
+    skip.test("at negative position facing south") {
+      var robot = Robot.new()
+      robot.place({ "direction": "south", "x": -1, "y": -1 })
+
+      Expect.that(robot.bearing).toEqual("south")
+      Expect.that(robot.coordinates).toEqual([-1, -1])
+    }
+
+    skip.test("invalid robot bearing") {
+      var robot = Robot.new()
+
+      // Expect.that(InvalidInputError.prototype).toBeInstanceOf(Error)
+      // Expect.that(() => robot.place({ "direction": "crood", "x": 0, "y": 0 })).toThrow(
+      //   InvalidInputError
+      // )
+    }
+  }
+
+  do.describe("Rotating clockwise") {
+
+    skip.test("changes north to east") {
+      var robot = Robot.new()
+      robot.place({ "direction": "north", "x": 0, "y": 0 })
+
+      TurnRight.call(robot)
+
+      Expect.that(robot.bearing).toEqual("east")
+      Expect.that(robot.coordinates).toEqual([0, 0])
+    }
+
+    skip.test("changes east to south") {
+      var robot = Robot.new()
+      robot.place({ "direction": "east", "x": 0, "y": 0 })
+
+      TurnRight.call(robot)
+
+      Expect.that(robot.bearing).toEqual("south")
+      Expect.that(robot.coordinates).toEqual([0, 0])
+    }
+
+    skip.test("changes south to west") {
+      var robot = Robot.new()
+      robot.place({ "direction": "south", "x": 0, "y": 0 })
+
+      TurnRight.call(robot)
+
+      Expect.that(robot.bearing).toEqual("west")
+      Expect.that(robot.coordinates).toEqual([0, 0])
+    }
+
+    skip.test("changes west to north") {
+      var robot = Robot.new()
+      robot.place({ "direction": "west", "x": 0, "y": 0 })
+
+      TurnRight.call(robot)
+
+      Expect.that(robot.bearing).toEqual("north")
+      Expect.that(robot.coordinates).toEqual([0, 0])
+    }
+  }
+
+  do.describe("Rotating counter-clockwise") {
+
+    skip.test("changes north to west") {
+      var robot = Robot.new()
+      robot.place({ "direction": "north", "x": 0, "y": 0 })
+
+      TurnLeft.call(robot)
+
+      Expect.that(robot.bearing).toEqual("west")
+      Expect.that(robot.coordinates).toEqual([0, 0])
+    }
+
+    skip.test("changes west to south") {
+      var robot = Robot.new()
+      robot.place({ "direction": "west", "x": 0, "y": 0 })
+
+      TurnLeft.call(robot)
+
+      Expect.that(robot.bearing).toEqual("south")
+      Expect.that(robot.coordinates).toEqual([0, 0])
+    }
+
+    skip.test("changes south to east") {
+      var robot = Robot.new()
+      robot.place({ "direction": "south", "x": 0, "y": 0 })
+
+      TurnLeft.call(robot)
+
+      Expect.that(robot.bearing).toEqual("east")
+      Expect.that(robot.coordinates).toEqual([0, 0])
+    }
+
+    skip.test("changes east to north") {
+      var robot = Robot.new()
+      robot.place({ "direction": "east", "x": 0, "y": 0 })
+
+      TurnLeft.call(robot)
+
+      Expect.that(robot.bearing).toEqual("north")
+      Expect.that(robot.coordinates).toEqual([0, 0])
+    }
+  }
+
+  do.describe("Moving forward one") {
+    skip.test("advance when facing north") {
+      var robot = Robot.new()
+      robot.place({ "direction": "north", "x": 0, "y": 0 })
+
+      Advance.call(robot)
+
+      Expect.that(robot.coordinates).toEqual([0, 1])
+      Expect.that(robot.bearing).toEqual("north")
+    }
+
+    skip.test("advance when facing south") {
+      var robot = Robot.new()
+      robot.place({ "direction": "south", "x": 0, "y": 0 })
+
+      Advance.call(robot)
+
+      Expect.that(robot.coordinates).toEqual([0, -1])
+      Expect.that(robot.bearing).toEqual("south")
+    }
+
+    skip.test("advance when facing east") {
+      var robot = Robot.new()
+      robot.place({ "direction": "east", "x": 0, "y": 0 })
+
+      Advance.call(robot)
+
+      Expect.that(robot.coordinates).toEqual([1, 0])
+      Expect.that(robot.bearing).toEqual("east")
+    }
+
+    skip.test("advance when facing west") {
+      var robot = Robot.new()
+      robot.place({ "direction": "west", "x": 0, "y": 0 })
+
+      Advance.call(robot)
+
+      Expect.that(robot.coordinates).toEqual([-1, 0])
+      Expect.that(robot.bearing).toEqual("west")
+    }
+  }
+
+  do.describe("Follow series of instructions") {
+
+    skip.test("moving east and north from README") {
+      var robot = Robot.new()
+      robot.place({ "x": 7, "y": 3, "direction": "north" })
+
+      robot.evaluate("RAALAL")
+
+      Expect.that(robot.coordinates).toEqual([9, 4])
+      Expect.that(robot.bearing).toEqual("west")
+    }
+
+    skip.test("moving west and north") {
+      var robot = Robot.new()
+      robot.place({ "x": 0, "y": 0, "direction": "north" })
+
+      robot.evaluate("LAAARALA")
+
+      Expect.that(robot.coordinates).toEqual([-4, 1])
+      Expect.that(robot.bearing).toEqual("west")
+    }
+
+    skip.test("moving west and south") {
+      var robot = Robot.new()
+      robot.place({ "x": 2, "y": -7, "direction": "east" })
+
+      robot.evaluate("RRAAAAALA")
+
+      Expect.that(robot.coordinates).toEqual([-3, -8])
+      Expect.that(robot.bearing).toEqual("south")
+    }
+
+    skip.test("moving east and north") {
+      var robot = Robot.new()
+      robot.place({ "x": 8, "y": 4, "direction": "south" })
+
+      robot.evaluate("LAAARRRALLLL")
+
+      Expect.that(robot.coordinates).toEqual([11, 5])
+      Expect.that(robot.bearing).toEqual("north")
+    }
+
+    skip.test("instruct many robots") {
+      var robot1 = Robot.new()
+      var robot2 = Robot.new()
+      var robot3 = Robot.new()
+      robot1.place({ "x": 0, "y": 0, "direction": "north" })
+      robot2.place({ "x": 2, "y": -7, "direction": "east" })
+      robot3.place({ "x": 8, "y": 4, "direction": "south" })
+
+      robot1.evaluate("LAAARALA")
+      robot2.evaluate("RRAAAAALA")
+      robot3.evaluate("LAAARRRALLLL")
+
+      Expect.that(robot1.coordinates).toEqual([-4, 1])
+      Expect.that(robot1.bearing).toEqual("west")
+
+      Expect.that(robot2.coordinates).toEqual([-3, -8])
+      Expect.that(robot2.bearing).toEqual("south")
+
+      Expect.that(robot3.coordinates).toEqual([11, 5])
+      Expect.that(robot3.bearing).toEqual("north")
+    }
+  }
+}

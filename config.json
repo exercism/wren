@@ -306,6 +306,20 @@
         ]
       },
       {
+        "slug": "robot-simulator",
+        "name": "Robot Simulator",
+        "uuid": "567924ea-a84f-445f-9c1f-18649b2fde7e",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "operator_overloading",
+          "maps",
+          "strings",
+          "loops"
+        ]
+      },
+      {
         "slug": "queen-attack",
         "name": "Queen Attack",
         "uuid": "765e3b15-e8a2-46e1-b735-5510bb4ac0e2",

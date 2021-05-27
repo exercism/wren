@@ -1,0 +1,12 @@
+{
+  "blurb": "Write a robot simulator.",
+  "authors": ["joshgoebel"],
+  "contributors": [],
+  "files": {
+    "solution": ["robot-simulator.wren"],
+    "test": ["robot-simulator.spec.wren"],
+    "example": [".meta/proof.ci.wren"]
+  },
+  "source": "Inspired by an interview question at a famous company.",
+  "source_url": ""
+}
