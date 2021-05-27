@@ -139,7 +139,19 @@
           "fields"
         ]
       },
-
+      {
+        "slug": "flatten-array",
+        "name": "Flatten Array",
+        "uuid": "64696046-cece-4f07-bf74-8c592c964ae2",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "recursion",
+          "lists",
+          "sequences"
+        ]
+      },
       {
         "slug": "accumulate",
         "name": "Accumulate",
