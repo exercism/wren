@@ -172,6 +172,18 @@
         ]
       },
       {
+        "slug": "grains",
+        "name": "Grains",
+        "uuid": "945040c2-e0bd-4b25-87f7-33cd153c240f",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "numbers",
+          "loops"
+        ]
+      },
+      {
         "slug": "darts",
         "name": "Darts",
         "uuid": "7a07b5b4-49ea-4ebb-bbe9-a9428548aa84",
