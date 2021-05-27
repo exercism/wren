@@ -286,6 +286,18 @@
         ]
       },
       {
+        "slug": "brackets",
+        "name": "Brackets",
+        "uuid": "8a7da033-311e-4ffd-8b69-ce192672564a",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "lists",
+          "strings"
+        ]
+      }
+      {
         "slug": "run-length-encoding",
         "name": "Run Length Encoding",
         "uuid": "642ddb58-625b-43b8-b7b9-3e0025dbd989",
