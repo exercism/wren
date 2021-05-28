@@ -152,6 +152,7 @@
           "sequences"
         ]
       },
+
       {
         "slug": "accumulate",
         "name": "Accumulate",
@@ -198,6 +199,17 @@
         "slug": "bob",
         "name": "Bob",
         "uuid": "ebc21ea0-6f53-4262-a21b-8481fda44cf2",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "strings"
+        ]
+      },
+      {
+        "slug": "anagram",
+        "name": "Anagram",
+        "uuid": "451d5472-daad-47a3-b3cd-41fa9b775c79",
         "practices": [],
         "prerequisites": [],
         "difficulty": 1,
