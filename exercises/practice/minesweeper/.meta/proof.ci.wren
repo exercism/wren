@@ -11,16 +11,18 @@ var DELTAS = [
 
 class Grid {
   construct new(list) {
-    _width = list[0].count
     _height = list.count
+    // assumes all rows are equal width
+    // special case: list might be empty
+    _width = list.count > 0 ? list[0].count : 0
     _list = list.map {|x| x.bytes.map { |b| String.fromByte(b) }.toList }.toList
   }
-  walk(fn) {
+  walkTransform(fn) {
     (0..._height).each { |y|
       (0..._width).each { |x|
         var data = fetch(x,y)
         var r = fn.call(x,y,data)
-        set(x,y,r)
+        if (r != null) set(x,y,r)
       }
     }
   }
@@ -29,29 +31,29 @@ class Grid {
       var dy = delta[0]
       var dx = delta[1]
       return fetch(x + dx, y + dy)
-    }.where {|x| x!=null }
+    }.where {|x| x != null }
   }
   set(x,y,v) { _list[y][x] = v }
   fetch(x,y) {
-    if (y<0 || y>= _height) return null
-    if (x<0 || x>= _width) return null
+    if (y<0 || y >= _height) return null
+    if (x<0 || x >= _width) return null
     return _list[y][x]
   }
-  toList { _list.map {|x| x.join("" )}.toList }
+  toList { _list.map {|x| x.join("")}.toList }
 }
 
 var BOMB = "*"
 
 class Minesweeper {
   static annotate(list) {
-    if (list.isEmpty) return list
-
     var grid = Grid.new(list)
-    grid.walk() { |x,y,data|
-      if (data==BOMB) return BOMB
+    grid.walkTransform() { |x,y,data|
+      if (data==BOMB) return
 
-      var count = grid.adjacentTo(x,y).where {|c| c==BOMB }.count
-
+      var count = grid.
+        adjacentTo(x,y).
+        where {|c| c==BOMB }.
+        count
 
       return count == 0 ? " " : count.toString
     }
