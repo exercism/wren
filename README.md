@@ -25,3 +25,9 @@ To run a single test locally:
 ```
 ./script/ci simple-linked-list
 ```
+
+To update all the individual package files:
+
+```
+./script/update_testie.sh
+```
