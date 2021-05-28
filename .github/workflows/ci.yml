@@ -19,7 +19,7 @@ name: wren / main
 
 on:
   push:
-    branches: [main, ci]
+    branches: [main, wren-package]
   workflow_dispatch:
 
 jobs:
@@ -62,6 +62,14 @@ jobs:
           mkdir -p $GITHUB_WORKSPACE/bin
           cp bin/wrenc $GITHUB_WORKSPACE/bin
           echo "$GITHUB_WORKSPACE/bin" >> $GITHUB_PATH
+
+      - name: Install package manager & packages
+        run: |
+          mkdir wren_modules
+          cd wren_modules
+          git clone https://github.com/joshgoebel/wren-package
+          cd ..
+          wrenc package.wren install
 
       # - name: Use <setup tooling> ${{ matrix.version }}
         # uses: <action to setup tooling>
