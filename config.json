@@ -226,6 +226,18 @@
         ]
       },
       {
+        "slug": "minesweeper",
+        "name": "Minesweeper",
+        "uuid": "012a9733-c2fe-4521-a4c3-458b6fa4caa8",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "loops",
+          "strings"
+        ]
+      },
+      {
         "slug": "protein-translation",
         "name": "Protein Translation",
         "uuid": "01020197-99a4-41ca-8378-a2c80804e838",
