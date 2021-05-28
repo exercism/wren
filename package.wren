@@ -6,7 +6,7 @@ class Package is WrenPackage {
   name { "exercism-wren-track" }
   dependencies {
     return [
-      Dependency.new("wren-testie", "0.1.0", "https://github.com/joshgoebel/wren-testie.git")
+      Dependency.new("wren-testie", "0.1.1", "https://github.com/joshgoebel/wren-testie.git")
     ]
   }
 }
