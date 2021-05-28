@@ -206,6 +206,19 @@
         ]
       },
       {
+        "slug": "roman-numerals",
+        "name": "Roman Numerals",
+        "uuid": "3588d71c-9374-4277-a489-dbfde704e9eb",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "numbers",
+          "loops",
+          "strings"
+        ]
+      },
+      {
         "slug": "custom-set",
         "name": "Custom Set",
         "uuid": "795a34e3-1515-49a0-b5f8-fba2bf4808ff",
