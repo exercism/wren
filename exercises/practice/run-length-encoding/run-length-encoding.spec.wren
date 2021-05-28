@@ -1,5 +1,5 @@
 import "./run-length-encoding" for RLE
-import "./vendor/wren-testie/testie" for Testie, Expect
+import "wren-testie/testie" for Testie, Expect
 
 Testie.test("run-length encode a string") { |do, skip|
   do.describe("run-length encode a string") {

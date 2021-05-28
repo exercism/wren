@@ -1,5 +1,5 @@
 import "./custom-set" for CustomSet
-import "./vendor/wren-testie/testie" for Testie, Expect
+import "wren-testie/testie" for Testie, Expect
 
 Testie.test("CustomSet") { |do, skip|
 

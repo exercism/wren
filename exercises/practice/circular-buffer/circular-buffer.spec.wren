@@ -1,5 +1,5 @@
 import "./circular-buffer" for CircularBuffer, BufferEmptyError, BufferFullError
-import "./vendor/wren-testie/testie" for Testie, Expect
+import "wren-testie/testie" for Testie, Expect
 
 Testie.test("CircularBuffer") { |do, skip|
   do.test("reading empty buffer should fail") {

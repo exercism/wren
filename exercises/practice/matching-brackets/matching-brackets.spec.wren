@@ -1,5 +1,5 @@
 import "./matching-brackets" for Brackets
-import "./vendor/wren-testie/testie" for Testie, Expect
+import "wren-testie/testie" for Testie, Expect
 
 Testie.test("Matching Brackets") { |do, skip|
   do.test("paired square brackets") {

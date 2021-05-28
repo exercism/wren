@@ -1,5 +1,5 @@
 import "./rna-transcription" for DNA
-import "./vendor/wren-testie/testie" for Testie, Expect
+import "wren-testie/testie" for Testie, Expect
 
 Testie.test("RNA Transcription") { |do, skip|
   do.test("empty rna sequence") {

@@ -1,5 +1,5 @@
 import "./queen-attack" for QueenAttack
-import "./vendor/wren-testie/testie" for Testie, Expect
+import "wren-testie/testie" for Testie, Expect
 
 Testie.test("Queens") { |do, skip|
   do.describe("Test creation of Queens with valid and invalid positions") {

@@ -1,5 +1,5 @@
 import "./accumulate" for Accumulate
-import "./vendor/wren-testie/testie" for Testie, Expect
+import "wren-testie/testie" for Testie, Expect
 
 Testie.test("accumulate") { |do, skip|
   do.test("accumulation empty") {

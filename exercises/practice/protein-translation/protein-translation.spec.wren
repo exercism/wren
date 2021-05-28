@@ -1,5 +1,5 @@
 import "./protein-translation" for Tools
-import "./vendor/wren-testie/testie" for Testie, Expect
+import "wren-testie/testie" for Testie, Expect
 
 Testie.test("ProteinTranslation") { |do, skip|
   do.test("Empty RNA has no proteins") {
