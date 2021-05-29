@@ -1,5 +1,5 @@
 import "./simple-linked-list" for LinkedList, Element
-import "./vendor/wren-testie/testie" for Testie, Expect
+import "wren-testie/testie" for Testie, Expect
 
 Testie.test("Simple Linked List") { |do, skip|
 

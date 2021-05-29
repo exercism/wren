@@ -1,4 +1,4 @@
-import "./vendor/wren-testie/testie" for Testie, Expect
+import "wren-testie/testie" for Testie, Expect
 import "./resistor-color" for Resistor, COLORS
 
 Testie.test("Resistor Color") { |do, skip|

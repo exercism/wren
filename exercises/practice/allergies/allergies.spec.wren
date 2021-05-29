@@ -1,4 +1,4 @@
-import "./vendor/wren-testie/testie" for Testie, Expect
+import "wren-testie/testie" for Testie, Expect
 import "./allergies" for Allergies
 
 Testie.test("Allergies") { |do, skip|

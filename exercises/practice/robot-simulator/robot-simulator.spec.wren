@@ -11,7 +11,7 @@ var Advance = Fn.new { |robot |
 }
 
 import "./robot-simulator" for Robot
-import "./vendor/wren-testie/testie" for Testie, Expect
+import "wren-testie/testie" for Testie, Expect
 
 Testie.test("Robot") { |do, skip|
 

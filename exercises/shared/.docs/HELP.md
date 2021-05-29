@@ -1,5 +1,11 @@
 # Help
 
+## Installing the test suite package
+
+```
+$ wrenc package.wren install
+```
+
 ## Running the tests
 
 Execute the test suite with:

@@ -1,5 +1,5 @@
 import "./flatten-array" for Flatten
-import "./vendor/wren-testie/testie" for Testie, Expect
+import "wren-testie/testie" for Testie, Expect
 
 Testie.test("Flatten Array") { |do, skip|
 

@@ -1,5 +1,5 @@
 import "./two-fer" for TwoFer
-import "./vendor/wren-testie/testie" for Testie, Expect
+import "wren-testie/testie" for Testie, Expect
 
 Testie.test("TwoFer") { |do, skip|
 
