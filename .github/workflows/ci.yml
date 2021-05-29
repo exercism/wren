@@ -19,7 +19,7 @@ name: wren / main
 
 on:
   push:
-    branches: [main, wren-package]
+    branches: [main]
   workflow_dispatch:
 
 jobs:
