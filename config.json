@@ -245,6 +245,7 @@
         "prerequisites": [],
         "difficulty": 1,
         "topics": [
+          "strings"
         ]
       },
       {
@@ -255,6 +256,20 @@
         "prerequisites": [],
         "difficulty": 1,
         "topics": [
+          "strings",
+          "numbers"
+        ]
+      },
+      {
+        "slug": "resistor-color-trio",
+        "name": "Resistor Color Trio",
+        "uuid": "00e5bf20-c4ee-4ac4-b59a-fcbe2555ceaf",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "strings",
+          "numbers"
         ]
       },
       {
