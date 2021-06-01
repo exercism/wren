@@ -1,5 +1,5 @@
 import "./anagram" for Anagram
-import "./vendor/wren-testie/testie" for Testie, Expect
+import "wren-testie/testie" for Testie, Expect
 
 Testie.test("Anagram") { |do, skip|
   do.test("no matches") {

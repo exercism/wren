@@ -1,5 +1,5 @@
 import "./isbn-verifier" for ISBN
-import "./vendor/wren-testie/testie" for Testie, Expect
+import "wren-testie/testie" for Testie, Expect
 
 Testie.test("ISBN Verifier") { |do, skip|
 

@@ -1,5 +1,5 @@
 import "./armstrong-numbers" for Number
-import "./vendor/wren-testie/testie" for Testie, Expect
+import "wren-testie/testie" for Testie, Expect
 
 Testie.test("Armstrong Numbers") { |do, skip|
   do.test("Zero is an Armstrong number") {

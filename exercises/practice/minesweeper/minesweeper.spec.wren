@@ -1,5 +1,5 @@
 import "./minesweeper" for Minesweeper
-import "./vendor/wren-testie/testie" for Testie, Expect
+import "wren-testie/testie" for Testie, Expect
 
 Testie.test("Minesweeper") { |do, skip|
   skip.test("handles no rows") {

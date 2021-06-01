@@ -1,5 +1,5 @@
 import "./roman-numerals" for Number
-import "./vendor/wren-testie/testie" for Testie, Expect
+import "wren-testie/testie" for Testie, Expect
 
 Testie.test("Roman Numerals") { |do, skip|
   do.test("converts 1") { Expect.that(Number.toRoman(1)).toEqual("I") }
