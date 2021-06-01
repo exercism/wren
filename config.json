@@ -218,6 +218,17 @@
         ]
       },
       {
+        "slug": "isbn-verifier",
+        "name": "ISBN Verifier",
+        "uuid": "bdc954b3-1d5d-45a3-88c6-a952fb455042",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "strings"
+        ]
+      },
+      {
         "slug": "nucleotide-count",
         "name": "Nucleotide Count",
         "uuid": "9a681ccf-1909-4776-bd79-94e614f5ef22",
