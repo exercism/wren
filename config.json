@@ -218,6 +218,17 @@
         ]
       },
       {
+        "slug": "armstrong-numbers",
+        "name": "Armstrong Numbers",
+        "uuid": "e8e60dd0-d460-4150-a738-05e4d46e64f7",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "numbers"
+        ]
+      },
+      {
         "slug": "bob",
         "name": "Bob",
         "uuid": "ebc21ea0-6f53-4262-a21b-8481fda44cf2",
