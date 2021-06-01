@@ -117,6 +117,17 @@
         ]
       },
       {
+        "slug": "binary",
+        "name": "Binary",
+        "uuid": "51ca10a3-0b01-440c-adec-a604366b12c5",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "numbers"
+        ]
+      },
+      {
         "slug": "triangle",
         "name": "Triangle",
         "uuid": "bcbc4530-0f10-4fe5-84f1-e95741e6f046",
