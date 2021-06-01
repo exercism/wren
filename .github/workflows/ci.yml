@@ -1,25 +1,16 @@
-# This workflow will do a clean install of the dependencies and run tests across different versions
-#
-# Replace <track> with the track name
-# Replace <image-name> with an image to run the jobs on
-# Replace <action to setup tooling> with a github action to setup tooling on the image
-# Replace <install dependencies> with a cli command to install the dependencies
-# Replace <code-extensions> with file extensions that should trigger the workflow
-#
-# Find Github Actions to setup tooling here:
-# - https://github.com/actions/?q=setup&type=&language=
-# - https://github.com/actions/starter-workflows/tree/main/ci
-# - https://github.com/marketplace?type=actions&query=setup
-#
 # Requires scripts:
-# - scripts/ci-check
+# - scripts/ci-check (in the future)
 # - scripts/ci
 
 name: wren / main
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
@@ -42,44 +33,38 @@ jobs:
 
   ci:
     runs-on: ubuntu-latest
-
-    # strategy:
-      # matrix:
-        # Here, add all SUPPORTED versions only, e.g.:
-        # version: [10.x, 12.x, 14.x]
-        # Optionally, add more matrix variables, such as os or arch
-
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Wren CLI built from source (main)
+      - name: Checkout wren-console
+        uses: actions/checkout@v2
+        with:
+          repository: joshgoebel/wren-console
+          path: wren-console
+          ref: v0.2.90
+      - name: Checkout wren-essentials
+        uses: actions/checkout@v2
+        with:
+          repository: joshgoebel/wren-essentials
+          path: wren-console/deps/wren-essentials
+          ref: v0.1.0
+      - name: Build wren-console
         run: |
-          git clone https://github.com/joshgoebel/wren-cli
-          cd wren-cli
-          cd deps
-          git clone https://github.com/joshgoebel/wren-essentials/
-          cd ..
+          cd wren-console
           make -j4 -C projects/make/
-          mkdir -p $GITHUB_WORKSPACE/bin
-          cp bin/wrenc $GITHUB_WORKSPACE/bin
-          echo "$GITHUB_WORKSPACE/bin" >> $GITHUB_PATH
-
-      - name: Install package manager & packages
+          mkdir -p $GITHUB_WORKSPACE/usr/bin
+          cp bin/wrenc $GITHUB_WORKSPACE/usr/bin
+          echo "$GITHUB_WORKSPACE/usr/bin" >> $GITHUB_PATH
+      - name: Checkout wren track
+        uses: actions/checkout@v2
+        with:
+          path: track
+      - name: Checkout wren-package
+        uses: actions/checkout@v2
+        with:
+          repository: joshgoebel/wren-package
+          path: track/wren_modules/wren-package
+          ref: v0.1.0
+      - name: Install deps and run CI
         run: |
-          mkdir wren_modules
-          cd wren_modules
-          git clone https://github.com/joshgoebel/wren-package
-          cd ..
+          cd track
           wrenc package.wren install
-
-      # - name: Use <setup tooling> ${{ matrix.version }}
-        # uses: <action to setup tooling>
-        # with:
-          # Use the ${{ matrix.x }} format to inject variables into commands
-          # node-version: ${{ matrix.version }}
-
-      # no dependencies yet other then Wren CLI
-      # - name: Install project dependencies
-        # run: <install dependencies>
-
-      - name: Run exercism/wren ci (runs tests) for all exercises
-        run: scripts/ci
+          scripts/ci
