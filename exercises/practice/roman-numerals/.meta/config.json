@@ -1,0 +1,12 @@
+{
+  "blurb": "Write a function to convert from normal numbers to Roman Numerals.",
+  "authors": ["joshgoebel"],
+  "contributors": [],
+  "files": {
+    "solution": ["roman-numerals.wren"],
+    "test": ["roman-numerals.spec.wren"],
+    "example": [".meta/proof.ci.wren"]
+  },
+  "source": "The Roman Numeral Kata",
+  "source_url": "http://codingdojo.org/cgi-bin/index.pl?KataRomanNumerals"
+}
