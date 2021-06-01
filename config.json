@@ -165,6 +165,7 @@
           "sequences"
         ]
       },
+
       {
         "slug": "acronym",
         "name": "Acronym",
@@ -240,6 +241,17 @@
         ]
       },
       {
+        "slug": "anagram",
+        "name": "Anagram",
+        "uuid": "451d5472-daad-47a3-b3cd-41fa9b775c79",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "strings"
+        ]
+      },
+      {
         "slug": "roman-numerals",
         "name": "Roman Numerals",
         "uuid": "3588d71c-9374-4277-a489-dbfde704e9eb",
@@ -249,7 +261,6 @@
         "topics": [
           "numbers",
           "loops",
-          "strings"
         ]
       },
       {
