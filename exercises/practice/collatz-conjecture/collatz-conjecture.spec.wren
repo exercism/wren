@@ -1,5 +1,5 @@
 import "./collatz-conjecture" for Collatz
-import "./vendor/wren-testie/testie" for Testie, Expect
+import "wren-testie/testie" for Testie, Expect
 
 Testie.test("Collatz.steps()") { |do, skip|
   do.test("zero steps for one") {

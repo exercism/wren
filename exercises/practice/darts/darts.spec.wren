@@ -1,5 +1,5 @@
 import "./darts" for Darts
-import "./vendor/wren-testie/testie" for Testie, Expect
+import "wren-testie/testie" for Testie, Expect
 
 Testie.test("Darts") { |do, skip|
   do.test("Missed target") {

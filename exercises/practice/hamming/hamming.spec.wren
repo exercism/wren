@@ -1,5 +1,5 @@
 import "./hamming" for Hamming
-import "./vendor/wren-testie/testie" for Testie, Expect
+import "wren-testie/testie" for Testie, Expect
 
 Testie.test("Hamming") { |do, skip|
   do.test("empty strands") {
