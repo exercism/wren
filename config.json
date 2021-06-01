@@ -166,6 +166,16 @@
         ]
       },
       {
+        "slug": "acronym",
+        "name": "Acronym",
+        "uuid": "c89e1937-d6c4-43bf-9fe6-06ebc5f70d5b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "strings"
+        ]
+      },      {
         "slug": "accumulate",
         "name": "Accumulate",
         "uuid": "7a8cd1a3-6e95-43f6-a98c-53e837557bbb",
