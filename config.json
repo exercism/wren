@@ -379,6 +379,18 @@
         "prerequisites": [],
         "difficulty": 1,
         "topics": [
+          "strings"
+        ]
+      },
+      {
+        "slug": "beer-song",
+        "name": "Beer Song",
+        "uuid": "4d7c3f7e-16f8-439f-ad01-e89446267d2d",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "strings"
         ]
       },
       {
