@@ -43,16 +43,17 @@ All recently versions of Mac OS bundle `git` right out of the box.
 
 You'll want to [download the latest release][releases] from GitHub:
 
-After that you'll need to copy it into your path.  **Need better instructions???**
+After that you'll need to extract the `wrenc` executable and copy it into your path.
 
+It's also possible to [build from source][build-from-source] if you have Visual Studio.
 
 #### Linux
 
 You'll want to [download the latest release][releases] from GitHub.
 
 ```sh
-wget -c https://github.com/joshgoebel/wren-console/releases/download/v0.1.1/wren-console-v0.1.1-linux.tar.gz
-tar xzf wren-console-v0.1.1-linux.tar.gz
+wget -c https://github.com/joshgoebel/wren-console/releases/download/v0.2.90/wren-console-v0.2.90-linux.tar.gz
+tar xzf wren-console-v0.2.90-linux.tar.gz
 ```
 
 And make sure it's available somewhere in your `PATH`.
@@ -61,13 +62,14 @@ And make sure it's available somewhere in your `PATH`.
 cp bin/wrenc /usr/local/bin/
 ```
 
-If you're comfortable with such things you could even [build from source][build-from-source].
+If you're comfortable with such things it's pretty easy to [build from source][build-from-source].
 
 #### Mac
 
 The easiest installation is using [Homebrew][homebrew]:
 
 ```
+brew tap exercism/wren
 brew install wren-console
 ```
 
@@ -81,7 +83,7 @@ Lastly, we'll need to install `wren-package` where Wren Console can find it easi
 #### Windows
 
 ```sh
-cd C:\Users\yourusername\Exercism
+cd C:\Users\yourusername\
 mkdir wren_modules
 git clone https://github.com/joshgoebel/wren-package
 ```
@@ -105,7 +107,7 @@ After your believe you've got the binary installed propery, it's good to test if
 You should see both the `wrenc` and Wren versions listed:
 
 ```
-wrenc v0.2 (wren v0.4.0)
+wrenc v0.2.90 (wren v0.4.0)
 ```
 
 **Note**: It is important you open a _new_ terminal window. Any open terminal

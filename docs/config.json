@@ -2,28 +2,35 @@
 {
     "docs": [
       {
-        "uuid": "",
+        "uuid": "d644b652-cf21-475a-80c6-a9b9637db361",
+        "slug": "about",
+        "path": "docs/ABOUT.md",
+        "title": "About Wren",
+        "blurb": "Learn about what makes Wren unique"
+      },
+      {
+        "uuid": "bd031395-be2c-4288-9fa9-14fcd546b9ec",
         "slug": "installation",
         "path": "docs/INSTALLATION.md",
         "title": "Installing Wren locally",
         "blurb": "Learn how to install Wren locally to solve Exercism's exercises on your own machine"
       },
       {
-        "uuid": "",
+        "uuid": "dc9906c8-b630-40de-8406-515d75b393f8",
         "slug": "learning",
         "path": "docs/LEARNING.md",
         "title": "How to learn Wren",
         "blurb": "An overview of how to get started from scratch with Wren"
       },
       {
-        "uuid": "",
+        "uuid": "065ac69c-f694-4c53-89da-28941c446252",
         "slug": "tests",
         "path": "docs/TESTS.md",
         "title": "Testing on the Wren track",
         "blurb": "Learn how to test your Wren exercises on Exercism"
       },
       {
-        "uuid": "",
+        "uuid": "32d02929-4b98-4512-8ceb-eb481ccfd371",
         "slug": "resources",
         "path": "docs/RESOURCES.md",
         "title": "Useful Wren resources",
