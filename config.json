@@ -40,9 +40,9 @@
         "prerequisites": [],
         "difficulty": 1,
         "practices": [
-          "optional_values",
+          "optional-values",
           "strings",
-          "text_formatting"
+          "text-formatting"
         ]
       },
       {
@@ -444,7 +444,7 @@
         "prerequisites": [],
         "difficulty": 1,
         "practices": [
-          "operator_overloading",
+          "operator-overloading",
           "maps",
           "strings",
           "loops"
@@ -479,9 +479,9 @@
         "prerequisites": [],
         "difficulty": 1,
         "practices": [
-          "optional_values",
+          "optional-values",
           "strings",
-          "text_formatting"
+          "text-formatting"
         ]
       },
       {
