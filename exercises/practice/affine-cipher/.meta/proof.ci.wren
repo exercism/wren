@@ -1,105 +1,3 @@
-// const ALPHABET = 'abcdefghijklmnopqrstuvwxyz';
-// const ALPHABET_LENGTH = ALPHABET.length;
-
-// const areCoprimes = (a, b) => {
-//   for (let i = Math.min(a, b); i > 1; i--) {
-//     if (a % i === 0 && b % i === 0) {
-//       return false;
-//     }
-//   }
-
-//   return true;
-// };
-
-// const checkCoprime = (a, b) => {
-//   if (!areCoprimes(a, b)) {
-//     throw new Error('a and m must be coprime.');
-//   }
-// };
-
-// const isNumber = (candidate) => {
-//   return !isNaN(Number(candidate));
-// };
-
-// const findMMI = (a) => {
-//   let i = 1;
-
-//   // eslint-disable-next-line no-constant-condition
-//   while (true) {
-//     i++;
-
-//     if ((a * i - 1) % ALPHABET_LENGTH === 0) {
-//       return i;
-//     }
-//   }
-// };
-
-// const positiveModulo = (a, b) => {
-//   return ((a % b) + b) % b;
-// };
-
-// const groupBy = (elements, groupLength) => {
-//   const result = [[]];
-//   let i = 0;
-
-//   elements.forEach((el) => {
-//     if (result[i] && result[i].length < groupLength) {
-//       result[i].push(el);
-//     } else {
-//       i++;
-//       result[i] = [el];
-//     }
-//   });
-
-//   return result;
-// };
-
-// export const encode = (phrase, { a, b }) => {
-//   checkCoprime(a, ALPHABET_LENGTH);
-
-//   let encodedText = '';
-
-//   phrase
-//     .toLowerCase()
-//     .split('')
-//     .filter((char) => char !== ' ')
-//     .forEach((char) => {
-//       if (ALPHABET.includes(char)) {
-//         const x = ALPHABET.indexOf(char);
-//         const encodedIndex = (a * x + b) % ALPHABET_LENGTH;
-
-//         encodedText += ALPHABET[encodedIndex];
-//       } else if (isNumber(char)) {
-//         encodedText += char;
-//       }
-//     });
-
-//   return groupBy(encodedText.split(''), 5)
-//     .map((group) => group.join(''))
-//     .join(' ');
-// };
-
-// export const decode = (phrase, { a, b }) => {
-//   checkCoprime(a, ALPHABET_LENGTH);
-
-//   const mmi = findMMI(a);
-
-//   return phrase
-//     .split('')
-//     .filter((char) => char !== ' ')
-//     .map((char) => {
-//       if (isNumber(char)) {
-//         return char;
-//       }
-
-//       const y = ALPHABET.indexOf(char);
-//       const decodedIndex = positiveModulo(mmi * (y - b), ALPHABET_LENGTH);
-
-//       return ALPHABET[decodedIndex];
-//     })
-//     .join('');
-// };
-
 var NUMBERS = "0123456789"
 
 class Strings {
@@ -124,9 +22,7 @@ class Maths {
     return true
   }
 
-  static positiveModulo(a,b) {
-    return ((a % b) + b) % b
-  }
+  static positiveModulo(a,b) { ((a % b) + b) % b }
   static findMMI(a, m) {
     var i = 1
 
@@ -143,7 +39,31 @@ class Maths {
 var ALPHABET = "abcdefghijklmnopqrstuvwxyz"
 
 class AffineCipher {
-  static guaranteeCoprime(a,m) {
+  static encode(text, opts) {
+    var i = 0
+    var a = opts["a"]
+    var b = opts["b"]
+    guaranteeCoprime(a, ALPHABET.count)
+    return pad5(code_(text) { |x| ((a*x) + b) % ALPHABET.count })
+  }
+  static decode(text, opts) {
+    var a = opts["a"]
+    var b = opts["b"]
+    guaranteeCoprime(a, ALPHABET.count)
+    var mmi = Maths.findMMI(a, ALPHABET.count)
+    return code_(text) { |x| Maths.positiveModulo(mmi * (x - b), ALPHABET.count) }
+  }
+  static code_(text, fn) {
+    var out = ""
+    for (char in Strings.downcase(text)) {
+      var e = transformChar(char,fn)
+      if (e == null) continue
+
+      out = out + e
+    }
+    return out
+  }
+   static guaranteeCoprime(a,m) {
     if (!Maths.areCoprimes(a, m)) {
       Fiber.abort("a and m must be coprime.")
     }
@@ -155,38 +75,13 @@ class AffineCipher {
 
       return ALPHABET[fn.call(x)]
   }
-  static encode(text, opts) {
-    var i = 0
-    var a = opts["a"]
-    var b = opts["b"]
-    guaranteeCoprime(a, ALPHABET.count)
-
+  static pad5(test) {
     var out = ""
-    for (char in Strings.downcase(text)) {
-      // `E(x) = (ax + b) mod m`
-      var e = transformChar(char) { |x| ((a*x) + b) % ALPHABET.count }
-      if (e == null) continue
-
-      out = out + e
-      i = i + 1
-      if (i % 5 == 0) out = out + " "
+    while (test.count >= 5) {
+      out = out + test[0...5] + " "
+      test = test[5..-1]
     }
+    out = out + test
     return out.trim()
-  }
-  static decode(text, opts) {
-    var a = opts["a"]
-    var b = opts["b"]
-    guaranteeCoprime(a, ALPHABET.count)
-
-    var mmi = Maths.findMMI(a, ALPHABET.count)
-
-    var out = ""
-    for (char in Strings.downcase(text)) {
-      var e = transformChar(char) { |x| Maths.positiveModulo(mmi * (x - b), ALPHABET.count) }
-      if (e == null) continue
-
-      out = out + e
-    }
-    return out
   }
 }
