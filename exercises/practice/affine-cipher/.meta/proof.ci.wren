@@ -100,6 +100,8 @@
 //     .join('');
 // };
 
+var NUMBERS = "0123456789"
+
 class Strings {
     static downcase(s) {
         return s.bytes.map { |x|
@@ -107,12 +109,10 @@ class Strings {
             return String.fromByte(x)
         }.join("")
     }
+    static isNumber(s) { NUMBERS.contains(s) }
 }
 
-var ALPHABET = "abcdefghijklmnopqrstuvwxyz"
-var NUMBERS = "0123456789"
-
-class Numbers {
+class Maths {
   static areCoprimes(a,b) {
     var min = a.min(b)
 
@@ -127,33 +127,44 @@ class Numbers {
   static positiveModulo(a,b) {
     return ((a % b) + b) % b
   }
+  static findMMI(a, m) {
+    var i = 1
 
+    while (true) {
+      i = i + 1
+
+      if ((a * i - 1) % m == 0) {
+        return i
+      }
+    }
+  }
 }
 
-
+var ALPHABET = "abcdefghijklmnopqrstuvwxyz"
 
 class AffineCipher {
-  static encodeChar(char, a, b) {
+  static guaranteeCoprime(a,m) {
+    if (!Maths.areCoprimes(a, m)) {
+      Fiber.abort("a and m must be coprime.")
+    }
+  }
+  static transformChar(char, fn) {
+      if (Strings.isNumber(char)) return char
       var x = ALPHABET.indexOf(char)
-      if (NUMBERS.contains(char)) return char
       if (x == -1) return null
 
-      // `E(x) = (ax + b) mod m`
-      var e = ((a*x) + b) % ALPHABET.count
-      return ALPHABET[e]
+      return ALPHABET[fn.call(x)]
   }
   static encode(text, opts) {
-    var out = ""
     var i = 0
     var a = opts["a"]
     var b = opts["b"]
-    if (!Numbers.areCoprimes(a,ALPHABET.count)) {
-      Fiber.abort("a and m must be coprime.")
-    }
+    guaranteeCoprime(a, ALPHABET.count)
 
+    var out = ""
     for (char in Strings.downcase(text)) {
-      if (char == " ") continue
-      var e = encodeChar(char, a, b)
+      // `E(x) = (ax + b) mod m`
+      var e = transformChar(char) { |x| ((a*x) + b) % ALPHABET.count }
       if (e == null) continue
 
       out = out + e
@@ -162,39 +173,16 @@ class AffineCipher {
     }
     return out.trim()
   }
-  static findMMI(a) {
-    var i = 1
-
-    while (true) {
-      i = i + 1
-
-      if ((a * i - 1) % ALPHABET.count == 0) {
-        return i
-      }
-    }
-  }
-  static decodeChar(char, a, b) {
-      var x = ALPHABET.indexOf(char)
-      if (NUMBERS.contains(char)) return char
-      if (x == -1) return null
-
-      var mmi = findMMI(a)
-
-      // `D(y) = a^-1(y - b) mod m`
-      var d = Numbers.positiveModulo(mmi * (x - b), ALPHABET.count)
-      return ALPHABET[d]
-  }
   static decode(text, opts) {
-    var out = ""
     var a = opts["a"]
     var b = opts["b"]
-    if (!Numbers.areCoprimes(a,ALPHABET.count)) {
-      Fiber.abort("a and m must be coprime.")
-    }
+    guaranteeCoprime(a, ALPHABET.count)
 
+    var mmi = Maths.findMMI(a, ALPHABET.count)
+
+    var out = ""
     for (char in Strings.downcase(text)) {
-      if (char == " ") continue
-      var e = decodeChar(char, a, b)
+      var e = transformChar(char) { |x| Maths.positiveModulo(mmi * (x - b), ALPHABET.count) }
       if (e == null) continue
 
       out = out + e
