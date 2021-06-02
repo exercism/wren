@@ -495,6 +495,18 @@
         ]
       },
       {
+        "slug": "affine-cipher",
+        "name": "Affice Cipher",
+        "uuid": "400bf704-ed95-4014-bb51-0a60cff94425",
+        "practices": [
+          "math"
+        ],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+        ]
+      },
+      {
         "slug": "circular-buffer",
         "name": "Circular Buffer",
         "uuid": "6050d1e5-f68d-4cf7-b29c-1a07c4b31dda",
