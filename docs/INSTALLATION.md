@@ -1,72 +1,61 @@
 # Installation
 
-This track relies on [Wren Console][wren-console] throughout to provide a runtime for Wren. This means that we assume all execution of Wren on your
+This track relies on [Wren Console][wren-console] throughout to provide a local runtime for Wren. This means that we assume all execution of Wren on your
 computer will happen using [Wren Console][wren-console].  Please don't get this confused with the official Wren <abbr title="Command Line Interface">CLI</abbr>.  In a perfect world you could use that runtime but it currently [has](https://github.com/wren-lang/wren-cli/pull/74) [several](https://github.com/wren-lang/wren/pull/1006) [different](https://github.com/wren-lang/wren-cli/issues/108) [issues](https://github.com/wren-lang/wren-cli/pull/105) making it a less than optimal choice for learning Wren with Exercism.
 
-Wren Console is forked from Wren CLI, resolves these issues, and adds features to make your learning experience smoother.  Don't worry, the Wren language knowledge and concepts you'll be learning should apply wherever you wish to use Wren in the future.
+Wren Console is forked from Wren CLI, resolves these issues, and adds features to make your learning experience smoother.  Don't worry, the Wren language knowledge and concepts you'll be learning here should apply wherever you wish to use Wren in the future.
 
 ## Install Overview
 
-- [ ] Install Git for the `git` command
-- [ ] Install [Wren Console][wren-console] for the `wrenc` command
-- [ ] Install [Wren Package][wren-package] for simple Wren packages
+- Install Git for the `git` command
+- Install [Wren Console][wren-console] for the `wrenc` command
+- Install [Wren Package][wren-package] to allow exercises to download dependencies
 
 ### Install Git
 
-You'll need the `git` binary installed and in your path.  This is how Wren Package installs packages (such as the test suite you'll need for testing your exercises, etc).  You can confirm this with `git --version`:
+You'll need the `git` binary installed and in your path.  This is how Wren Package installs packages (such as the test suite you'll need for testing your exercises, etc).
+
+- **Windows** - The official [Git download](https://git-scm.com/download/win) is a good place to start.
+-  **Linux** - Your favorite package manager should help you out.
+- **Mac** - All recently versions of Mac OS bundle `git` right out of the box.
+
+You can confirm Git is installed with `git --version`:
 
 ```
 $ git --version
 git version 2.31.1
 ```
 
-Don't worry if the exact version number isn't a match, this isn't usually super critical.
-
-**Windows**
-
-The official Git download is a good place to start:
-
-- https://git-scm.com/download/win
-
-**Linux**
-
-Your favorite package manager should help you out.
-
-**Mac**
-
-All recently versions of Mac OS bundle `git` right out of the box.
+Don't worry if the exact version isn't a match, this isn't typically that critical.
 
 
 ### Install Wren Console
 
 #### Windows
 
-You'll want to [download the latest release][releases] from GitHub:
+You'll most likely want to [download the latest release][releases] from GitHub.  After that you'll need to unzip, and copy the `wrenc` executable into your path.
 
-After that you'll need to extract the `wrenc` executable and copy it into your path.
-
-It's also possible to [build from source][build-from-source] if you have Visual Studio.
+It's also possible to [build from source][build-from-source] using Visual Studio.
 
 #### Linux
 
-You'll want to [download the latest release][releases] from GitHub.
+You can to [download the latest release][releases] from GitHub or [build from source][build-from-source].
 
 ```sh
 wget -c https://github.com/joshgoebel/wren-console/releases/download/v0.2.90/wren-console-v0.2.90-linux.tar.gz
 tar xzf wren-console-v0.2.90-linux.tar.gz
 ```
 
-And make sure it's available somewhere in your `PATH`.
+And make sure it's available in your `PATH`.
 
 ```sh
 cp bin/wrenc /usr/local/bin/
 ```
 
-If you're comfortable with such things it's pretty easy to [build from source][build-from-source].
 
 #### Mac
 
-The easiest installation is using [Homebrew][homebrew]:
+The easiest installation is using Exercism's [Homebrew][homebrew] tap and formula:
 
 ```
 brew tap exercism/wren
@@ -74,11 +63,11 @@ brew install wren-console
 ```
 
 Alternatively you can [download the latest release][releases] from Github and
-install it manually as shown in the Linux instructions.  Building from source is also pretty simple if you're already familiar with such things.
+install it manually as shown in the Linux instructions.  Building from source is also pretty simple if you're  familiar with such things.
 
 ### Install Wren Package
 
-Lastly, we'll need to install `wren-package` where Wren Console can find it easily.  Any directory higher than where your exercises are stored will be just fine.  Your home directory or `Exercism` directory is perfect.
+Lastly, we'll need to install `wren-package` where Wren Console can find it.  Any directory higher than where your exercises are stored will be just fine.  Your home directory or `Exercism` directory is perfect.
 
 #### Windows
 
@@ -143,11 +132,27 @@ $ exercism download --exercise=hello-world --track=wren
 ```
 
 Each assignment then needs some tools to run the tests. They can be installed
-running this command within each assignment directory:
+running this command within the assignment directory:
 
 ```bash
 $ wrenc package.wren install
 ```
+
+> **Help:** `Could not load module 'wren-package/package'.`
+>
+> If you see this error then you haven't properly installed Wren Package (see above).  There should be a `wren_modules` directory above the current working directory for your exercise and `wren-package` should be installed there.
+>
+> For example on a Mac your directory structure might look like:
+>
+> ```
+> ~ (home)
+> +-- wren_modules
+>     +-- wren-package
+> +-- Exercism
+>     +-- wren
+>         +--- hello-world
+> ```
+
 
 [homebrew]: https://brew.sh
 [releases]: https://github.com/joshgoebel/wren-console/releases
