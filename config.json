@@ -463,6 +463,19 @@
         ]
       },
       {
+        "slug": "luhn",
+        "name": "Luhn",
+        "uuid": "5eef7e0c-0219-48d4-b8af-3bd5d0f331af",
+        "topics": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "practices": [
+          "match",
+          "lists",
+          "strings"
+        ]
+      },
+      {
         "slug": "queen-attack",
         "name": "Queen Attack",
         "uuid": "765e3b15-e8a2-46e1-b735-5510bb4ac0e2",
