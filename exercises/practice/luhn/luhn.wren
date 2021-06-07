@@ -3,6 +3,8 @@
 // convenience to get you started writing code faster.
 //
 
-export const valid = () => {
-  throw new Error('Remove this statement and implement this function');
-};
+class Luhn {
+  static valid(number) {
+    Fiber.abort("Remove this statement and implement this function")
+  }
+}
