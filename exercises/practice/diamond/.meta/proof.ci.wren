@@ -6,16 +6,25 @@ class CharList {
   }
 }
 
+// to allow map with index
+class Each {
+  construct new(list) { _list = list }
+  map(fn) {
+    var i = -1
+    return _list.map { |el|
+      return fn.call(el, i = i + 1)
+    }
+  }
+  static [list] { Each.new(list) }
+}
+
 class Diamond {
   construct new(letter) {
     _list = CharList["A", letter]
   }
   rows {
     var i = -1
-    var topHalf = _list.map {|c|
-      i = i + 1
-      return row(c, i)
-    }.toList
+    var topHalf = Each[_list].map { |c,i| row(c,i) }.toList
     return mirror(topHalf[-1..0])
   }
   mirror(list) {
