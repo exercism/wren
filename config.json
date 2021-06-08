@@ -469,6 +469,17 @@
         ]
       },
       {
+        "slug": "diamond",
+        "name": "Diamond",
+        "uuid": "5b1d4950-e9ba-4e64-a4de-320bddbf6ca2",
+        "topics": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "practices": [
+          "strings"
+        ]
+      },
+      {
         "slug": "robot-simulator",
         "name": "Robot Simulator",
         "uuid": "567924ea-a84f-445f-9c1f-18649b2fde7e",
