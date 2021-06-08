@@ -5,253 +5,253 @@ Testie.test("Allergies") { |do, skip|
   do.describe("testing for eggs allergy") {
     do.test("not allergic to anything") {
       var allergies = Allergies.new(0)
-      Expect.that(allergies.allergicTo("eggs")).toEqual(false)
+      Expect.value(allergies.allergicTo("eggs")).toEqual(false)
     }
 
     skip.test("allergic only to eggs") {
       var allergies = Allergies.new(1)
-      Expect.that(allergies.allergicTo("eggs")).toEqual(true)
+      Expect.value(allergies.allergicTo("eggs")).toEqual(true)
     }
 
     skip.test("allergic to eggs and something else") {
       var allergies = Allergies.new(3)
-      Expect.that(allergies.allergicTo("eggs")).toEqual(true)
+      Expect.value(allergies.allergicTo("eggs")).toEqual(true)
     }
 
     skip.test("allergic to something, but not eggs") {
       var allergies = Allergies.new(2)
-      Expect.that(allergies.allergicTo("eggs")).toEqual(false)
+      Expect.value(allergies.allergicTo("eggs")).toEqual(false)
     }
 
     skip.test("allergic to everything") {
       var allergies = Allergies.new(255)
-      Expect.that(allergies.allergicTo("eggs")).toEqual(true)
+      Expect.value(allergies.allergicTo("eggs")).toEqual(true)
     }
   }
 
   do.describe("testing for peanuts allergy") {
     skip.test("not allergic to anything") {
       var allergies = Allergies.new(0)
-      Expect.that(allergies.allergicTo("peanuts")).toEqual(false)
+      Expect.value(allergies.allergicTo("peanuts")).toEqual(false)
     }
 
     skip.test("allergic only to peanuts") {
       var allergies = Allergies.new(2)
-      Expect.that(allergies.allergicTo("peanuts")).toEqual(true)
+      Expect.value(allergies.allergicTo("peanuts")).toEqual(true)
     }
 
     skip.test("allergic to peanuts and something else") {
       var allergies = Allergies.new(7)
-      Expect.that(allergies.allergicTo("peanuts")).toEqual(true)
+      Expect.value(allergies.allergicTo("peanuts")).toEqual(true)
     }
 
     skip.test("allergic to something, but not peanuts") {
       var allergies = Allergies.new(5)
-      Expect.that(allergies.allergicTo("peanuts")).toEqual(false)
+      Expect.value(allergies.allergicTo("peanuts")).toEqual(false)
     }
 
     skip.test("allergic to everything") {
       var allergies = Allergies.new(255)
-      Expect.that(allergies.allergicTo("peanuts")).toEqual(true)
+      Expect.value(allergies.allergicTo("peanuts")).toEqual(true)
     }
   }
 
   do.describe("testing for shellfish allergy") {
     skip.test("not allergic to anything") {
       var allergies = Allergies.new(0)
-      Expect.that(allergies.allergicTo("shellfish")).toEqual(false)
+      Expect.value(allergies.allergicTo("shellfish")).toEqual(false)
     }
 
     skip.test("allergic only to shellfish") {
       var allergies = Allergies.new(4)
-      Expect.that(allergies.allergicTo("shellfish")).toEqual(true)
+      Expect.value(allergies.allergicTo("shellfish")).toEqual(true)
     }
 
     skip.test("allergic to shellfish and something else") {
       var allergies = Allergies.new(14)
-      Expect.that(allergies.allergicTo("shellfish")).toEqual(true)
+      Expect.value(allergies.allergicTo("shellfish")).toEqual(true)
     }
 
     skip.test("allergic to something, but not shellfish") {
       var allergies = Allergies.new(10)
-      Expect.that(allergies.allergicTo("shellfish")).toEqual(false)
+      Expect.value(allergies.allergicTo("shellfish")).toEqual(false)
     }
 
     skip.test("allergic to everything") {
       var allergies = Allergies.new(255)
-      Expect.that(allergies.allergicTo("shellfish")).toEqual(true)
+      Expect.value(allergies.allergicTo("shellfish")).toEqual(true)
     }
   }
 
   do.describe("testing for strawberries allergy") {
     skip.test("not allergic to anything") {
       var allergies = Allergies.new(0)
-      Expect.that(allergies.allergicTo("strawberries")).toEqual(false)
+      Expect.value(allergies.allergicTo("strawberries")).toEqual(false)
     }
 
     skip.test("allergic only to strawberries") {
       var allergies = Allergies.new(8)
-      Expect.that(allergies.allergicTo("strawberries")).toEqual(true)
+      Expect.value(allergies.allergicTo("strawberries")).toEqual(true)
     }
 
     skip.test("allergic to strawberries and something else") {
       var allergies = Allergies.new(28)
-      Expect.that(allergies.allergicTo("strawberries")).toEqual(true)
+      Expect.value(allergies.allergicTo("strawberries")).toEqual(true)
     }
 
     skip.test("allergic to something, but not strawberries") {
       var allergies = Allergies.new(20)
-      Expect.that(allergies.allergicTo("strawberries")).toEqual(false)
+      Expect.value(allergies.allergicTo("strawberries")).toEqual(false)
     }
 
     skip.test("allergic to everything") {
       var allergies = Allergies.new(255)
-      Expect.that(allergies.allergicTo("strawberries")).toEqual(true)
+      Expect.value(allergies.allergicTo("strawberries")).toEqual(true)
     }
   }
 
   do.describe("testing for tomatoes allergy") {
     skip.test("not allergic to anything") {
       var allergies = Allergies.new(0)
-      Expect.that(allergies.allergicTo("tomatoes")).toEqual(false)
+      Expect.value(allergies.allergicTo("tomatoes")).toEqual(false)
     }
 
     skip.test("allergic only to tomatoes") {
       var allergies = Allergies.new(16)
-      Expect.that(allergies.allergicTo("tomatoes")).toEqual(true)
+      Expect.value(allergies.allergicTo("tomatoes")).toEqual(true)
     }
 
     skip.test("allergic to tomatoes and something else") {
       var allergies = Allergies.new(56)
-      Expect.that(allergies.allergicTo("tomatoes")).toEqual(true)
+      Expect.value(allergies.allergicTo("tomatoes")).toEqual(true)
     }
 
     skip.test("allergic to something, but not tomatoes") {
       var allergies = Allergies.new(40)
-      Expect.that(allergies.allergicTo("tomatoes")).toEqual(false)
+      Expect.value(allergies.allergicTo("tomatoes")).toEqual(false)
     }
 
     skip.test("allergic to everything") {
       var allergies = Allergies.new(255)
-      Expect.that(allergies.allergicTo("tomatoes")).toEqual(true)
+      Expect.value(allergies.allergicTo("tomatoes")).toEqual(true)
     }
   }
 
   do.describe("testing for chocolate allergy") {
     skip.test("not allergic to anything") {
       var allergies = Allergies.new(0)
-      Expect.that(allergies.allergicTo("chocolate")).toEqual(false)
+      Expect.value(allergies.allergicTo("chocolate")).toEqual(false)
     }
 
     skip.test("allergic only to chocolate") {
       var allergies = Allergies.new(32)
-      Expect.that(allergies.allergicTo("chocolate")).toEqual(true)
+      Expect.value(allergies.allergicTo("chocolate")).toEqual(true)
     }
 
     skip.test("allergic to chocolate and something else") {
       var allergies = Allergies.new(112)
-      Expect.that(allergies.allergicTo("chocolate")).toEqual(true)
+      Expect.value(allergies.allergicTo("chocolate")).toEqual(true)
     }
 
     skip.test("allergic to something, but not chocolate") {
       var allergies = Allergies.new(80)
-      Expect.that(allergies.allergicTo("chocolate")).toEqual(false)
+      Expect.value(allergies.allergicTo("chocolate")).toEqual(false)
     }
 
     skip.test("allergic to everything") {
       var allergies = Allergies.new(255)
-      Expect.that(allergies.allergicTo("chocolate")).toEqual(true)
+      Expect.value(allergies.allergicTo("chocolate")).toEqual(true)
     }
   }
 
   do.describe("testing for pollen allergy") {
     skip.test("not allergic to anything") {
       var allergies = Allergies.new(0)
-      Expect.that(allergies.allergicTo("pollen")).toEqual(false)
+      Expect.value(allergies.allergicTo("pollen")).toEqual(false)
     }
 
     skip.test("allergic only to pollen") {
       var allergies = Allergies.new(64)
-      Expect.that(allergies.allergicTo("pollen")).toEqual(true)
+      Expect.value(allergies.allergicTo("pollen")).toEqual(true)
     }
 
     skip.test("allergic to pollen and something else") {
       var allergies = Allergies.new(224)
-      Expect.that(allergies.allergicTo("pollen")).toEqual(true)
+      Expect.value(allergies.allergicTo("pollen")).toEqual(true)
     }
 
     skip.test("allergic to something, but not pollen") {
       var allergies = Allergies.new(160)
-      Expect.that(allergies.allergicTo("pollen")).toEqual(false)
+      Expect.value(allergies.allergicTo("pollen")).toEqual(false)
     }
 
     skip.test("allergic to everything") {
       var allergies = Allergies.new(255)
-      Expect.that(allergies.allergicTo("pollen")).toEqual(true)
+      Expect.value(allergies.allergicTo("pollen")).toEqual(true)
     }
   }
 
   do.describe("testing for cats allergy") {
     skip.test("not allergic to anything") {
       var allergies = Allergies.new(0)
-      Expect.that(allergies.allergicTo("cats")).toEqual(false)
+      Expect.value(allergies.allergicTo("cats")).toEqual(false)
     }
 
     skip.test("allergic only to cats") {
       var allergies = Allergies.new(128)
-      Expect.that(allergies.allergicTo("cats")).toEqual(true)
+      Expect.value(allergies.allergicTo("cats")).toEqual(true)
     }
 
     skip.test("allergic to cats and something else") {
       var allergies = Allergies.new(192)
-      Expect.that(allergies.allergicTo("cats")).toEqual(true)
+      Expect.value(allergies.allergicTo("cats")).toEqual(true)
     }
 
     skip.test("allergic to something, but not cats") {
       var allergies = Allergies.new(64)
-      Expect.that(allergies.allergicTo("cats")).toEqual(false)
+      Expect.value(allergies.allergicTo("cats")).toEqual(false)
     }
 
     skip.test("allergic to everything") {
       var allergies = Allergies.new(255)
-      Expect.that(allergies.allergicTo("cats")).toEqual(true)
+      Expect.value(allergies.allergicTo("cats")).toEqual(true)
     }
   }
 
   do.describe("list when:") {
     skip.test("no allergies") {
       var allergies = Allergies.new(0)
-      Expect.that(allergies.list()).toEqual([])
+      Expect.value(allergies.list()).toEqual([])
     }
 
     skip.test("just eggs") {
       var allergies = Allergies.new(1)
-      Expect.that(allergies.list()).toEqual(["eggs"])
+      Expect.value(allergies.list()).toEqual(["eggs"])
     }
 
     skip.test("just peanuts") {
       var allergies = Allergies.new(2)
-      Expect.that(allergies.list()).toEqual(["peanuts"])
+      Expect.value(allergies.list()).toEqual(["peanuts"])
     }
 
     skip.test("just strawberries") {
       var allergies = Allergies.new(8)
-      Expect.that(allergies.list()).toEqual(["strawberries"])
+      Expect.value(allergies.list()).toEqual(["strawberries"])
     }
 
     skip.test("eggs and peanuts") {
       var allergies = Allergies.new(3)
-      Expect.that(allergies.list()).toIncludeSameItemsAs(["eggs", "peanuts"])
+      Expect.value(allergies.list()).toIncludeSameItemsAs(["eggs", "peanuts"])
     }
 
     skip.test("more than eggs but not peanuts") {
       var allergies = Allergies.new(5)
-      Expect.that(allergies.list()).toIncludeSameItemsAs(["eggs", "shellfish"])
+      Expect.value(allergies.list()).toIncludeSameItemsAs(["eggs", "shellfish"])
     }
 
     skip.test("lots of stuff") {
       var allergies = Allergies.new(248)
-      Expect.that(allergies.list()).toIncludeSameItemsAs([
+      Expect.value(allergies.list()).toIncludeSameItemsAs([
         "strawberries",
         "tomatoes",
         "chocolate",
@@ -262,7 +262,7 @@ Testie.test("Allergies") { |do, skip|
 
     skip.test("everything") {
       var allergies = Allergies.new(255)
-      Expect.that(allergies.list()).toIncludeSameItemsAs([
+      Expect.value(allergies.list()).toIncludeSameItemsAs([
         "eggs",
         "peanuts",
         "shellfish",
@@ -276,7 +276,7 @@ Testie.test("Allergies") { |do, skip|
 
     skip.test("no allergen score parts") {
       var allergies = Allergies.new(509)
-      Expect.that(allergies.list()).toIncludeSameItemsAs([
+      Expect.value(allergies.list()).toIncludeSameItemsAs([
         "eggs",
         "shellfish",
         "strawberries",
@@ -290,11 +290,11 @@ Testie.test("Allergies") { |do, skip|
   do.describe("random allergies") {
     skip.test("not allergic to random things") {
       var allergies = Allergies.new(255)
-      Expect.that(allergies.allergicTo("pankcakes")).toEqual(false)
-      Expect.that(allergies.allergicTo("mushrooms")).toEqual(false)
-      Expect.that(allergies.allergicTo("water")).toEqual(false)
-      Expect.that(allergies.allergicTo("milk")).toEqual(false)
-      Expect.that(allergies.allergicTo("candy")).toEqual(false)
+      Expect.value(allergies.allergicTo("pankcakes")).toEqual(false)
+      Expect.value(allergies.allergicTo("mushrooms")).toEqual(false)
+      Expect.value(allergies.allergicTo("water")).toEqual(false)
+      Expect.value(allergies.allergicTo("milk")).toEqual(false)
+      Expect.value(allergies.allergicTo("candy")).toEqual(false)
     }
   }
 }

@@ -18,37 +18,37 @@ Testie.test("Robot") { |do, skip|
   do.describe("Create robot") {
     do.test("facing north by default") {
       var robot = Robot.new()
-      Expect.that(robot.bearing).toEqual("north")
+      Expect.value(robot.bearing).toEqual("north")
     }
 
     skip.test("facing east") {
       var robot = Robot.new()
       robot.place({ "direction": "east", "x": 0, "y": 0 })
 
-      Expect.that(robot.bearing).toEqual("east")
+      Expect.value(robot.bearing).toEqual("east")
     }
 
     skip.test("facing west, at origin") {
       var robot = Robot.new()
       robot.place({ "direction": "west", "x": 0, "y": 0 })
 
-      Expect.that(robot.bearing).toEqual("west")
-      Expect.that(robot.coordinates).toEqual([0, 0])
+      Expect.value(robot.bearing).toEqual("west")
+      Expect.value(robot.coordinates).toEqual([0, 0])
     }
 
     skip.test("at negative position facing south") {
       var robot = Robot.new()
       robot.place({ "direction": "south", "x": -1, "y": -1 })
 
-      Expect.that(robot.bearing).toEqual("south")
-      Expect.that(robot.coordinates).toEqual([-1, -1])
+      Expect.value(robot.bearing).toEqual("south")
+      Expect.value(robot.coordinates).toEqual([-1, -1])
     }
 
     skip.test("invalid robot bearing") {
       var robot = Robot.new()
 
-      // Expect.that(InvalidInputError.prototype).toBeInstanceOf(Error)
-      // Expect.that(() => robot.place({ "direction": "crood", "x": 0, "y": 0 })).toThrow(
+      // Expect.value(InvalidInputError.prototype).toBeInstanceOf(Error)
+      // Expect.value(() => robot.place({ "direction": "crood", "x": 0, "y": 0 })).toThrow(
       //   InvalidInputError
       // )
     }
@@ -62,8 +62,8 @@ Testie.test("Robot") { |do, skip|
 
       TurnRight.call(robot)
 
-      Expect.that(robot.bearing).toEqual("east")
-      Expect.that(robot.coordinates).toEqual([0, 0])
+      Expect.value(robot.bearing).toEqual("east")
+      Expect.value(robot.coordinates).toEqual([0, 0])
     }
 
     skip.test("changes east to south") {
@@ -72,8 +72,8 @@ Testie.test("Robot") { |do, skip|
 
       TurnRight.call(robot)
 
-      Expect.that(robot.bearing).toEqual("south")
-      Expect.that(robot.coordinates).toEqual([0, 0])
+      Expect.value(robot.bearing).toEqual("south")
+      Expect.value(robot.coordinates).toEqual([0, 0])
     }
 
     skip.test("changes south to west") {
@@ -82,8 +82,8 @@ Testie.test("Robot") { |do, skip|
 
       TurnRight.call(robot)
 
-      Expect.that(robot.bearing).toEqual("west")
-      Expect.that(robot.coordinates).toEqual([0, 0])
+      Expect.value(robot.bearing).toEqual("west")
+      Expect.value(robot.coordinates).toEqual([0, 0])
     }
 
     skip.test("changes west to north") {
@@ -92,8 +92,8 @@ Testie.test("Robot") { |do, skip|
 
       TurnRight.call(robot)
 
-      Expect.that(robot.bearing).toEqual("north")
-      Expect.that(robot.coordinates).toEqual([0, 0])
+      Expect.value(robot.bearing).toEqual("north")
+      Expect.value(robot.coordinates).toEqual([0, 0])
     }
   }
 
@@ -105,8 +105,8 @@ Testie.test("Robot") { |do, skip|
 
       TurnLeft.call(robot)
 
-      Expect.that(robot.bearing).toEqual("west")
-      Expect.that(robot.coordinates).toEqual([0, 0])
+      Expect.value(robot.bearing).toEqual("west")
+      Expect.value(robot.coordinates).toEqual([0, 0])
     }
 
     skip.test("changes west to south") {
@@ -115,8 +115,8 @@ Testie.test("Robot") { |do, skip|
 
       TurnLeft.call(robot)
 
-      Expect.that(robot.bearing).toEqual("south")
-      Expect.that(robot.coordinates).toEqual([0, 0])
+      Expect.value(robot.bearing).toEqual("south")
+      Expect.value(robot.coordinates).toEqual([0, 0])
     }
 
     skip.test("changes south to east") {
@@ -125,8 +125,8 @@ Testie.test("Robot") { |do, skip|
 
       TurnLeft.call(robot)
 
-      Expect.that(robot.bearing).toEqual("east")
-      Expect.that(robot.coordinates).toEqual([0, 0])
+      Expect.value(robot.bearing).toEqual("east")
+      Expect.value(robot.coordinates).toEqual([0, 0])
     }
 
     skip.test("changes east to north") {
@@ -135,8 +135,8 @@ Testie.test("Robot") { |do, skip|
 
       TurnLeft.call(robot)
 
-      Expect.that(robot.bearing).toEqual("north")
-      Expect.that(robot.coordinates).toEqual([0, 0])
+      Expect.value(robot.bearing).toEqual("north")
+      Expect.value(robot.coordinates).toEqual([0, 0])
     }
   }
 
@@ -147,8 +147,8 @@ Testie.test("Robot") { |do, skip|
 
       Advance.call(robot)
 
-      Expect.that(robot.coordinates).toEqual([0, 1])
-      Expect.that(robot.bearing).toEqual("north")
+      Expect.value(robot.coordinates).toEqual([0, 1])
+      Expect.value(robot.bearing).toEqual("north")
     }
 
     skip.test("advance when facing south") {
@@ -157,8 +157,8 @@ Testie.test("Robot") { |do, skip|
 
       Advance.call(robot)
 
-      Expect.that(robot.coordinates).toEqual([0, -1])
-      Expect.that(robot.bearing).toEqual("south")
+      Expect.value(robot.coordinates).toEqual([0, -1])
+      Expect.value(robot.bearing).toEqual("south")
     }
 
     skip.test("advance when facing east") {
@@ -167,8 +167,8 @@ Testie.test("Robot") { |do, skip|
 
       Advance.call(robot)
 
-      Expect.that(robot.coordinates).toEqual([1, 0])
-      Expect.that(robot.bearing).toEqual("east")
+      Expect.value(robot.coordinates).toEqual([1, 0])
+      Expect.value(robot.bearing).toEqual("east")
     }
 
     skip.test("advance when facing west") {
@@ -177,8 +177,8 @@ Testie.test("Robot") { |do, skip|
 
       Advance.call(robot)
 
-      Expect.that(robot.coordinates).toEqual([-1, 0])
-      Expect.that(robot.bearing).toEqual("west")
+      Expect.value(robot.coordinates).toEqual([-1, 0])
+      Expect.value(robot.bearing).toEqual("west")
     }
   }
 
@@ -190,8 +190,8 @@ Testie.test("Robot") { |do, skip|
 
       robot.evaluate("RAALAL")
 
-      Expect.that(robot.coordinates).toEqual([9, 4])
-      Expect.that(robot.bearing).toEqual("west")
+      Expect.value(robot.coordinates).toEqual([9, 4])
+      Expect.value(robot.bearing).toEqual("west")
     }
 
     skip.test("moving west and north") {
@@ -200,8 +200,8 @@ Testie.test("Robot") { |do, skip|
 
       robot.evaluate("LAAARALA")
 
-      Expect.that(robot.coordinates).toEqual([-4, 1])
-      Expect.that(robot.bearing).toEqual("west")
+      Expect.value(robot.coordinates).toEqual([-4, 1])
+      Expect.value(robot.bearing).toEqual("west")
     }
 
     skip.test("moving west and south") {
@@ -210,8 +210,8 @@ Testie.test("Robot") { |do, skip|
 
       robot.evaluate("RRAAAAALA")
 
-      Expect.that(robot.coordinates).toEqual([-3, -8])
-      Expect.that(robot.bearing).toEqual("south")
+      Expect.value(robot.coordinates).toEqual([-3, -8])
+      Expect.value(robot.bearing).toEqual("south")
     }
 
     skip.test("moving east and north") {
@@ -220,8 +220,8 @@ Testie.test("Robot") { |do, skip|
 
       robot.evaluate("LAAARRRALLLL")
 
-      Expect.that(robot.coordinates).toEqual([11, 5])
-      Expect.that(robot.bearing).toEqual("north")
+      Expect.value(robot.coordinates).toEqual([11, 5])
+      Expect.value(robot.bearing).toEqual("north")
     }
 
     skip.test("instruct many robots") {
@@ -236,14 +236,14 @@ Testie.test("Robot") { |do, skip|
       robot2.evaluate("RRAAAAALA")
       robot3.evaluate("LAAARRRALLLL")
 
-      Expect.that(robot1.coordinates).toEqual([-4, 1])
-      Expect.that(robot1.bearing).toEqual("west")
+      Expect.value(robot1.coordinates).toEqual([-4, 1])
+      Expect.value(robot1.bearing).toEqual("west")
 
-      Expect.that(robot2.coordinates).toEqual([-3, -8])
-      Expect.that(robot2.bearing).toEqual("south")
+      Expect.value(robot2.coordinates).toEqual([-3, -8])
+      Expect.value(robot2.bearing).toEqual("south")
 
-      Expect.that(robot3.coordinates).toEqual([11, 5])
-      Expect.that(robot3.bearing).toEqual("north")
+      Expect.value(robot3.coordinates).toEqual([11, 5])
+      Expect.value(robot3.bearing).toEqual("north")
     }
   }
 }

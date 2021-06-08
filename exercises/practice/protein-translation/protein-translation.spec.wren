@@ -3,7 +3,7 @@ import "wren-testie/testie" for Testie, Expect
 
 Testie.test("ProteinTranslation") { |do, skip|
   do.test("Empty RNA has no proteins") {
-    Expect.that(Tools.translate()).toEqual([])
+    Expect.value(Tools.translate()).toEqual([])
   }
 
   do.describe("Single codons") {
@@ -22,7 +22,7 @@ Testie.test("ProteinTranslation") { |do, skip|
       var codons = item[1]
       codons.each { |codon|
         skip.test("%(protein) RNA sequence `%(codon)` translates into %(protein)") {
-          Expect.that(Tools.translate(codon)).toEqual([protein])
+          Expect.value(Tools.translate(codon)).toEqual([protein])
         }
       }
     }
@@ -30,22 +30,22 @@ Testie.test("ProteinTranslation") { |do, skip|
     var stopCodons = ["UAA", "UAG", "UGA"]
     stopCodons.each { |codon|
       skip.test("STOP codon RNA sequence `%(codon)`") {
-        Expect.that(Tools.translate(codon)).toEqual([])
+        Expect.value(Tools.translate(codon)).toEqual([])
       }
     }
   }
 
   do.describe("Multiple codons") {
     skip.test("Sequence of two protein codons translates into proteins") {
-      Expect.that(Tools.translate("UUUUUU")).toEqual(["Phenylalanine", "Phenylalanine"])
+      Expect.value(Tools.translate("UUUUUU")).toEqual(["Phenylalanine", "Phenylalanine"])
     }
 
     skip.test("Sequence of two different protein codons translates into proteins") {
-      Expect.that(Tools.translate("UUAUUG")).toEqual(["Leucine", "Leucine"])
+      Expect.value(Tools.translate("UUAUUG")).toEqual(["Leucine", "Leucine"])
     }
 
     skip.test("Translate RNA strand into correct protein list") {
-      Expect.that(Tools.translate("AUGUUUUGG")).toEqual([
+      Expect.value(Tools.translate("AUGUUUUGG")).toEqual([
         "Methionine",
         "Phenylalanine",
         "Tryptophan",
@@ -53,19 +53,19 @@ Testie.test("ProteinTranslation") { |do, skip|
     }
 
     skip.test("Translation stops if STOP codon at beginning of sequence") {
-      Expect.that(Tools.translate("UAGUGG")).toEqual([])
+      Expect.value(Tools.translate("UAGUGG")).toEqual([])
     }
 
     skip.test("Translation stops if STOP codon at end of three-codon sequence") {
-      Expect.that(Tools.translate("AUGUUUUAA")).toEqual(["Methionine", "Phenylalanine"])
+      Expect.value(Tools.translate("AUGUUUUAA")).toEqual(["Methionine", "Phenylalanine"])
     }
 
     skip.test("Translation stops if STOP codon in middle of three-codon sequence") {
-      Expect.that(Tools.translate("UGGUAGUGG")).toEqual(["Tryptophan"])
+      Expect.value(Tools.translate("UGGUAGUGG")).toEqual(["Tryptophan"])
     }
 
     skip.test("Translation stops if STOP codon in middle of six-codon sequence") {
-      Expect.that(Tools.translate("UGGUGUUAUUAAUGGUUU")).toEqual([
+      Expect.value(Tools.translate("UGGUGUUAUUAAUGGUUU")).toEqual([
         "Tryptophan",
         "Cysteine",
         "Tyrosine",
@@ -87,7 +87,7 @@ Testie.test("ProteinTranslation") { |do, skip|
     }
 
     skip.test("Incomplete RNA sequence can translate if valid until a STOP codon") {
-      Expect.that(Tools.translate("UUCUUCUAAUGGU")).toEqual([
+      Expect.value(Tools.translate("UUCUUCUAAUGGU")).toEqual([
         "Phenylalanine",
         "Phenylalanine",
       ])
