@@ -22,7 +22,7 @@
     {
       "icon": "features-declarative",
       "title": "Familiar",
-      "content": "Wren uses a familiar, modern syntax instantly familiar to anyone coming from JavaScript or another C-like language."
+      "content": "Wren uses a familiar, modern syntax familiar to many coming from JS or another C-like language."
     },
     {
       "icon": "features-strongly-typed",
@@ -32,12 +32,12 @@
     {
       "icon": "features-lazy",
       "title": "Fast",
-      "content": "A single-pass compiler, tight byte-code, and compact object representation keeps Wren fast on it's feet."
+      "content": "A single-pass compiler, tight byte-code, and compact objects keeps Wren fast on it's feet."
     },
     {
       "icon": "features-functional",
       "title": "Concurrent",
-      "content": "Lightweight fibers are core to the execution model and let you organize your program into a flock of communicating coroutines."
+      "content": "Lightweight fibers let you organize your program into a flock of communicating coroutines."
     },
     {
       "icon": "features-generic",
@@ -47,7 +47,7 @@
     {
       "icon": "features-oop",
       "title": "Class-based",
-      "content": "There are lots of scripting languages out there, but many have unusual or non-existent object models. Wren places classes front and center."
+      "content": "Many scripting languages lack (or have unusual) object models. Wren places classes front and center."
     }
   ],
   "exercises": {
