@@ -4,32 +4,32 @@ import "wren-testie/testie" for Testie, Expect
 Testie.test("Acronyms") { |do, skip|
   // basic
   do.test("title cased phrases") {
-    Expect.that(Acronym.parse("Portable Network Graphics")).toEqual("PNG")
+    Expect.value(Acronym.parse("Portable Network Graphics")).toEqual("PNG")
   }
 
   // lowercase words
   skip.test("other title cased phrases") {
-    Expect.that(Acronym.parse("Ruby on Rails")).toEqual("ROR")
+    Expect.value(Acronym.parse("Ruby on Rails")).toEqual("ROR")
   }
 
   // punctuation
   skip.test("phrases with punctuation") {
-    Expect.that(Acronym.parse("First In, First Out")).toEqual("FIFO")
+    Expect.value(Acronym.parse("First In, First Out")).toEqual("FIFO")
   }
 
   // all caps word
   skip.test("phrases with all uppercase words") {
-    Expect.that(Acronym.parse("GNU Image Manipulation Program")).toEqual("GIMP")
+    Expect.value(Acronym.parse("GNU Image Manipulation Program")).toEqual("GIMP")
   }
 
   // punctuation without whitespace
   skip.test("phrases with punctuation without whitespace") {
-    Expect.that(Acronym.parse("Complementary metal-oxide semiconductor")).toEqual("CMOS")
+    Expect.value(Acronym.parse("Complementary metal-oxide semiconductor")).toEqual("CMOS")
   }
 
   // very long abbreviation
   skip.test("long phrases") {
-    Expect.that(
+    Expect.value(
       Acronym.parse(
         "Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me"
       )
@@ -38,16 +38,16 @@ Testie.test("Acronyms") { |do, skip|
 
   // consecutive delimiters
   skip.test("phrases with consecutive delimiters") {
-    Expect.that(Acronym.parse("Something - I made up from thin air")).toEqual("SIMUFTA")
+    Expect.value(Acronym.parse("Something - I made up from thin air")).toEqual("SIMUFTA")
   }
 
   // apostrophes
   skip.test("phrases with apostrophes") {
-    Expect.that(Acronym.parse("Halley's Comet")).toEqual("HC")
+    Expect.value(Acronym.parse("Halley's Comet")).toEqual("HC")
   }
 
   // underscore emphasis
   skip.test("phrases with underscore emphasis") {
-    Expect.that(Acronym.parse("The Road _Not_ Taken")).toEqual("TRNT")
+    Expect.value(Acronym.parse("The Road _Not_ Taken")).toEqual("TRNT")
   }
 }

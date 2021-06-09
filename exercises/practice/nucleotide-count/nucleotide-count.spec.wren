@@ -4,19 +4,19 @@ import "./nucleotide-count" for Nucleotide
 Testie.test("count nucleotides") { |do, skip|
 
   do.test("empty strand") {
-    Expect.that(Nucleotide.count("")).toEqual({ "A": 0, "C": 0, "G": 0, "T": 0})
+    Expect.value(Nucleotide.count("")).toEqual({ "A": 0, "C": 0, "G": 0, "T": 0})
   }
 
   skip.test("can count one nucleotide in single-character input") {
-    Expect.that(Nucleotide.count("G")).toEqual({ "A": 0, "C": 0, "G": 1, "T": 0})
+    Expect.value(Nucleotide.count("G")).toEqual({ "A": 0, "C": 0, "G": 1, "T": 0})
   }
 
   skip.test("strand with repeated nucleotide") {
-    Expect.that(Nucleotide.count("GGGGGGG")).toEqual({ "A": 0, "C": 0, "G": 7, "T": 0})
+    Expect.value(Nucleotide.count("GGGGGGG")).toEqual({ "A": 0, "C": 0, "G": 7, "T": 0})
   }
 
   skip.test("strand with multiple nucleotides") {
-    Expect.that(
+    Expect.value(
       Nucleotide.count(
         "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC"
       )

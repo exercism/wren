@@ -3,23 +3,23 @@ import "wren-testie/testie" for Testie, Expect
 
 Testie.test("Hamming") { |do, skip|
   do.test("empty strands") {
-    Expect.that(Hamming.compute("", "")).toEqual(0)
+    Expect.value(Hamming.compute("", "")).toEqual(0)
   }
 
   skip.test("single letter identical strands") {
-    Expect.that(Hamming.compute("A", "A")).toEqual(0)
+    Expect.value(Hamming.compute("A", "A")).toEqual(0)
   }
 
   skip.test("single letter different strands") {
-    Expect.that(Hamming.compute("G", "T")).toEqual(1)
+    Expect.value(Hamming.compute("G", "T")).toEqual(1)
   }
 
   skip.test("long identical strands") {
-    Expect.that(Hamming.compute("GGACTGAAATCTG", "GGACTGAAATCTG")).toEqual(0)
+    Expect.value(Hamming.compute("GGACTGAAATCTG", "GGACTGAAATCTG")).toEqual(0)
   }
 
   skip.test("long different strands") {
-    Expect.that(Hamming.compute("GGACGGATTCTG", "AGGACGGATTCT")).toEqual(9)
+    Expect.value(Hamming.compute("GGACGGATTCTG", "AGGACGGATTCT")).toEqual(9)
   }
 
   skip.test("disallow first strand longer") {

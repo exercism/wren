@@ -5,14 +5,14 @@ Testie.test("Bank account") { |do, skip|
   do.test("newly opened account has zero balance") {
     var account = BankAccount.new()
     account.open()
-    Expect.that(account.balance).toEqual(0)
+    Expect.value(account.balance).toEqual(0)
   }
 
   skip.test("can deposit money") {
     var account = BankAccount.new()
     account.open()
     account.deposit(100)
-    Expect.that(account.balance).toEqual(100)
+    Expect.value(account.balance).toEqual(100)
   }
 
   skip.test("can deposit money sequentially") {
@@ -20,7 +20,7 @@ Testie.test("Bank account") { |do, skip|
     account.open()
     account.deposit(100)
     account.deposit(50)
-    Expect.that(account.balance).toEqual(150)
+    Expect.value(account.balance).toEqual(150)
   }
 
   skip.test("can withdraw money") {
@@ -28,7 +28,7 @@ Testie.test("Bank account") { |do, skip|
     account.open()
     account.deposit(100)
     account.withdraw(50)
-    Expect.that(account.balance).toEqual(50)
+    Expect.value(account.balance).toEqual(50)
   }
 
   skip.test("can withdraw money sequentially") {
@@ -37,7 +37,7 @@ Testie.test("Bank account") { |do, skip|
     account.deposit(100)
     account.withdraw(20)
     account.withdraw(80)
-    Expect.that(account.balance).toEqual(0)
+    Expect.value(account.balance).toEqual(0)
   }
 
   skip.test("checking balance of closed account throws error") {
@@ -88,7 +88,7 @@ Testie.test("Bank account") { |do, skip|
     account.deposit(50)
     account.close()
     account.open()
-    Expect.that(account.balance).toEqual(0)
+    Expect.value(account.balance).toEqual(0)
   }
 
   skip.test("cannot withdraw more than deposited") {
