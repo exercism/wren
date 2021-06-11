@@ -9,7 +9,6 @@ Wren Console is forked from Wren CLI, resolves these issues, and adds features t
 
 - Install Git for the `git` command
 - Install [Wren Console][wren-console] for the `wrenc` command
-- Install [Wren Package][wren-package] to allow exercises to download dependencies
 
 ### Install Git
 
@@ -64,27 +63,6 @@ brew install wren-console
 
 Alternatively you can [download the latest release][releases] from Github and
 install it manually as shown in the Linux instructions.  Building from source is also pretty simple if you're  familiar with such things.
-
-### Install Wren Package
-
-Lastly, we'll need to install `wren-package` where Wren Console can find it.  Any directory higher than where your exercises are stored will be just fine.  Your home directory or `Exercism` directory is perfect.
-
-#### Windows
-
-```sh
-cd C:\Users\yourusername\
-mkdir wren_modules
-git clone https://github.com/joshgoebel/wren-package
-```
-
-#### Linux / Mac
-
-```sh
-cd ~
-mkdir wren_modules
-git clone https://github.com/joshgoebel/wren-package
-```
-
 
 ### Testing the Installation
 
