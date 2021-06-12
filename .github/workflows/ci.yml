@@ -39,7 +39,7 @@ jobs:
         with:
           repository: joshgoebel/wren-console
           path: wren-console
-          ref: v0.2.90
+          ref: v0.2.91
       - name: Checkout wren-essentials
         uses: actions/checkout@v2
         with:
@@ -57,12 +57,6 @@ jobs:
         uses: actions/checkout@v2
         with:
           path: track
-      - name: Checkout wren-package
-        uses: actions/checkout@v2
-        with:
-          repository: joshgoebel/wren-package
-          path: track/wren_modules/wren-package
-          ref: v0.1.0
       - name: Install deps and run CI
         run: |
           cd track
