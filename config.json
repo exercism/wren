@@ -20,32 +20,32 @@
   },
   "key_features": [
     {
-      "icon": "features-declarative",
+      "icon": "fun",
       "title": "Familiar",
       "content": "Wren uses a familiar, modern syntax familiar to many coming from JS or another C-like language."
     },
     {
-      "icon": "features-strongly-typed",
+      "icon": "small",
       "title": "Small",
       "content": "Wren's VM implementation is under 4,000 semicolons of readable and lovingly commented C code."
     },
     {
-      "icon": "features-lazy",
+      "icon": "fast",
       "title": "Fast",
       "content": "A single-pass compiler, tight byte-code, and compact objects keeps Wren fast on it's feet."
     },
     {
-      "icon": "features-functional",
+      "icon": "concurrency",
       "title": "Concurrent",
       "content": "Lightweight fibers let you organize your program into a flock of communicating coroutines."
     },
     {
-      "icon": "features-generic",
+      "icon": "embeddable",
       "title": "Embeddable",
       "content": "Easily embedded, no dependencies, a small standard lib, and easy-to-use C API."
     },
     {
-      "icon": "features-oop",
+      "icon": "interop",
       "title": "Class-based",
       "content": "Many scripting languages lack (or have unusual) object models. Wren places classes front and center."
     }
