@@ -4,37 +4,27 @@
 //
 
 class CircularBuffer {
-  constructor() {
-    throw new Error('Remove this statement and implement this function');
+  construct new() {
+    Fiber.abort("Remove this statement and implement this function")
   }
 
   write() {
-    throw new Error('Remove this statement and implement this function');
+    Fiber.abort("Remove this statement and implement this function")
   }
 
   read() {
-    throw new Error('Remove this statement and implement this function');
+    Fiber.abort("Remove this statement and implement this function")
   }
 
   forceWrite() {
-    throw new Error('Remove this statement and implement this function');
+    Fiber.abort("Remove this statement and implement this function")
   }
 
   clear() {
-    throw new Error('Remove this statement and implement this function');
+    Fiber.abort("Remove this statement and implement this function")
   }
 }
 
-export default CircularBuffer;
+var BufferFullError = "error message here"
 
-export class BufferFullError extends Error {
-  constructor() {
-    throw new Error('Remove this statement and implement this function');
-  }
-}
-
-export class BufferEmptyError extends Error {
-  constructor() {
-    throw new Error('Remove this statement and implement this function');
-  }
-}
+var BufferEmptyError = "another error message here"
