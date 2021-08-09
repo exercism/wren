@@ -43,15 +43,6 @@ Testie.test("Robot") { |do, skip|
       Expect.value(robot.bearing).toEqual("south")
       Expect.value(robot.coordinates).toEqual([-1, -1])
     }
-
-    skip.test("invalid robot bearing") {
-      var robot = Robot.new()
-
-      // Expect.value(InvalidInputError.prototype).toBeInstanceOf(Error)
-      // Expect.value(() => robot.place({ "direction": "crood", "x": 0, "y": 0 })).toThrow(
-      //   InvalidInputError
-      // )
-    }
   }
 
   do.describe("Rotating clockwise") {
@@ -244,6 +235,22 @@ Testie.test("Robot") { |do, skip|
 
       Expect.value(robot3.coordinates).toEqual([11, 5])
       Expect.value(robot3.bearing).toEqual("north")
+    }
+  }
+
+  do.describe("Error handling") {
+    skip.test("invalid robot bearing") {
+      var robot = Robot.new()
+      Expect.that {
+        robot.place({ "direction": "crood", "x": 0, "y": 0 })
+      }.abortsWith("Invalid input")
+    }
+
+    skip.test("invalid instruction") {
+      var robot = Robot.new()
+      Expect.that {
+        robot.evaluate("LAX")
+      }.abortsWith("Invalid input")
     }
   }
 }
