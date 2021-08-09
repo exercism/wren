@@ -3,6 +3,8 @@
 // convenience to get you started writing code faster.
 //
 
-export const annotate = (input) => {
-  throw new Error('Remove this statement and implement this function');
-};
+class Minesweeper {
+  static annotate(grid) {
+    Fiber.abort("Remove this statement and implement this function")
+  }
+}
