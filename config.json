@@ -552,7 +552,7 @@
       },
       {
         "slug": "affine-cipher",
-        "name": "Affice Cipher",
+        "name": "Affine Cipher",
         "uuid": "400bf704-ed95-4014-bb51-0a60cff94425",
         "practices": [
           "math"
