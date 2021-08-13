@@ -1,7 +1,7 @@
 import "wren-testie/testie" for Testie, Expect
 import "./sieve" for Sieve
 
-Testie.test("Hello World") { |do, skip|
+Testie.test("Sieve of Eratosthenes") { |do, skip|
   do.test("no primes under two") {
     Expect.value(Sieve.new(1).primes).toEqual([])
   }
