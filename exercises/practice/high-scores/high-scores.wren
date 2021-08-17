@@ -1,8 +1,3 @@
-//
-// This is only a SKELETON file for the 'High Scores' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
-
 class HighScores {
   construct new(scores) {
     Fiber.abort("Remove this statement and implement this function")
