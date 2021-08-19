@@ -5,7 +5,7 @@
   "status": {
     "concept_exercises": false,
     "test_runner": true,
-    "representer": false,
+    "representer": true,
     "analyzer": false
   },
   "test_runner": {
