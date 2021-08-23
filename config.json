@@ -581,6 +581,16 @@
         "difficulty": 10,
         "practices": [
         ]
+      },
+      {
+        "slug": "change",
+        "name": "Change",
+        "uuid": "808ff438-6b51-473e-baa9-ce3b7ce5fa90",
+        "topics": [],
+        "prerequisites": [],
+        "difficulty": 5,
+        "practices": [
+        ]
       }
     ]
   },
