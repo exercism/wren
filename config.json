@@ -573,6 +573,16 @@
         ]
       },
       {
+        "slug": "change",
+        "name": "Change",
+        "uuid": "808ff438-6b51-473e-baa9-ce3b7ce5fa90",
+        "topics": [],
+        "prerequisites": [],
+        "difficulty": 5,
+        "practices": [
+        ]
+      },
+      {
         "slug": "forth",
         "name": "Forth",
         "uuid": "36a62783-86d7-4c6e-a419-8fbebf54047d",
