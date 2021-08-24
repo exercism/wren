@@ -28,7 +28,8 @@ class Change {
       var min = Num.infinity
       var coin
       for (c in denominations) {
-        if (c <= p && 1 + C[p - c] < min) {
+        if (c > p) break
+        if (1 + C[p - c] < min) {
           min = 1 + C[p - c]
           coin = c
         }
@@ -40,13 +41,14 @@ class Change {
   }
 
   static makeChange(changeData, valueOfCoins) {
-    if (valueOfCoins == 0) return []
+    var coins = []
+    while (valueOfCoins > 0) {
+      var coin = changeData[valueOfCoins]
+      if (coin == null) Fiber.abort("can't make target with given coins")
 
-    var firstCoin = changeData[valueOfCoins]
-    if (firstCoin == null) {
-      Fiber.abort("can't make target with given coins")
+      coins.add(coin)
+      valueOfCoins = valueOfCoins - coin
     }
-    var remainingValue = valueOfCoins - firstCoin
-    return [firstCoin] + makeChange(changeData, remainingValue)
+    return coins
   }
 }
