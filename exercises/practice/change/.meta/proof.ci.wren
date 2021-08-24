@@ -3,6 +3,9 @@ class Change {
     if (target < 0) {
       Fiber.abort("target can't be negative")
     }
+    if (target == 0 ) {
+      return []
+    }
     return makeChange(change(coins, target), target)
   }
 
@@ -17,15 +20,14 @@ class Change {
    *
    * S = the _first_ coin used to make change for amount n.
    */
-  static change(d, n) {
-    var C = [0] + List.filled(n, Num.largest)
-    var S = [0] + List.filled(n, null)
+  static change(denominations, valueOfCoins) {
+    var C = [0] + List.filled(valueOfCoins, null)
+    var S = [0] + List.filled(valueOfCoins, null)
 
-    var p = 1
-    while (p <= n) {
-      var min = Num.largest
-      var coin = null
-      for (c in d) {
+    for (p in 1..valueOfCoins) {
+      var min = Num.infinity
+      var coin
+      for (c in denominations) {
         if (c <= p && 1 + C[p - c] < min) {
           min = 1 + C[p - c]
           coin = c
@@ -33,18 +35,18 @@ class Change {
       }
       C[p] = min
       S[p] = coin
-      p = p + 1
     }
     return S
   }
 
-  static makeChange(S, n) {
-    if (S[n] == null) {
+  static makeChange(changeData, valueOfCoins) {
+    if (valueOfCoins == 0) return []
+
+    var firstCoin = changeData[valueOfCoins]
+    if (firstCoin == null) {
       Fiber.abort("can't make target with given coins")
     }
-    if (n == 0) {
-      return []
-    }
-    return [S[n]] + makeChange(S, n - S[n])
+    var remainingValue = valueOfCoins - firstCoin
+    return [firstCoin] + makeChange(changeData, remainingValue)
   }
 }
