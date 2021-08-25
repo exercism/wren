@@ -1,5 +1,12 @@
 var TwoBucketError = "Impossible to measure"
 
+class Math {
+  static gcd(a,b) {
+    return (b == 0) ? a : gcd(b, a % b)
+  }
+}
+
+
 class TwoBucket {
   static measure(info) {this.new(info).solve()}
 
@@ -15,11 +22,9 @@ class TwoBucket {
     }
 
     if (_goal > _first.size.max(_second.size)) Fiber.abort(TwoBucketError)
-    var gcd = gcd(_first.size, _second.size)
+    var gcd = Math.gcd(_first.size, _second.size)
     if (gcd > 1 && _goal % gcd != 0) Fiber.abort(TwoBucketError)
   }
-
-  gcd(a, b) { (b == 0) ? a : gcd(b, a % b) }
 
   solve() {
     _first.empty()
@@ -34,7 +39,7 @@ class TwoBucket {
       steps = steps + 1
     }
 
-    while (1) {
+    while (true) {
       if (_goal == _first.amount) {
         return resultData(steps, _first, _second)
       }
@@ -68,23 +73,24 @@ class Bucket {
   name     {_name}
   size     {_size}
   amount   {_amount}
+  available {_size - _amount}
 
   isFull   {_amount == _size}
   isEmpty  {_amount == 0}
-  
+
   fill()  {
     _amount = _size
   }
   empty() {
     _amount = 0
   }
-  add(amt) {
-    _amount = _amount + amt
+  add(amount) {
+    _amount = _amount + amount
   }
   pourInto(other) {
-    var amt = _amount.min(other.size - other.amount)
-    other.add(amt)
-    _amount = _amount - amt
+    var amount = _amount.min(other.available)
+    other.add(amount)
+    _amount = _amount - amount
   }
 
   toString { "%(this.type)(%(name): %(amount)/%(size))" }
