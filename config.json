@@ -583,6 +583,16 @@
         ]
       },
       {
+        "slug": "robot-name",
+        "name": "Robot Name",
+        "uuid": "a10b8c10-6c6f-492b-9ed1-851172ed74ab",
+        "topics": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "practices": [
+        ]
+      },
+      {
         "slug": "change",
         "name": "Change",
         "uuid": "808ff438-6b51-473e-baa9-ce3b7ce5fa90",
