@@ -29,22 +29,22 @@ class TwoBucket {
   solve() {
     _first.empty()
     _second.empty()
-    var steps = 0
+    var moves = 0
 
     _first.fill()
-    steps = steps + 1
+    moves = moves + 1
 
     if (_goal == _second.size) {
       _second.fill()
-      steps = steps + 1
+      moves = moves + 1
     }
 
     while (true) {
       if (_goal == _first.amount) {
-        return resultData(steps, _first, _second)
+        return resultData(moves, _first, _second)
       }
       if (_goal == _second.amount) {
-        return resultData(steps, _second, _first)
+        return resultData(moves, _second, _first)
       }
 
       if (_first.isEmpty) {
@@ -54,12 +54,12 @@ class TwoBucket {
       } else {
         _first.pourInto(_second)
       }
-      steps = steps + 1
+      moves = moves + 1
     }
   }
 
-  resultData(steps, b1, b2) {
-    return {"moves": steps, "goalBucket": b1.name, "otherBucket": b2.amount}
+  resultData(moves, b1, b2) {
+    return {"moves": moves, "goalBucket": b1.name, "otherBucket": b2.amount}
   }
 }
 
