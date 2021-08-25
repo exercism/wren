@@ -8,7 +8,7 @@ class Math {
 
 
 class TwoBucket {
-  static measure(info) {this.new(info).solve()}
+  static measure(info) { this.new(info).solve() }
 
   construct new(info) {
     _goal = info["goal"]
@@ -70,13 +70,13 @@ class Bucket {
     _amount = 0
   }
 
-  name     {_name}
-  size     {_size}
-  amount   {_amount}
-  available {_size - _amount}
+  name     { _name }
+  size     { _size }
+  amount   { _amount }
+  available { _size - _amount }
 
-  isFull   {_amount == _size}
-  isEmpty  {_amount == 0}
+  isFull   { _amount == _size }
+  isEmpty  { _amount == 0 }
 
   fill()  {
     _amount = _size
