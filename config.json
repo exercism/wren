@@ -611,6 +611,16 @@
         ]
       },
       {
+        "slug": "isogram",
+        "name": "Isogram",
+        "uuid": "7f650ff2-c80f-42d9-98e7-d0d516bd1a2d",
+        "topics": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "practices": [
+        ]
+      },
+      {
         "slug": "affine-cipher",
         "name": "Affine Cipher",
         "uuid": "400bf704-ed95-4014-bb51-0a60cff94425",
