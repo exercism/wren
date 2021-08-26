@@ -1,13 +1,13 @@
 class BinarySearchTree {
-  construct new(elem) {
-    _value = elem
+  construct new(item) {
+    _value = item
     _left = null
     _right = null
   }
 
-  construct addAll(elements) {
-    for (elem in elements) {
-      insert(elem)
+  construct addAll(items) {
+    for (item in items) {
+      insert(item)
     }
   }
 
