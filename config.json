@@ -623,6 +623,16 @@
         ]
       },
       {
+        "slug": "grep",
+        "name": "Grep",
+        "uuid": "c1d9b9ef-5d22-4ca8-b941-6f7ce70b911b",
+        "topics": [],
+        "prerequisites": [],
+        "difficulty": 6,
+        "practices": [
+        ]
+      },
+      {
         "slug": "forth",
         "name": "Forth",
         "uuid": "36a62783-86d7-4c6e-a419-8fbebf54047d",
