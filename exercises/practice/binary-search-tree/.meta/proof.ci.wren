@@ -1,11 +1,11 @@
 class BinarySearchTree {
-  construct new(item) {
+  construct new() {}
+
+  construct with(item) {
     _value = item
-    _left = null
-    _right = null
   }
 
-  construct addAll(items) {
+  construct withAll(items) {
     for (item in items) {
       insert(item)
     }
@@ -16,13 +16,13 @@ class BinarySearchTree {
       _value = item
     } else if (item <= _value) {
       if (_left == null) {
-        _left = BinarySearchTree.new(item)
+        _left = this.type.with(item)
       } else {
         _left.insert(item)
       }
     } else {
       if (_right == null) {
-        _right = BinarySearchTree.new(item)
+        _right = this.type.with(item)
       } else {
         _right.insert(item)
       }
