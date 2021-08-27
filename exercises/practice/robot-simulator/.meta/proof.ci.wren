@@ -27,6 +27,9 @@ class Robot {
   bearing { _bearing }
   coordinates { _coords.toList }
   place(opts) {
+    if (! DIRECTIONS.contains(opts["direction"])) {
+      Fiber.abort("Invalid input")
+    }
     _bearing = opts["direction"]
     _coords = Vector.new(opts["x"], opts["y"])
   }
@@ -49,6 +52,8 @@ class Robot {
       right
     } else if (cmd == "L") {
       left
+    } else {
+      Fiber.abort("Invalid input")
     }
   }
 }
