@@ -28,16 +28,17 @@ A skipped test:
 
 ```js
 // this test will be skipped and not run
-do.skip("title cased phrases") {
-    Assert.equal(Acronyms.parse("Portable Network Graphics"), "PNG")
+skip.test("title cased phrases") {
+    Expect.value(Acronyms.parse("Portable Network Graphics")).toEqual("PNG")
 }
 ```
 
-Simply change `do.skip` to `do.test`.
+Simply change `skip.test` to `do.test`.
 
 ```js
+// now the test will be run normally
 do.test("title cased phrases") {
-    Assert.equal(Acronyms.parse("Portable Network Graphics"), "PNG")
+    Expect.value(Acronyms.parse("Portable Network Graphics")).toEqual("PNG")
 }
 ```
 
@@ -59,6 +60,6 @@ class Bob {
 You can find more information about modules in the
 [Wren Modularity documentation][modularity].
 To make it easier to get started, there is a _skeleton_ Wren file in the
-directory for the first exercise.
+directory for each exercise.
 
 [modularity]: https://wren.io/modularity.html
