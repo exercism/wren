@@ -109,27 +109,12 @@ Once CLI is all setup & configured, download the first exercise - `hello-world`:
 $ exercism download --exercise=hello-world --track=wren
 ```
 
-Each assignment then needs some tools to run the tests. They can be installed
-running this command within the assignment directory:
+Each assignment then needs some Wren packages to run the tests. These can be installed
+by running this command within the assignment directory:
 
 ```bash
 $ wrenc package.wren install
 ```
-
-> **Help:** `Could not load module 'wren-package/package'.`
->
-> If you see this error then you haven't properly installed Wren Package (see above).  There should be a `wren_modules` directory above the current working directory for your exercise and `wren-package` should be installed there.
->
-> For example on a Mac your directory structure might look like:
->
-> ```
-> ~ (home)
-> +-- wren_modules
->     +-- wren-package
-> +-- Exercism
->     +-- wren
->         +--- hello-world
-> ```
 
 
 [homebrew]: https://brew.sh
