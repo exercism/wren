@@ -634,6 +634,16 @@
         ]
       },
       {
+        "slug": "clock",
+        "name": "Clock",
+        "uuid": "923fca85-bb3c-4ae4-bf93-be9b39673163",
+        "topics": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "practices": [
+        ]
+      },
+      {
         "slug": "binary-search-tree",
         "name": "Binary Search Tree",
         "uuid": "459de1b3-e433-4830-84fd-a0c897766b72",
