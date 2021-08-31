@@ -15,7 +15,7 @@ class RobotNameChecker {
 }
 
 
-var testSuite = Testie.new("Robot Name") { |do, skip|
+var testSuite = Testie.test("Robot Name") { |do, skip|
   do.test("robot has a name") {
     var robot = Robot.new()
     Expect.that(
@@ -71,6 +71,7 @@ var testSuite = Testie.new("Robot Name") { |do, skip|
   }
 
   skip.test("generate all robots") {
+    Robot.resetNames()
     var iterations = 676000
     var seenNames = {}
     for (i in (1..iterations)) {
@@ -83,6 +84,3 @@ var testSuite = Testie.new("Robot Name") { |do, skip|
     Expect.that {Robot.new()}.abortsWith("All names consumed")
   }
 }
-
-testSuite.beforeEach { Robot.resetNames() }
-testSuite.run()
