@@ -3,7 +3,7 @@ import "os" for Process
 
 class Package is WrenPackage {
   construct new() {}
-  name { "exercism/binary" }
+  name { "exercism/binary-search-tree" }
   dependencies {
     return [
       Dependency.new("wren-testie", "0.2.0", "https://github.com/joshgoebel/wren-testie.git")
