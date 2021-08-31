@@ -33,7 +33,7 @@ var testSuite = Testie.new("Robot Name") { |do, skip|
     var robot = Robot.new()
     var name = robot.name
     robot.reset()
-    Expect.that(name == robot.name).toBe(false)
+    Expect.value(name).toNotEqual(robot.name)
   }
 
   skip.test("reset before name called does not cause an error") {
@@ -57,7 +57,7 @@ var testSuite = Testie.new("Robot Name") { |do, skip|
   skip.test("different robots have different names") {
     var r1 = Robot.new()
     var r2 = Robot.new()
-    Expect.that(r1.name == r2.name).toBe(false)
+    Expect.value(r1.name).toNotEqual(r2.name)
   }
 
   skip.test("generate lots of robots") {
