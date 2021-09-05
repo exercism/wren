@@ -1,7 +1,11 @@
 class HighScores {
-  construct new(scores) { _scores = scores }
+  construct new(scores) { _scores = scores[0..-1] }
   scores { _scores }
   latest { _scores[-1] }
-  personalBest { _scores.sort()[-1] }
-  personalTopThree { _scores.sort{ |a,b| a > b }.take(3).toList }
+
+  // sort a _copy_ of the scores
+  sorted_ { _scores[0..-1].sort{ |a,b| a > b } }
+
+  personalBest { sorted_[0] }
+  personalTopThree { sorted_.take(3).toList }
 }
