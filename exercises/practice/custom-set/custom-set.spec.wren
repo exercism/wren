@@ -2,7 +2,6 @@ import "./custom-set" for CustomSet
 import "wren-testie/testie" for Testie, Expect
 
 Testie.test("CustomSet") { |do, skip|
-
   do.describe("empty: returns true if the set contains no elements") {
     do.test("sets with no elements are empty") {
       var actual = CustomSet.new().isEmpty
