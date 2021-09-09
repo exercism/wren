@@ -3,7 +3,7 @@ class CustomSet {
     Fiber.abort("Remove this statement and implement this function")
   }
 
-  empty() {
+  isEmpty {
     Fiber.abort("Remove this statement and implement this function")
   }
 
