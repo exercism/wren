@@ -117,6 +117,7 @@ Testie.test("CustomSet") { |do, skip|
       var actual = CustomSet.new([1, 2, 3]).eql(CustomSet.new([1, 2, 4]))
       Expect.value(actual).toBe(false)
     }
+
     skip.test("set is not equal to larger set with same elements") {
       var actual = CustomSet.new([1, 2, 3]).eql(CustomSet.new([1, 2, 3, 4]))
       Expect.value(actual).toBe(false)
