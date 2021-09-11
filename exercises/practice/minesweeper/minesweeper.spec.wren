@@ -2,7 +2,7 @@ import "./minesweeper" for Minesweeper
 import "wren-testie/testie" for Testie, Expect
 
 Testie.test("Minesweeper") { |do, skip|
-  skip.test("handles no rows") {
+  do.test("handles no rows") {
     Expect.value(Minesweeper.annotate([])).toEqual([])
   }
 
