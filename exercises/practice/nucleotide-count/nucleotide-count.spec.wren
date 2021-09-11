@@ -2,7 +2,6 @@ import "wren-testie/testie" for Testie, Expect
 import "./nucleotide-count" for Nucleotide
 
 Testie.test("count nucleotides") { |do, skip|
-
   do.test("empty strand") {
     Expect.value(Nucleotide.count("")).toEqual({ "A": 0, "C": 0, "G": 0, "T": 0})
   }
@@ -25,7 +24,7 @@ Testie.test("count nucleotides") { |do, skip|
 
   skip.test("strand with invalid nucleotides") {
     Expect.that {
-       Nucleotide.count("AGXXACT")
+      Nucleotide.count("AGXXACT")
     }.abortsWith("Invalid nucleotide in strand")
   }
 }
