@@ -14,7 +14,6 @@ import "./robot-simulator" for Robot
 import "wren-testie/testie" for Testie, Expect
 
 Testie.test("Robot") { |do, skip|
-
   do.describe("Create robot") {
     do.test("facing north by default") {
       var robot = Robot.new()
@@ -46,7 +45,6 @@ Testie.test("Robot") { |do, skip|
   }
 
   do.describe("Rotating clockwise") {
-
     skip.test("changes north to east") {
       var robot = Robot.new()
       robot.place({ "direction": "north", "x": 0, "y": 0 })
@@ -89,7 +87,6 @@ Testie.test("Robot") { |do, skip|
   }
 
   do.describe("Rotating counter-clockwise") {
-
     skip.test("changes north to west") {
       var robot = Robot.new()
       robot.place({ "direction": "north", "x": 0, "y": 0 })
@@ -174,7 +171,6 @@ Testie.test("Robot") { |do, skip|
   }
 
   do.describe("Follow series of instructions") {
-
     skip.test("moving east and north from README") {
       var robot = Robot.new()
       robot.place({ "x": 7, "y": 3, "direction": "north" })
