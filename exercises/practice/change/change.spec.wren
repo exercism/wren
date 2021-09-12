@@ -46,6 +46,7 @@ Testie.test("Change") { |do, skip|
     var result = Change.findMinimumCoins(0, [1, 5, 10, 21, 25])
     Expect.value(result).toEqual([])
   }
+
   skip.test("error testing for change smaller than the smallest of coins") {
     Expect.that {
       Change.findMinimumCoins(3, [5, 10])

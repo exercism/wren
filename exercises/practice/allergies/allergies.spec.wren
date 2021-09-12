@@ -287,6 +287,7 @@ Testie.test("Allergies") { |do, skip|
       ])
     }
   }
+
   do.describe("random allergies") {
     skip.test("not allergic to random things") {
       var allergies = Allergies.new(255)

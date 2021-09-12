@@ -14,7 +14,6 @@ class RobotNameChecker {
   static isDigit(char) { "0123456789".contains(char) }
 }
 
-
 var testSuite = Testie.test("Robot Name") { |do, skip|
   do.test("robot has a name") {
     var robot = Robot.new()

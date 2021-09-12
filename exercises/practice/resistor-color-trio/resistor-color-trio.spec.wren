@@ -1,4 +1,3 @@
-
 var makeLabel = Fn.new { |opts|
   return "Resistor value: %(opts["value"]) %(opts["unit"])"
 }
