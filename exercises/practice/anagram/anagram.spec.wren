@@ -9,9 +9,9 @@ Testie.test("Anagram") { |do, skip|
   }
 
   skip.test("detects two anagrams") {
-    Expect.value(Anagram.find("master", ["stream", "pigeon", "maters"])).toEqual([
-      "stream",
-      "maters",
+    Expect.value(Anagram.find("solemn", ["lemons", "cherry", "melons"])).toEqual([
+      "lemons",
+      "melons",
     ])
   }
 

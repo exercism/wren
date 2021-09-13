@@ -73,4 +73,8 @@ Testie.test("Luhn") { |do, skip|
   skip.test("using ascii value for doubled non-digit isn't allowed") {
     Expect.that(Luhn.valid(":9")).toEqual(false)
   }
+
+  skip.test("non-numeric, non-space char in the middle with a sum that's divisible by 10 isn't allowed") {
+    Expect.that(Luhn.valid("59!59")).toEqual(false)
+  }
 }
