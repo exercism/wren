@@ -8,15 +8,15 @@ var OPERATIONS = {
 class WordLexer {
   construct new(s) {
     _cursor = 0
-    _items = s.replace("?"," ?").split(" ")
+    _items = s.replace("?", " ?").split(" ")
   }
   isMore { _cursor < _items.count }
   peek() {
     if (!isMore) return null
     return _items[_cursor]
-    }
+  }
   readOrAbort(expected, err) {
-    if (read()!=expected) Fiber.abort(err)
+    if (read() != expected) Fiber.abort(err)
   }
   read() {
     if (!isMore) return null
