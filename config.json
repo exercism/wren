@@ -593,6 +593,16 @@
         ]
       },
       {
+        "slug": "wordy",
+        "name": "Wordy",
+        "uuid": "2feba255-9200-4d47-839b-646c2ac5c83c",
+        "topics": [],
+        "prerequisites": [],
+        "difficulty": 5,
+        "practices": [
+        ]
+      },
+      {
         "slug": "change",
         "name": "Change",
         "uuid": "808ff438-6b51-473e-baa9-ce3b7ce5fa90",
