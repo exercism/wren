@@ -233,4 +233,24 @@ Testie.test("CustomSet") { |do, skip|
       Expect.value(actual.eql(expected)).toBe(true)
     }
   }
+
+  do.describe("sets can return their items as a List") {
+    skip.test("toList") {
+      var set = CustomSet.new([42, "Zaphod", 3.14])
+      var expected = [3.14, 42, "Zaphod"]
+      Expect.value(set.toList).toIncludeSameItemsAs(expected)
+    }
+  }
+
+  do.describe("iterating") {
+    skip.test("iterating over the items of a set") {
+      // refer to https://wren.io/control-flow.html#the-iterator-protocol
+      var set = CustomSet.new([3, 2, 1, 3])
+      var result = []
+      for (item in set) {
+        result.add(item * item)
+      }
+      Expect.value(result).toIncludeSameItemsAs([1, 4, 9])
+    }
+  }
 }

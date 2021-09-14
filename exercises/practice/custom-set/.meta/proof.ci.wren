@@ -9,6 +9,8 @@ class CustomSet {
   isEmpty { _data.count == 0 }
   contains(value) { _data.containsKey(value) }
 
+  toList { _data.keys.toList }
+
   add(item) {
     _data[item] = true
     return this
@@ -50,4 +52,8 @@ class CustomSet {
     }
     return this
   }
+
+  // iterator protocol
+  iterate(iter) { _data.iterate(iter) }
+  iteratorValue(iter) { _data.iteratorValue(iter).key }
 }
