@@ -2,7 +2,6 @@ import "./flatten-array" for Flatten
 import "wren-testie/testie" for Testie, Expect
 
 Testie.test("Flatten Array") { |do, skip|
-
   do.test("empty") {
     Expect.value(Flatten.flatten([])).toEqual([])
   }

@@ -4,7 +4,6 @@ import "./forth" for Forth
 var FORTH = null
 
 Testie.test("Forth") { |do, skip|
-
   do.beforeEach {
     FORTH = Forth.new()
   }

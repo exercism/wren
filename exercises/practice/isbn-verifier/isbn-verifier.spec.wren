@@ -2,7 +2,6 @@ import "./isbn-verifier" for ISBN
 import "wren-testie/testie" for Testie, Expect
 
 Testie.test("ISBN Verifier") { |do, skip|
-
   do.test("valid isbn") {
     Expect.value(ISBN.new("3-598-21508-8").isValid).toEqual(true)
   }

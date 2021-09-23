@@ -2,9 +2,13 @@ import "./binary" for Binary
 import "wren-testie/testie" for Testie, Expect
 
 Testie.test("Binary") { |do, skip|
-  do.test("0 is decimal 0") { Expect.value(Binary.new("0").toDecimal).toEqual(0) }
+  do.test("0 is decimal 0") {
+    Expect.value(Binary.new("0").toDecimal).toEqual(0)
+  }
 
-  skip.test("1 is decimal 1") { Expect.value(Binary.new("1").toDecimal).toEqual(1) }
+  skip.test("1 is decimal 1") {
+    Expect.value(Binary.new("1").toDecimal).toEqual(1)
+  }
 
   skip.test("10 is decimal 2") {
     Expect.value(Binary.new("10").toDecimal).toEqual(2)

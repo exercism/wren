@@ -2,7 +2,6 @@ import "./grains" for Grains
 import "wren-testie/testie" for Testie, Expect
 
 Testie.test("Grains") { |do, skip|
-
   do.describe("returns the number of grains on the square") {
     do.test("grains on square 1") {
       Expect.value(Grains.square(1)).toEqual(1)
