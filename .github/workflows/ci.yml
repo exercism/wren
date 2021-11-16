@@ -39,13 +39,13 @@ jobs:
         with:
           repository: joshgoebel/wren-console
           path: wren-console
-          ref: v0.2.91
+          ref: v0.3.0
       - name: Checkout wren-essentials
         uses: actions/checkout@v2
         with:
           repository: joshgoebel/wren-essentials
           path: wren-console/deps/wren-essentials
-          ref: v0.1.0
+          ref: v0.2.0
       - name: Build wren-console
         run: |
           cd wren-console
