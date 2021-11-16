@@ -8,7 +8,7 @@ familiar, modern syntax.
 
 - **Fast.** A smart, single-pass compiler produces tight, efficient bytecode.
 
-- **Class-based.** Classes are objects are front and center.
+- **Class-based.** Classes and objects are front and center.
 
 - **Concurrent.** Lightweight fibers are built into the language.
 
@@ -21,9 +21,9 @@ The heart of Wren is the VM.  The Wren Virtual Machine is the core of the langua
 
 You can find Wren embedded in such projects as:
 
-* [TIC-80](https://tic.computer) - a fantasy computer for making, playing and sharing tiny games (similar to PICO8)
-* [DOME](https://domeengine.com) - a cross-platform framework for making games
-* [luxe](https://luxeengine.com) - a cross platform, rapid development game engine for making games
+* [TIC-80](https://tic80.com - a fantasy computer for making, playing and sharing tiny games (similar to PICO8).
+* [DOME](https://domeengine.com) - a cross-platform framework for making games.
+* [luxe](https://luxeengine.com) - a cross-platform, rapid development game engine for making games.
 * [Wren Console][wren-console] - a Wren REPL and CLI written largely in Wren itself.
 
 You can even embed Wren inside your own projects.  For Exercism purposes the host application we'll be using is [Wren Console]([wren-console]) - allowing us to run and test our Wren scripts from the terminal.
@@ -31,7 +31,7 @@ You can even embed Wren inside your own projects.  For Exercism purposes the hos
 
 ### Why Wren?
 
-Wren was originally created by [Bob Nystrom](http://journal.stuffwithstuff.com) of [Crafting Interpretters](http://craftinginterpreters.com) fame.  He has more than a few languages under his belt, but he explains specifically what led to the creation of Wren:
+Wren was originally created by [Bob Nystrom](http://journal.stuffwithstuff.com) of [Crafting Interpreters](http://craftinginterpreters.com) fame.  He has more than a few languages under his belt, but he explains specifically what led to the creation of Wren:
 
 > There are a few scripting languages used for embedding in applications. Lua is the main one. TCL used to be. There’s also Guile, increasingly JavaScript, and some applications embed Python. I’m an ex-game developer, so when I think “scripting”, I tend to think “game scripting”.
 
