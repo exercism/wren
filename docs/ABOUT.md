@@ -21,7 +21,7 @@ The heart of Wren is the VM.  The Wren Virtual Machine is the core of the langua
 
 You can find Wren embedded in such projects as:
 
-* [TIC-80](https://tic80.com - a fantasy computer for making, playing and sharing tiny games (similar to PICO8).
+* [TIC-80](https://tic80.com) - a fantasy computer for making, playing and sharing tiny games (similar to PICO8).
 * [DOME](https://domeengine.com) - a cross-platform framework for making games.
 * [luxe](https://luxeengine.com) - a cross-platform, rapid development game engine for making games.
 * [Wren Console][wren-console] - a Wren REPL and CLI written largely in Wren itself.
