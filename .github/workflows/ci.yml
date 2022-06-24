@@ -43,7 +43,7 @@ jobs:
       - name: Pin dependencies
         shell: bash
         run: |
-          cat WREN_ESSENTIALS >> $GITHUB_ENV
+          cat wren-console/WREN_ESSENTIALS >> $GITHUB_ENV
       - name: Checkout wren-essentials
         uses: actions/checkout@v2
         with:
