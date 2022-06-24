@@ -39,13 +39,17 @@ jobs:
         with:
           repository: joshgoebel/wren-console
           path: wren-console
-          ref: v0.3.0
+          ref: v0.3.1
+      - name: Pin dependencies
+        shell: bash
+        run: |
+          cat WREN_ESSENTIALS >> $GITHUB_ENV
       - name: Checkout wren-essentials
         uses: actions/checkout@v2
         with:
           repository: joshgoebel/wren-essentials
           path: wren-console/deps/wren-essentials
-          ref: v0.2.0
+          ref: ${{env.WREN_ESSENTIALS}}
       - name: Build wren-console
         run: |
           cd wren-console
