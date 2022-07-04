@@ -14,6 +14,12 @@ Testie.test("Resistor Color") { |do, skip|
     skip.test("Orange") {
       Expect.value(Resistor.colorCode("orange")).toEqual(3)
     }
+    
+    skip.test("Invalid color code") {
+      Expect.that {
+        Resistor.colorCode("pink")
+      }.abortsWith("Invalid color code")
+    }
   }
 
   skip.test("Colors") {
