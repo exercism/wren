@@ -25,4 +25,11 @@ Testie.test("RNA Transcription") { |do, skip|
   skip.test("transcribes all dna nucleotides to their rna complements") {
     Expect.value(DNA.toRNA("ACGTGGTCTTAA")).toEqual("UGCACCAGAAUU")
   }
+  
+  skip.test("rejects invalid nucleotides") {
+    Expect.that {
+      DNA.toRNA("pink")
+    }.abortsWith("Invalid nucleotide")
+  }
+  
 }
