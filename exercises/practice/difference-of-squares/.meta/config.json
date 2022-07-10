@@ -1,0 +1,29 @@
+{
+  "authors": [
+    "Atomic-Germ"
+  ],
+  "contributors": [
+    "ankorGH",
+    "hayashi-ay",
+    "rchavarria",
+    "ryanplusplus",
+    "Scientifica96",
+    "SleeplessByte",
+    "tejasbubane",
+    "xarxziux"
+  ],
+  "files": {
+    "solution": [
+      "difference-of-squares.wren"
+    ],
+    "test": [
+      "difference-of-squares.spec.wren"
+    ],
+    "example": [
+      ".meta/proof.ci.wren"
+    ]
+  },
+  "blurb": "Find the difference between the square of the sum and the sum of the squares of the first N natural numbers.",
+  "source": "Problem 6 at Project Euler",
+  "source_url": "http://projecteuler.net/problem=6"
+}
