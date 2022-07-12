@@ -12,7 +12,6 @@ class Rational {
   toString { "%(numerator)/%(denominator)" }
 
   ==(other) {
-    assertRational(other)
     return numerator == other.numerator &&
            denominator == other.denominator
   }
@@ -21,33 +20,23 @@ class Rational {
   reciprocal { type.new(denominator, numerator) }
   abs        { type.new(numerator.abs, denominator) }
 
-  assertRational(other) {
-    if (!(other is this.type)) {
-      Fiber.assert("Not a %(type): %(other)")
-    }
-  }
-
   +(other) {
-    assertRational(other)
     return type.new(
       numerator * other.denominator + denominator * other.numerator,
       denominator * other.denominator)
   }
 
   -(other) {
-    assertRational(other)
     return this + other.negated
   }
 
   *(other) {
-    assertRational(other)
     return type.new(
       numerator * other.numerator,
       denominator * other.denominator)
   }
 
   /(other) {
-    assertRational(other)
     return this * other.reciprocal
   }
 
