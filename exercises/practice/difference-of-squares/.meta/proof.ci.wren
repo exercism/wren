@@ -22,18 +22,9 @@ class Squares {
 
     return squares
   }
-
+  
   static differenceOfSquares(n) {
-    var squares = 0
-    var sum = 0
-    var x = 0
-
-    while (x < n) {
-      x = x + 1
-      sum = sum + x
-      squares = squares + (x * x)
-    }
-
-    return (sum * sum) - squares
+    return squareOfSum(n) - sumOfSquares(n)
   }
+
 }
