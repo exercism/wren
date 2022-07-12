@@ -5,7 +5,7 @@ class Grep {
     Fiber.abort("Remove this statement and implement this function")
   }
 
-  static grep(flags, pattern, files) {
+  static grep(pattern, files, flags) {
     Fiber.abort("Remove this statement and implement this function")
   }
 }

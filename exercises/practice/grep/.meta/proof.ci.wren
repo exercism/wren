@@ -2,9 +2,9 @@ import "io" for File
 import "essentials" for Strings
 
 class Grep {
-  static grep(pattern, files) { grep([], pattern, files) }
+  static grep(pattern, files) { grep(pattern, files, []) }
 
-  static grep(flags, pattern, files) {
+  static grep(pattern, files, flags) {
     var grepper = this.new(pattern, flags)
     return grepper.scan(files)
   }
