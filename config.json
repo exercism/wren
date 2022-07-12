@@ -414,6 +414,16 @@
         ]
       },
       {
+        "slug": "square-root",
+        "name": "Square Root",
+        "uuid": "3227280b-c68f-43de-8c92-94db78e6a288",
+        "topics": ["bitwise_operations", "algorithms", "loops", "math"],
+        "prerequisites": [],
+        "difficulty": 4,
+        "practices": [
+        ]
+      },
+      {
         "slug": "matching-brackets",
         "name": "Matching Brackets",
         "uuid": "8a7da033-311e-4ffd-8b69-ce192672564a",
