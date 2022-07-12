@@ -1,5 +1,5 @@
 class Squares {
-  static squareOfSums(n) {
+  static squareOfSum(n) {
     Fiber.abort("Remove this statement and implement this function")
   }
   
