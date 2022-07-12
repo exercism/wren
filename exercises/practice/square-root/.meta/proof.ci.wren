@@ -1,10 +1,10 @@
 class SquareRoot {
 
-  static squareRoot(input) {
+  static squareRoot(n) {
     var candidate = 1
 
-    if (input >= 2) {
-      while ((candidate * candidate) < input) candidate = candidate + 1
+    if (n >= 2) {
+      while ((candidate * candidate) < n) candidate = candidate + 1
     }
 
     return candidate
