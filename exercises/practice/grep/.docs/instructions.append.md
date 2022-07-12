@@ -2,8 +2,12 @@
 
 ## "io" module
 
-The "io" module is part of [the wren-console extended library][wrenc].
-The documentation is TODO, but the source code can be found in [the src/module directory][module].
+You'll need to read from files in this exercise.
+The required `File` class is in the `io` module.
+It is described in the [documentation for the Wren CLI project][wren-cli].
 
-[wrenc]: https://github.com/joshgoebel/wren-console#extended-library-support
-[module]: https://github.com/joshgoebel/wren-console/tree/v0.3.1/src/module
+(Note that the `wren-console` project [extends the `io` module][wren-console] with a few methods,
+although these are not needed for this exercise.)
+
+[wren-cli]: https://wren.io/cli/modules/
+[wren-console]: https://github.com/joshgoebel/wren-console#extended-library-support
