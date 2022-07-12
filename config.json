@@ -525,6 +525,14 @@
         ]
       },
       {
+        "slug": "spiral-matrix",
+        "name": "Spiral Matrix",
+        "uuid": "0404dafc-9db0-4a80-b1da-743a033284aa",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "luhn",
         "name": "Luhn",
         "uuid": "5eef7e0c-0219-48d4-b8af-3bd5d0f331af",
