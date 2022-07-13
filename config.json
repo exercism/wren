@@ -60,7 +60,8 @@
         "topics": [],
         "prerequisites": [],
         "difficulty": 1,
-        "practices": [
+        "practices": [],
+        "will_have_practices": [
           "strings"
         ]
       },
@@ -71,7 +72,8 @@
         "topics": [],
         "prerequisites": [],
         "difficulty": 1,
-        "practices": [
+        "practices": [],
+        "will_have_practices": [
           "optional-values",
           "strings",
           "text-formatting"
@@ -84,7 +86,8 @@
         "topics": [],
         "prerequisites": [],
         "difficulty": 1,
-        "practices": [
+        "practices": [],
+        "will_have_practices": [
           "lists",
           "strings"
         ]
@@ -106,7 +109,8 @@
         "topics": [],
         "prerequisites": [],
         "difficulty": 1,
-        "practices": [
+        "practices": [],
+        "will_have_practices": [
           "lists"
         ]
       },
@@ -117,7 +121,8 @@
         "topics": [],
         "prerequisites": [],
         "difficulty": 1,
-        "practices": [
+        "practices": [],
+        "will_have_practices": [
           "enumeration",
           "maps"
         ]
@@ -129,7 +134,8 @@
         "topics": [],
         "prerequisites": [],
         "difficulty": 1,
-        "practices": [
+        "practices": [],
+        "will_have_practices": [
           "exceptions",
           "numbers",
           "loops",
@@ -143,7 +149,8 @@
         "topics": [],
         "prerequisites": [],
         "difficulty": 1,
-        "practices": [
+        "practices": [],
+        "will_have_practices": [
           "strings",
           "enumeration"
         ]
@@ -155,7 +162,8 @@
         "topics": [],
         "prerequisites": [],
         "difficulty": 1,
-        "practices": [
+        "practices": [],
+        "will_have_practices": [
           "numbers"
         ]
       },
@@ -166,7 +174,8 @@
         "topics": [],
         "prerequisites": [],
         "difficulty": 1,
-        "practices": [
+        "practices": [],
+        "will_have_practices": [
           "fields",
           "getters"
         ]
@@ -178,7 +187,8 @@
         "topics": [],
         "prerequisites": [],
         "difficulty": 1,
-        "practices": [
+        "practices": [],
+        "will_have_practices": [
           "classes",
           "exceptions",
           "fields"
@@ -191,7 +201,8 @@
         "topics": [],
         "prerequisites": [],
         "difficulty": 1,
-        "practices": [
+        "practices": [],
+        "will_have_practices": [
           "recursion",
           "lists",
           "sequences"
@@ -205,7 +216,8 @@
         "topics": [],
         "prerequisites": [],
         "difficulty": 1,
-        "practices": [
+        "practices": [],
+        "will_have_practices": [
           "strings"
         ]
       },      {
@@ -234,7 +246,8 @@
         "topics": [],
         "prerequisites": [],
         "difficulty": 1,
-        "practices": [
+        "practices": [],
+        "will_have_practices": [
           "numbers",
           "loops"
         ]
@@ -246,7 +259,8 @@
         "topics": [],
         "prerequisites": [],
         "difficulty": 1,
-        "practices": [
+        "practices": [],
+        "will_have_practices": [
           "numbers"
         ]
       },
@@ -255,7 +269,8 @@
         "name": "Difference of Squares",
         "uuid": "2ffe1999-e0d5-4870-9abf-878046f094b8",
         "practices": [],
-        "prerequisites": ["classes", "loops"],
+        "prerequisites": [],
+        "will_have_prerequisites": ["classes", "loops"],
         "difficulty": 3,
         "topics": ["algorithms", "loops", "integers", "math"]
       },
@@ -266,7 +281,8 @@
         "topics": [],
         "prerequisites": [],
         "difficulty": 1,
-        "practices": [
+        "practices": [],
+        "will_have_practices": [
           "numbers"
         ]
       },
@@ -277,7 +293,8 @@
         "topics": [],
         "prerequisites": [],
         "difficulty": 1,
-        "practices": [
+        "practices": [],
+        "will_have_practices": [
           "strings"
         ]
       },
@@ -288,7 +305,8 @@
         "topics": [],
         "prerequisites": [],
         "difficulty": 1,
-        "practices": [
+        "practices": [],
+        "will_have_practices": [
           "strings"
         ]
       },
@@ -299,7 +317,8 @@
         "topics": [],
         "prerequisites": [],
         "difficulty": 1,
-        "practices": [
+        "practices": [],
+        "will_have_practices": [
           "numbers",
           "loops"
         ]
@@ -321,7 +340,8 @@
         "topics": [],
         "prerequisites": [],
         "difficulty": 1,
-        "practices": [
+        "practices": [],
+        "will_have_practices": [
           "strings"
         ]
       },
@@ -342,7 +362,8 @@
         "topics": [],
         "prerequisites": [],
         "difficulty": 1,
-        "practices": [
+        "practices": [],
+        "will_have_practices": [
           "loops",
           "strings"
         ]
@@ -364,7 +385,8 @@
         "topics": [],
         "prerequisites": [],
         "difficulty": 1,
-        "practices": [
+        "practices": [],
+        "will_have_practices": [
           "strings"
         ]
       },
@@ -375,7 +397,8 @@
         "topics": [],
         "prerequisites": [],
         "difficulty": 1,
-        "practices": [
+        "practices": [],
+        "will_have_practices": [
           "strings",
           "numbers"
         ]
@@ -387,7 +410,8 @@
         "topics": [],
         "prerequisites": [],
         "difficulty": 1,
-        "practices": [
+        "practices": [],
+        "will_have_practices": [
           "strings",
           "numbers"
         ]
@@ -439,7 +463,8 @@
         "topics": [],
         "prerequisites": [],
         "difficulty": 1,
-        "practices": [
+        "practices": [],
+        "will_have_practices": [
           "lists",
           "strings"
         ]
@@ -461,7 +486,8 @@
         "topics": [],
         "prerequisites": [],
         "difficulty": 1,
-        "practices": [
+        "practices": [],
+        "will_have_practices": [
           "strings"
         ]
       },
@@ -472,7 +498,8 @@
         "topics": [],
         "prerequisites": [],
         "difficulty": 1,
-        "practices": [
+        "practices": [],
+        "will_have_practices": [
           "strings"
         ]
       },
@@ -483,7 +510,8 @@
         "topics": [],
         "prerequisites": [],
         "difficulty": 1,
-        "practices": [
+        "practices": [],
+        "will_have_practices": [
           "strings"
         ]
       },
@@ -494,7 +522,8 @@
         "topics": [],
         "prerequisites": [],
         "difficulty": 1,
-        "practices": [
+        "practices": [],
+        "will_have_practices": [
           "strings"
         ]
       },
@@ -505,7 +534,8 @@
         "topics": [],
         "prerequisites": [],
         "difficulty": 1,
-        "practices": [
+        "practices": [],
+        "will_have_practices": [
           "operator-overloading",
           "maps",
           "strings",
@@ -519,7 +549,8 @@
         "topics": [],
         "prerequisites": [],
         "difficulty": 1,
-        "practices": [
+        "practices": [],
+        "will_have_practices": [
           "classes",
           "fields"
         ]
@@ -539,7 +570,8 @@
         "topics": [],
         "prerequisites": [],
         "difficulty": 1,
-        "practices": [
+        "practices": [],
+        "will_have_practices": [
           "match",
           "lists",
           "strings"
@@ -561,7 +593,8 @@
         "topics": [],
         "prerequisites": [],
         "difficulty": 1,
-        "practices": [
+        "practices": [],
+        "will_have_practices": [
           "optional-values",
           "strings",
           "text-formatting"
@@ -581,7 +614,8 @@
         "slug": "affine-cipher",
         "name": "Affine Cipher",
         "uuid": "400bf704-ed95-4014-bb51-0a60cff94425",
-        "practices": [
+        "practices": [],
+        "will_have_practices": [
           "math"
         ],
         "prerequisites": [],
