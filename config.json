@@ -640,6 +640,16 @@
         ]
       },
       {
+        "slug": "rational-numbers",
+        "name": "Rational Numbers",
+        "uuid": "d14af867-6357-4b01-b998-e3ba2b033109",
+        "topics": [],
+        "prerequisites": [],
+        "difficulty": 5,
+        "practices": [
+        ]
+      },
+      {
         "slug": "two-bucket",
         "name": "Two Bucket",
         "uuid": "e411acb7-8812-4c31-b901-2f0c0eb637c8",
