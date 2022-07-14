@@ -704,6 +704,16 @@
         ]
       },
       {
+        "slug": "complex-numbers",
+        "name": "Complex Numbers",
+        "uuid": "a7baf102-9cf1-4fc8-adbd-c8197c0d9ca1",
+        "topics": [],
+        "prerequisites": [],
+        "difficulty": 5,
+        "practices": [
+        ]
+      },
+      {
         "slug": "forth",
         "name": "Forth",
         "uuid": "36a62783-86d7-4c6e-a419-8fbebf54047d",
