@@ -11,7 +11,7 @@ class Clock {
   minutes { _minutes }
 
   toString { 
-    var asTwoDigitString = Fn.new {|n| (0..9).contains(n) ? "0%(n)" : "%(n)" }
+    var asTwoDigitString = Fn.new {|n| n < 10 ? "0%(n)" : "%(n)" }
     var hh = asTwoDigitString.call((_minutes / 60).floor)
     var mm = asTwoDigitString.call(_minutes % 60)
     return "%(hh):%(mm)"
