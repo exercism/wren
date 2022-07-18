@@ -1,6 +1,6 @@
 class Rectangles {
   construct new(lines) {
-    _board = lines.map {|line| line.bytes}.toList
+    _board = lines[0..-1]
   }
 
   count {
@@ -29,7 +29,7 @@ class Rectangles {
     for (i in (0..._board.count)) {
       var row = _board[i]
       for (j in (0...row.count)) {
-        if (row[j] == 43) { // "+"
+        if (row[j] == "+") {
           vertices.add(Coord.new(i, j))
         }
       }
@@ -46,21 +46,21 @@ class Rectangles {
 
   is_horizontal_line_(row, col1, col2) {
     return (col1..col2).map {|c| _board[row][c]}
-                       .all {|ch| [43, 45].contains(ch)}  // "+", "-"
+                       .all {|ch| "+-".contains(ch)}
   }
 
   is_vertical_line_(col, row1, row2) {
     return (row1..row2).map {|r| _board[r][col]}
-                       .all {|ch| [43, 124].contains(ch)} // "+", "|"
+                       .all {|ch| "+|".contains(ch)}
   }
 }
 
 class Coord {
   construct new(row, col) {
-    _r = row
-    _c = col
+    _row = row
+    _col = col
   }
-  row {_r}
-  col {_c}
+  row {_row}
+  col {_col}
   ==(other) {type == other.type && row == other.row && col == other.col}
 }
