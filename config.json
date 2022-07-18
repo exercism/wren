@@ -654,6 +654,16 @@
         ]
       },
       {
+        "slug": "pig-latin",
+        "name": "Pig Latin",
+        "uuid": "ce586a71-8d71-42f0-823c-986f349e1c25",
+        "topics": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "practices": [
+        ]
+      },
+      {
         "slug": "binary-search-tree",
         "name": "Binary Search Tree",
         "uuid": "459de1b3-e433-4830-84fd-a0c897766b72",
