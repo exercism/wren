@@ -754,6 +754,16 @@
         ]
       },
       {
+        "slug": "rectangles",
+        "name": "Rectangles",
+        "uuid": "e55a1a48-bfaf-4ab0-ab1a-074961a123f9",
+        "topics": [],
+        "prerequisites": [],
+        "difficulty": 5,
+        "practices": [
+        ]
+      },
+      {
         "slug": "sieve",
         "name": "Sieve",
         "uuid": "fc6898b7-ff9d-45d3-bf42-da72f108b0c1",
