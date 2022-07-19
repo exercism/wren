@@ -634,6 +634,15 @@
         ]
       },
       {
+        "slug": "grade-school",
+        "name": "Grade School",
+        "uuid": "bfdd78fd-0f15-4e4a-90ce-34cf4276d688",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5,
+        "topics": ["arrays", "maps", "sorting"]
+      },
+      {
         "slug": "circular-buffer",
         "name": "Circular Buffer",
         "uuid": "6050d1e5-f68d-4cf7-b29c-1a07c4b31dda",
