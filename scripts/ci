@@ -1,31 +1,42 @@
 #!/bin/bash
-EXERCISES=$(ls -1 ./exercises/practice)
-
 set -e
 
-if [[ "$1z" != "z" ]]; then
-    EXERCISES=$1
+die() { echo "$*" >&2; exit 1; }
+
+cd ./exercises/practice
+
+exercises=()
+if [[ -n "$1" ]]; then
+    [[ -d "$1" ]] || die "Error: not an exercise slug: $1"
+    exercises=("$1")
+else
+    readarray -t exercises < <(
+        find . -maxdepth 1 -mindepth 1 -type d -printf '%f\n'
+    )
 fi
 
-cd exercises/practice
-for dir in $EXERCISES
-do
-    cd $dir
-    echo Running $dir ...
-    SOLUTION=$(jq < .meta/config.json ".files .solution[0]" -r)
-    EXAMPLE=$(jq < .meta/config.json ".files .example[0]" -r)
-    TEST=$(jq < .meta/config.json ".files .test[0]" -r)
+for dir in "${exercises[@]}"; do
+    cd "$dir"
+    echo "Running $dir ..."
+
+    # validate package name
+    name="exercism/$dir"
+    if ! grep -qE "^ *name .+\"$name\"" package.wren; then
+        die "package.wren: wrong name, should be: $name"
+    fi
+
+    # test it
+    solution=$(jq -r ".files .solution[0]" .meta/config.json)
+    example=$(jq -r ".files .example[0]" .meta/config.json)
+    spec=$(jq -r ".files .test[0]" .meta/config.json)
     rm -rf .tmp
     mkdir -p .tmp
     cd .tmp
     cp ../*.wren .
-    sed -i'' -e 's/skip.test/do.test/' $TEST
-    cp ../$EXAMPLE $SOLUTION
+    sed -i'' -e 's/skip.test/do.test/' "$spec"
+    cp "../$example" "$solution"
     ln -s ../../../../vendor vendor
-    # cat $TEST
-    # cat $SOLUTION
-    # ls -l
-    wrenc $TEST
+    wrenc "$spec"
     cd ..
     rm -rf .tmp
     cd ..
