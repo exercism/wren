@@ -781,6 +781,24 @@
         "difficulty": 3,
         "practices": [
         ]
+      },
+      {
+        "slug": "linked-list",
+        "name": "Linked List",
+        "uuid": "1d19b079-83f2-4d52-9a8b-e95e1087c1a4",
+        "topics": [
+          "algorithms",
+          "arrays",
+          "conditionals",
+          "data_structures",
+          "loops",
+          "lists",
+          "optional_values"
+        ],
+        "prerequisites": [],
+        "difficulty": 5,
+        "practices": [
+        ]
       }
     ]
   },

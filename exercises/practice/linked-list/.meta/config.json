@@ -1,0 +1,19 @@
+{
+  "blurb": "Implement a doubly linked list.",
+  "authors": [
+    "Atomic-Germ"
+  ],
+  "contributors": [],
+  "files": {
+    "solution": [
+      "linked-list.wren"
+    ],
+    "test": [
+      "linked-list.spec.wren"
+    ],
+    "example": [
+      ".meta/proof.ci.wren"
+    ]
+  },
+  "source": "Classic computer science topic"
+}
