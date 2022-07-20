@@ -1,9 +1,7 @@
 {
-  "blurb": "Implement a doubly linked list.",
   "authors": [
     "Atomic-Germ"
   ],
-  "contributors": [],
   "files": {
     "solution": [
       "linked-list.wren"
@@ -15,5 +13,6 @@
       ".meta/proof.ci.wren"
     ]
   },
+  "blurb": "Implement a doubly linked list.",
   "source": "Classic computer science topic"
 }
