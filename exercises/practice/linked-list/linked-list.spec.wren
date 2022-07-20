@@ -3,7 +3,7 @@ import "./linked-list" for LinkedList
 
 Testie.test("Linked List") { |do, skip|
 
-  do.test("poop gets last element from the list") {
+  do.test("pop gets last element from the list") {
     var list = LinkedList.new()
     list.push(7)
     Expect.value(list.pop()).toEqual(7)
