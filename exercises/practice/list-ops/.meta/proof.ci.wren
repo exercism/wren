@@ -13,25 +13,31 @@ class ListOps {
     _data.add(element)
   }
 
-  // https://wren.io/control-flow.html#the-iterator-protocol
+  /* the iterator protocol
+   * https://wren.io/control-flow.html#the-iterator-protocol
+   *
+   * iterate(iterator)
+   *  - determine the sequence of the "index" into the collection
+   *  - first iteration, wren provides the null value, we return
+   *    the first index
+   *  - subsequent iterations, wren provides the previous value, 
+   *    we return the next index
+   *  - return false to end the iteration
+   *
+   * iteratorValue(iterator)
+   *  - use the "index" value returned by `iterate` to provide
+   *    a value from the collection
+   *  - this is the `item` in `for (item in collection) {...}`
+   */
   iterate(iterator) {
-    // first iteration, wren provides the null value
     if (iterator == null) {
-      if (_data.isEmpty) {
-        return false
-      } else {
-        return 0
-      }
-    } else {
-      // subsequent iterations, wren provides the previous value
-      iterator = iterator + 1
-      if (iterator == _data.count) {
-        return false
-      } else {
-        return iterator
-      }
+      if (_data.isEmpty) return false
+      return 0
     }
+    if (iterator + 1 == _data.count) return false
+    return iterator + 1
   }
+
   iteratorValue(iterator) {_data[iterator]}
 
   addAll(other) {
