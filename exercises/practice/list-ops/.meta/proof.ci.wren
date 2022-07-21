@@ -15,13 +15,21 @@ class ListOps {
 
   // https://wren.io/control-flow.html#the-iterator-protocol
   iterate(iterator) {
+    // first iteration, wren provides the null value
     if (iterator == null) {
-      if (_data.isEmpty) return false
-      return 0
+      if (_data.isEmpty) {
+        return false
+      } else {
+        return 0
+      }
     } else {
+      // subsequent iterations, wren provides the previous value
       iterator = iterator + 1
-      if (iterator == _data.count) return false
-      return iterator
+      if (iterator == _data.count) {
+        return false
+      } else {
+        return iterator
+      }
     }
   }
   iteratorValue(iterator) {_data[iterator]}

@@ -6,7 +6,7 @@ The goal of this exercise is to implement some of List methods yourself.
 It's natural to use a List object in the backend to hold the data. 
 Keep your hands off the List methods (like `where`, `map`, etc).
 
-There are a some "primitive" List operations that can are inevitable, such as:
+There are a some "primitive" List operations that are unavoidable, such as:
 
 * slicing: `list[from..to]`
 * adding: `list.add(item)`
