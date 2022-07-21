@@ -763,6 +763,16 @@
         ]
       },
       {
+        "slug": "list-ops",
+        "name": "List Ops",
+        "uuid": "3640472b-5d3d-4ed1-a6ab-122ad2e0cb66",
+        "topics": [],
+        "prerequisites": [],
+        "difficulty": 7,
+        "practices": [
+        ]
+      },
+      {
         "slug": "rectangles",
         "name": "Rectangles",
         "uuid": "e55a1a48-bfaf-4ab0-ab1a-074961a123f9",
