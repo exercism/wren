@@ -3,6 +3,11 @@ class ListOps {
     Fiber.abort("Remove this statement and implement this class")
   }
 
+  // no-arguments constructor
+  construct new() {
+    Fiber.abort("Remove this statement and implement this class")
+  }
+
   // return the items as a List
   toList {
     Fiber.abort("Remove this statement and implement this method")

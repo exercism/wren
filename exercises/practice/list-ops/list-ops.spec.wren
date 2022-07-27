@@ -13,6 +13,11 @@ Testie.test("ListOps") { |do, skip|
       Expect.value(list1.toList).toEqual([1, 2, 3, 4])
     }
 
+    do.test("can be instantiated with no elements") {
+      var list1 = ListOps.new()
+      Expect.value(list1.toList).toEqual([])
+    }
+
     skip.test("can add an item") {
       var list1 = ListOps.new([1, 2])
       list1.add(3)
