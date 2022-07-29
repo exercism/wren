@@ -693,6 +693,16 @@
         ]
       },
       {
+        "slug": "simple-cipher",
+        "name": "Simple Cipher",
+        "uuid": "9124fd2e-7527-49b4-968e-f1feeff9f303",
+        "topics": [],
+        "prerequisites": [],
+        "difficulty": 4,
+        "practices": [
+        ]
+      },
+      {
         "slug": "wordy",
         "name": "Wordy",
         "uuid": "2feba255-9200-4d47-839b-646c2ac5c83c",
