@@ -783,6 +783,16 @@
         ]
       },
       {
+        "slug": "linked-list",
+        "name": "Linked List",
+        "uuid": "d6e21a61-c42e-43b3-a9e0-7da14bfece1f",
+        "topics": [],
+        "prerequisites": [],
+        "difficulty": 4,
+        "practices": [
+        ]
+      },
+      {
         "slug": "sieve",
         "name": "Sieve",
         "uuid": "fc6898b7-ff9d-45d3-bf42-da72f108b0c1",
