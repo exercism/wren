@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "glennj"
+  ],
+  "files": {
+    "solution": [
+      "simple-cipher.wren"
+    ],
+    "test": [
+      "simple-cipher.spec.wren"
+    ],
+    "example": [
+      ".meta/proof.ci.wren"
+    ]
+  },
+  "blurb": "Implement a simple shift cipher like Caesar and a more secure substitution cipher.",
+  "source": "Substitution Cipher at Wikipedia",
+  "source_url": "http://en.wikipedia.org/wiki/Substitution_cipher"
+}
