@@ -1,4 +1,4 @@
-# note
+# Placeholder
 
 ## Using builtin List type
 
