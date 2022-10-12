@@ -79,7 +79,7 @@
       },
       {
         "slug": "leap",
-        "name": "Leap Years",
+        "name": "Leap",
         "uuid": "e95f1ade-287a-4391-ae28-82e037f39628",
         "prerequisites": [],
         "difficulty": 1,
@@ -529,7 +529,7 @@
       },
       {
         "slug": "run-length-encoding",
-        "name": "Run Length Encoding",
+        "name": "Run-Length Encoding",
         "uuid": "642ddb58-625b-43b8-b7b9-3e0025dbd989",
         "prerequisites": [],
         "difficulty": 4,
