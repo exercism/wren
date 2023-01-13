@@ -41,8 +41,8 @@ It's also possible to [build from source][build-from-source] using Visual Studio
 You can to [download the latest release][releases] from GitHub or [build from source][build-from-source].
 
 ```sh
-wget -c https://github.com/joshgoebel/wren-console/releases/download/v0.2.90/wren-console-v0.2.90-linux.tar.gz
-tar xzf wren-console-v0.2.90-linux.tar.gz
+wget -c https://github.com/joshgoebel/wren-console/releases/download/v0.3.1/wren-console-v0.3.1-linux.tar.gz
+tar xzf wren-console-v0.3.1-linux.tar.gz
 ```
 
 And make sure it's available in your `PATH`.
@@ -74,7 +74,7 @@ After your believe you've got the binary installed propery, it's good to test if
 You should see both the `wrenc` and Wren versions listed:
 
 ```
-wrenc v0.2.90 (wren v0.4.0)
+wrenc v0.3.1 (wren v0.4.0)
 ```
 
 **Note**: It is important you open a _new_ terminal window. Any open terminal
