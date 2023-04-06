@@ -26,7 +26,7 @@ You can find Wren embedded in such projects as:
 * [luxe](https://luxeengine.com) - a cross-platform, rapid development game engine for making games.
 * [Wren Console][wren-console] - a Wren REPL and CLI written largely in Wren itself.
 
-You can even embed Wren inside your own projects.  For Exercism purposes the host application we'll be using is [Wren Console]([wren-console]) - allowing us to run and test our Wren scripts from the terminal.
+You can even embed Wren inside your own projects.  For Exercism purposes the host application we'll be using is [Wren Console][wren-console] - allowing us to run and test our Wren scripts from the terminal.
 
 
 ### Why Wren?
