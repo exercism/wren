@@ -9,7 +9,7 @@
     "analyzer": false
   },
   "test_runner": {
-    "average_run_time": 2.0
+    "average_run_time": 2
   },
   "blurb": "Wren is a small, fast, class-based concurrent scripting language",
   "version": 3,
