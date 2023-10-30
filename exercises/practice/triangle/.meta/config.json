@@ -1,6 +1,8 @@
 {
   "blurb": "Determine if a triangle is equilateral, isosceles, or scalene.",
-  "authors": ["rchavarria"],
+  "authors": [
+    "rchavarria"
+  ],
   "contributors": [
     "ankorGH",
     "matthewmorgan",
@@ -12,10 +14,16 @@
     "WebCu"
   ],
   "files": {
-    "solution": ["triangle.wren"],
-    "test": ["triangle.spec.wren"],
-    "example": [".meta/proof.ci.wren"]
+    "solution": [
+      "triangle.wren"
+    ],
+    "test": [
+      "triangle.spec.wren"
+    ],
+    "example": [
+      ".meta/proof.ci.wren"
+    ]
   },
   "source": "The Ruby Koans triangle project, parts 1 & 2",
-  "source_url": "http://rubykoans.com"
+  "source_url": "https://web.archive.org/web/20220831105330/http://rubykoans.com"
 }

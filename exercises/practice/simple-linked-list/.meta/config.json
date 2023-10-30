@@ -1,11 +1,19 @@
 {
-  "blurb": "Write a simple linked list implementation that uses Elements and a List",
-  "authors": ["joshgoebel"],
+  "blurb": "Write a simple linked list implementation that uses Elements and a List.",
+  "authors": [
+    "joshgoebel"
+  ],
   "contributors": [],
   "files": {
-    "solution": ["simple-linked-list.wren"],
-    "test": ["simple-linked-list.spec.wren"],
-    "example": [".meta/proof.ci.wren"]
+    "solution": [
+      "simple-linked-list.wren"
+    ],
+    "test": [
+      "simple-linked-list.spec.wren"
+    ],
+    "example": [
+      ".meta/proof.ci.wren"
+    ]
   },
   "source": "Inspired by 'Data Structures and Algorithms with Object-Oriented Design Patterns in Ruby', singly linked-lists.",
   "source_url": "https://web.archive.org/web/20160731005714/http://brpreiss.com/books/opus8/html/page96.html"

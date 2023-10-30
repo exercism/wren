@@ -1,12 +1,20 @@
 {
   "blurb": "Given a person's allergy score, determine whether or not they're allergic to a given item, and their full list of allergies.",
-  "authors": ["joshgoebel"],
+  "authors": [
+    "joshgoebel"
+  ],
   "contributors": [],
   "files": {
-    "solution": ["allergies.wren"],
-    "test": ["allergies.spec.wren"],
-    "example": [".meta/proof.ci.wren"]
+    "solution": [
+      "allergies.wren"
+    ],
+    "test": [
+      "allergies.spec.wren"
+    ],
+    "example": [
+      ".meta/proof.ci.wren"
+    ]
   },
-  "source": "Jumpstart Lab Warm-up",
-  "source_url": "http://jumpstartlab.com"
+  "source": "Exercise by the JumpstartLab team for students at The Turing School of Software and Design.",
+  "source_url": "https://turing.edu"
 }
