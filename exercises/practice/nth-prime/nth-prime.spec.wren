@@ -1,7 +1,7 @@
 import "./nth-prime" for NthPrime
 import "wren-testie/testie" for Testie, Expect
 
-Testie.test("NthPrime.steps()") { |do, skip|
+Testie.test("NthPrime.prime()") { |do, skip|
   do.test("first prime") {
     Expect.value(NthPrime.prime(1)).toEqual(2)
   }
