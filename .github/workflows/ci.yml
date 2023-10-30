@@ -14,23 +14,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  # precheck:
-  #   runs-on: <image-name>
-
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - name: Use <setup tooling>
-  #       uses: <action to setup tooling>
-  #       with:
-  #         # Here, use the LTS/stable version of the track's tooling, e.g.:
-  #         # node-version: 12.x
-
-  #     - name: Install project dependencies
-  #       run: <install dependencies>
-
-  #     - name: Run exercism/wren ci pre-check (checks config, lint code) for all exercises
-  #       run: scripts/ci-check
-
   ci:
     runs-on: ubuntu-latest
     steps:
