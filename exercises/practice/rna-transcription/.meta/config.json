@@ -1,12 +1,20 @@
 {
   "blurb": "Given a DNA strand, return its RNA Complement Transcription.",
-  "authors": ["joshgoebel"],
+  "authors": [
+    "joshgoebel"
+  ],
   "contributors": [],
   "files": {
-    "solution": ["rna-transcription.wren"],
-    "test": ["rna-transcription.spec.wren"],
-    "example": [".meta/proof.ci.wren"]
+    "solution": [
+      "rna-transcription.wren"
+    ],
+    "test": [
+      "rna-transcription.spec.wren"
+    ],
+    "example": [
+      ".meta/proof.ci.wren"
+    ]
   },
   "source": "Hyperphysics",
-  "source_url": "http://hyperphysics.phy-astr.gsu.edu/hbase/Organic/transcription.html"
+  "source_url": "https://web.archive.org/web/20220408112140/http://hyperphysics.phy-astr.gsu.edu/hbase/Organic/transcription.html"
 }

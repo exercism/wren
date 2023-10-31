@@ -1,12 +1,20 @@
 {
   "blurb": "Given a year, report if it is a leap year.",
-  "authors": ["joshgoebel"],
+  "authors": [
+    "joshgoebel"
+  ],
   "contributors": [],
   "files": {
-    "solution": ["leap.wren"],
-    "test": ["leap.spec.wren"],
-    "example": [".meta/proof.ci.wren"]
+    "solution": [
+      "leap.wren"
+    ],
+    "test": [
+      "leap.spec.wren"
+    ],
+    "example": [
+      ".meta/proof.ci.wren"
+    ]
   },
-  "source": "JavaRanch Cattle Drive, exercise 3",
-  "source_url": "http://www.javaranch.com/leap.jsp"
+  "source": "CodeRanch Cattle Drive, Assignment 3",
+  "source_url": "https://coderanch.com/t/718816/Leap"
 }

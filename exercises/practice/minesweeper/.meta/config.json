@@ -1,10 +1,18 @@
 {
-  "blurb": "Add the numbers to a minesweeper board",
-  "authors": ["joshgoebel"],
+  "blurb": "Add the numbers to a minesweeper board.",
+  "authors": [
+    "joshgoebel"
+  ],
   "contributors": [],
   "files": {
-    "solution": ["minesweeper.wren"],
-    "test": ["minesweeper.spec.wren"],
-    "example": [".meta/proof.ci.wren"]
+    "solution": [
+      "minesweeper.wren"
+    ],
+    "test": [
+      "minesweeper.spec.wren"
+    ],
+    "example": [
+      ".meta/proof.ci.wren"
+    ]
   }
 }

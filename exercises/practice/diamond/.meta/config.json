@@ -1,12 +1,20 @@
 {
   "blurb": "Given a letter, print a diamond starting with 'A' with the supplied letter at the widest point.",
-  "authors": ["joshgoebel"],
+  "authors": [
+    "joshgoebel"
+  ],
   "contributors": [],
   "files": {
-    "solution": ["diamond.wren"],
-    "test": ["diamond.spec.wren"],
-    "example": [".meta/proof.ci.wren"]
+    "solution": [
+      "diamond.wren"
+    ],
+    "test": [
+      "diamond.spec.wren"
+    ],
+    "example": [
+      ".meta/proof.ci.wren"
+    ]
   },
   "source": "Seb Rose",
-  "source_url": "http://claysnow.co.uk/recycling-tests-in-tdd/"
+  "source_url": "https://web.archive.org/web/20220807163751/http://claysnow.co.uk/recycling-tests-in-tdd/"
 }

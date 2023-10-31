@@ -1,11 +1,19 @@
 {
-  "blurb": "Convert a long phrase to its acronym",
-  "authors": ["joshgoebel"],
+  "blurb": "Convert a long phrase to its acronym.",
+  "authors": [
+    "joshgoebel"
+  ],
   "contributors": [],
   "files": {
-    "solution": ["acronym.wren"],
-    "test": ["acronym.spec.wren"],
-    "example": [".meta/proof.ci.wren"]
+    "solution": [
+      "acronym.wren"
+    ],
+    "test": [
+      "acronym.spec.wren"
+    ],
+    "example": [
+      ".meta/proof.ci.wren"
+    ]
   },
   "source": "Julien Vanier",
   "source_url": "https://github.com/monkbroc"
