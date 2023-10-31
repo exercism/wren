@@ -1,11 +1,18 @@
 {
-  "blurb": "Make sure the brackets and braces all match.",
-  "authors": ["joshgoebel"],
-  "contributors": [],
+  "authors": [
+    "joshgoebel"
+  ],
   "files": {
-    "solution": ["matching-brackets.wren"],
-    "test": ["matching-brackets.spec.wren"],
-    "example": [".meta/proof.ci.wren"]
+    "solution": [
+      "matching-brackets.wren"
+    ],
+    "test": [
+      "matching-brackets.spec.wren"
+    ],
+    "example": [
+      ".meta/proof.ci.wren"
+    ]
   },
+  "blurb": "Make sure the brackets and braces all match.",
   "source": "Ginna Baker"
 }

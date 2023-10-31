@@ -1,12 +1,19 @@
 {
-  "blurb": "Given a word and a list of possible anagrams, select the correct sublist.",
-  "authors": ["joshgoebel"],
-  "contributors": [],
+  "authors": [
+    "joshgoebel"
+  ],
   "files": {
-    "solution": ["anagram.wren"],
-    "test": ["anagram.spec.wren"],
-    "example": [".meta/proof.ci.wren"]
+    "solution": [
+      "anagram.wren"
+    ],
+    "test": [
+      "anagram.spec.wren"
+    ],
+    "example": [
+      ".meta/proof.ci.wren"
+    ]
   },
+  "blurb": "Given a word and a list of possible anagrams, select the correct sublist.",
   "source": "Inspired by the Extreme Startup game",
   "source_url": "https://github.com/rchatley/extreme_startup"
 }

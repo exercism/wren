@@ -1,9 +1,7 @@
 {
-  "blurb": "Randomly generate Dungeons & Dragons characters.",
   "authors": [
     "joshgoebel"
   ],
-  "contributors": [],
   "files": {
     "solution": [
       "dnd-character.wren"
@@ -15,6 +13,7 @@
       ".meta/proof.ci.wren"
     ]
   },
+  "blurb": "Randomly generate Dungeons & Dragons characters.",
   "source": "Simon Shine, Erik Schierboom",
   "source_url": "https://github.com/exercism/problem-specifications/issues/616#issuecomment-437358945"
 }

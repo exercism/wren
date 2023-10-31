@@ -1,12 +1,19 @@
 {
-  "blurb": "Implement run-length encoding and decoding.",
-  "authors": ["joshgoebel"],
-  "contributors": [],
+  "authors": [
+    "joshgoebel"
+  ],
   "files": {
-    "solution": ["run-length-encoding.wren"],
-    "test": ["run-length-encoding.spec.wren"],
-    "example": [".meta/proof.ci.wren"]
+    "solution": [
+      "run-length-encoding.wren"
+    ],
+    "test": [
+      "run-length-encoding.spec.wren"
+    ],
+    "example": [
+      ".meta/proof.ci.wren"
+    ]
   },
+  "blurb": "Implement run-length encoding and decoding.",
   "source": "Wikipedia",
   "source_url": "https://en.wikipedia.org/wiki/Run-length_encoding"
 }
