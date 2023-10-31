@@ -1,9 +1,7 @@
 {
-  "blurb": "Manage a player's High Score list.",
   "authors": [
     "joshgoebel"
   ],
-  "contributors": [],
   "files": {
     "solution": [
       "high-scores.wren"
@@ -15,5 +13,6 @@
       ".meta/proof.ci.wren"
     ]
   },
+  "blurb": "Manage a player's High Score list.",
   "source": "Tribute to the eighties' arcade game Frogger"
 }

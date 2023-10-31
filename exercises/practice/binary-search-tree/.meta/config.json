@@ -1,9 +1,7 @@
 {
-  "blurb": "Insert and search for numbers in a binary tree.",
   "authors": [
     "glennj"
   ],
-  "contributors": [],
   "files": {
     "solution": [
       "binary-search-tree.wren"
@@ -15,5 +13,6 @@
       ".meta/proof.ci.wren"
     ]
   },
+  "blurb": "Insert and search for numbers in a binary tree.",
   "source": "Josh Cheek"
 }

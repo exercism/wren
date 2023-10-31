@@ -2,7 +2,6 @@
   "authors": [
     "Atomic-Germ"
   ],
-  "contributors": [],
   "files": {
     "solution": [
       "difference-of-squares.wren"

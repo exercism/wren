@@ -1,12 +1,19 @@
 {
-  "blurb": "Given a word, compute the Scrabble score for that word.",
-  "authors": ["joshgoebel"],
-  "contributors": [],
+  "authors": [
+    "joshgoebel"
+  ],
   "files": {
-    "solution": ["scrabble-score.wren"],
-    "test": ["scrabble-score.spec.wren"],
-    "example": [".meta/proof.ci.wren"]
+    "solution": [
+      "scrabble-score.wren"
+    ],
+    "test": [
+      "scrabble-score.spec.wren"
+    ],
+    "example": [
+      ".meta/proof.ci.wren"
+    ]
   },
+  "blurb": "Given a word, compute the Scrabble score for that word.",
   "source": "Inspired by the Extreme Startup game",
   "source_url": "https://github.com/rchatley/extreme_startup"
 }

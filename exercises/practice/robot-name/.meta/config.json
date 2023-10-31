@@ -1,11 +1,18 @@
 {
-  "blurb": "Manage robot factory settings.",
-  "authors": ["glennj"],
-  "contributors": [],
+  "authors": [
+    "glennj"
+  ],
   "files": {
-    "solution": ["robot-name.wren"],
-    "test": ["robot-name.spec.wren"],
-    "example": [".meta/proof.ci.wren"]
+    "solution": [
+      "robot-name.wren"
+    ],
+    "test": [
+      "robot-name.spec.wren"
+    ],
+    "example": [
+      ".meta/proof.ci.wren"
+    ]
   },
+  "blurb": "Manage robot factory settings.",
   "source": "A debugging session with Paul Blackwell at gSchool."
 }

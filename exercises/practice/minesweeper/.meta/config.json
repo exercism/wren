@@ -1,9 +1,7 @@
 {
-  "blurb": "Add the numbers to a minesweeper board.",
   "authors": [
     "joshgoebel"
   ],
-  "contributors": [],
   "files": {
     "solution": [
       "minesweeper.wren"
@@ -14,5 +12,6 @@
     "example": [
       ".meta/proof.ci.wren"
     ]
-  }
+  },
+  "blurb": "Add the numbers to a minesweeper board."
 }

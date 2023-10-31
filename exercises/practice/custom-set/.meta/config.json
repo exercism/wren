@@ -1,10 +1,17 @@
 {
-  "blurb": "Create a custom set type.",
-  "authors": ["joshgoebel"],
-  "contributors": [],
+  "authors": [
+    "joshgoebel"
+  ],
   "files": {
-    "solution": ["custom-set.wren"],
-    "test": ["custom-set.spec.wren"],
-    "example": [".meta/proof.ci.wren"]
-  }
+    "solution": [
+      "custom-set.wren"
+    ],
+    "test": [
+      "custom-set.spec.wren"
+    ],
+    "example": [
+      ".meta/proof.ci.wren"
+    ]
+  },
+  "blurb": "Create a custom set type."
 }
