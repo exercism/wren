@@ -401,6 +401,14 @@
         "difficulty": 4
       },
       {
+        "slug": "nth-prime",
+        "name": "Nth Prime",
+        "uuid": "b904e358-d446-41b2-a168-0be20a4c9df8",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "robot-simulator",
         "name": "Robot Simulator",
         "uuid": "567924ea-a84f-445f-9c1f-18649b2fde7e",

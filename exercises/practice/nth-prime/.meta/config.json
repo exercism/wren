@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "keiravillekode"
+  ],
+  "files": {
+    "solution": [
+      "nth-prime.wren"
+    ],
+    "test": [
+      "nth-prime.spec.wren"
+    ],
+    "example": [
+      ".meta/proof.ci.wren"
+    ]
+  },
+  "blurb": "Given a number n, determine what the nth prime is.",
+  "source": "A variation on Problem 7 at Project Euler",
+  "source_url": "https://projecteuler.net/problem=7"
+}
