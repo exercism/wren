@@ -377,6 +377,14 @@
         "difficulty": 3
       },
       {
+        "slug": "perfect-numbers",
+        "name": "Perfect Numbers",
+        "uuid": "80471967-015f-45d8-a4c0-a7f30fe9340b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "custom-set",
         "name": "Custom Set",
         "uuid": "795a34e3-1515-49a0-b5f8-fba2bf4808ff",
