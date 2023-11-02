@@ -510,6 +510,14 @@
         "difficulty": 5
       },
       {
+        "slug": "kindergarten-garden",
+        "name": "Kindergarten Garden",
+        "uuid": "406354f8-22c3-4866-bf81-0332087664fc",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "rational-numbers",
         "name": "Rational Numbers",
         "uuid": "d14af867-6357-4b01-b998-e3ba2b033109",
