@@ -377,6 +377,14 @@
         "difficulty": 3
       },
       {
+        "slug": "rotational-cipher",
+        "name": "Rotational Cipher",
+        "uuid": "a9b73982-6a92-4a4e-80b0-14ae00ffa93c",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "perfect-numbers",
         "name": "Perfect Numbers",
         "uuid": "80471967-015f-45d8-a4c0-a7f30fe9340b",
