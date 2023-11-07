@@ -1,44 +1,64 @@
 import "./rotational-cipher" for RotationalCipher
 import "wren-testie/testie" for Testie, Expect
 
-Testie.test("RotationalCipher.rotate()") { |do, skip|
+Testie.test("RotationalCipher") { |do, skip|
   do.test("rotate a by 0, same output as input") {
-    Expect.value(RotationalCipher.rotate("a", 0)).toEqual("a")
+    var phrase = "a"
+    var expect = "a"
+    Expect.value(RotationalCipher.rotate(phrase, 0)).toEqual(expect)
   }
 
   skip.test("rotate a by 1") {
-    Expect.value(RotationalCipher.rotate("a", 1)).toEqual("b")
+    var phrase = "a"
+    var expect = "b"
+    Expect.value(RotationalCipher.rotate(phrase, 1)).toEqual(expect)
   }
 
   skip.test("rotate a by 26, same output as input") {
-    Expect.value(RotationalCipher.rotate("a", 26)).toEqual("a")
+    var phrase = "a"
+    var expect = "a"
+    Expect.value(RotationalCipher.rotate(phrase, 26)).toEqual(expect)
   }
 
   skip.test("rotate m by 13") {
-    Expect.value(RotationalCipher.rotate("m", 13)).toEqual("z")
+    var phrase = "m"
+    var expect = "z"
+    Expect.value(RotationalCipher.rotate(phrase, 13)).toEqual(expect)
   }
 
   skip.test("rotate n by 13 with wrap around alphabet") {
-    Expect.value(RotationalCipher.rotate("n", 13)).toEqual("a")
+    var phrase = "n"
+    var expect = "a"
+    Expect.value(RotationalCipher.rotate(phrase, 13)).toEqual(expect)
   }
 
   skip.test("rotate capital letters") {
-    Expect.value(RotationalCipher.rotate("OMG", 5)).toEqual("TRL")
+    var phrase = "OMG"
+    var expect = "TRL"
+    Expect.value(RotationalCipher.rotate(phrase, 5)).toEqual(expect)
   }
 
   skip.test("rotate spaces") {
-    Expect.value(RotationalCipher.rotate("O M G", 5)).toEqual("T R L")
+    var phrase = "O M G"
+    var expect = "T R L"
+    Expect.value(RotationalCipher.rotate(phrase, 5)).toEqual(expect)
   }
 
   skip.test("rotate numbers") {
-    Expect.value(RotationalCipher.rotate("Testing 1 2 3 testing", 4)).toEqual("Xiwxmrk 1 2 3 xiwxmrk")
+    var phrase = "Testing 1 2 3 testing"
+    var expect = "Xiwxmrk 1 2 3 xiwxmrk"
+    Expect.value(RotationalCipher.rotate(phrase, 4)).toEqual(expect)
   }
 
   skip.test("rotate punctuation") {
-    Expect.value(RotationalCipher.rotate("Let's eat, Grandma!", 21)).toEqual("Gzo'n zvo, Bmviyhv!")
+    var phrase = "Let's eat, Grandma!"
+    var expect = "Gzo'n zvo, Bmviyhv!"
+    Expect.value(RotationalCipher.rotate(phrase, 21)).toEqual(expect)
   }
 
   skip.test("rotate all letters") {
-    Expect.value(RotationalCipher.rotate("The quick brown fox jumps over the lazy dog.", 13)).toEqual("Gur dhvpx oebja sbk whzcf bire gur ynml qbt.")
+    var phrase = "The quick brown fox jumps over the lazy dog."
+    var expect = "Gur dhvpx oebja sbk whzcf bire gur ynml qbt."
+    Expect.value(RotationalCipher.rotate(phrase, 13)).toEqual(expect)
   }
 }
