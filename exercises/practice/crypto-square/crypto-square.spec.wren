@@ -3,34 +3,50 @@ import "wren-testie/testie" for Testie, Expect
 
 Testie.test("CryptoSquare.ciphertext()") { |do, skip|
   do.test("empty plaintext results in an empty ciphertext") {
-    Expect.value(CryptoSquare.ciphertext("")).toEqual("")
+    var phrase = ""
+    var expect = ""
+    Expect.value(CryptoSquare.ciphertext(phrase)).toEqual(expect)
   }
 
   skip.test("normalization results in empty plaintext") {
-    Expect.value(CryptoSquare.ciphertext("... --- ...")).toEqual("")
+    var phrase = "... --- ..."
+    var expect = ""
+    Expect.value(CryptoSquare.ciphertext(phrase)).toEqual(expect)
   }
 
   skip.test("Lowercase") {
-    Expect.value(CryptoSquare.ciphertext("A")).toEqual("a")
+    var phrase = "A"
+    var expect = "a"
+    Expect.value(CryptoSquare.ciphertext(phrase)).toEqual(expect)
   }
 
   skip.test("Remove spaces") {
-    Expect.value(CryptoSquare.ciphertext("  b ")).toEqual("b")
+    var phrase = "  b "
+    var expect = "b"
+    Expect.value(CryptoSquare.ciphertext(phrase)).toEqual(expect)
   }
 
   skip.test("Remove punctuation") {
-    Expect.value(CryptoSquare.ciphertext("@1,\%!")).toEqual("1")
+    var phrase = "@1,\%!"
+    var expect = "1"
+    Expect.value(CryptoSquare.ciphertext(phrase)).toEqual(expect)
   }
 
   skip.test("9 character plaintext results in 3 chunks of 3 characters") {
-    Expect.value(CryptoSquare.ciphertext("This is fun!")).toEqual("tsf hiu isn")
+    var phrase = "This is fun!"
+    var expect = "tsf hiu isn"
+    Expect.value(CryptoSquare.ciphertext(phrase)).toEqual(expect)
   }
 
   skip.test("8 character plaintext results in 3 chunks, the last one with a trailing space") {
-    Expect.value(CryptoSquare.ciphertext("Chill out.")).toEqual("clu hlt io ")
+    var phrase = "Chill out."
+    var expect = "clu hlt io "
+    Expect.value(CryptoSquare.ciphertext(phrase)).toEqual(expect)
   }
 
   skip.test("54 character plaintext results in 7 chunks, the last two with trailing spaces") {
-    Expect.value(CryptoSquare.ciphertext("If man was meant to stay on the ground, god would have given us roots.")).toEqual("imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn  sseoau ")
+    var phrase = "If man was meant to stay on the ground, god would have given us roots."
+    var expect = "imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn  sseoau "
+    Expect.value(CryptoSquare.ciphertext(phrase)).toEqual(expect)
   }
 }
