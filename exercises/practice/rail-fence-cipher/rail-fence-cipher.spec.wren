@@ -4,29 +4,41 @@ import "wren-testie/testie" for Testie, Expect
 Testie.test("RailFenceCipher") { |do, skip|
   do.describe("encode") {
     do.test("encode with two rails") {
-      Expect.value(RailFenceCipher.encode("XOXOXOXOXOXOXOXOXO", 2)).toEqual("XXXXXXXXXOOOOOOOOO")
+      var message = "XOXOXOXOXOXOXOXOXO"
+      var encoded = "XXXXXXXXXOOOOOOOOO"
+      Expect.value(RailFenceCipher.encode(message, 2)).toEqual(encoded)
     }
 
     skip.test("encode with three rails") {
-      Expect.value(RailFenceCipher.encode("WEAREDISCOVEREDFLEEATONCE", 3)).toEqual("WECRLTEERDSOEEFEAOCAIVDEN")
+      var message = "WEAREDISCOVEREDFLEEATONCE"
+      var encoded = "WECRLTEERDSOEEFEAOCAIVDEN"
+      Expect.value(RailFenceCipher.encode(message, 3)).toEqual(encoded)
     }
 
     skip.test("encode with ending in the middle") {
-      Expect.value(RailFenceCipher.encode("EXERCISES", 4)).toEqual("ESXIEECSR")
+      var message = "EXERCISES"
+      var encoded = "ESXIEECSR"
+      Expect.value(RailFenceCipher.encode(message, 4)).toEqual(encoded)
     }
   }
 
   do.describe("decode") {
     skip.test("decode with three rails") {
-      Expect.value(RailFenceCipher.decode("TEITELHDVLSNHDTISEIIEA", 3)).toEqual("THEDEVILISINTHEDETAILS")
+      var message = "TEITELHDVLSNHDTISEIIEA"
+      var decoded = "THEDEVILISINTHEDETAILS"
+      Expect.value(RailFenceCipher.decode(message, 3)).toEqual(decoded)
     }
 
     skip.test("decode with five rails") {
-      Expect.value(RailFenceCipher.decode("EIEXMSMESAORIWSCE", 5)).toEqual("EXERCISMISAWESOME")
+      var message = "EIEXMSMESAORIWSCE"
+      var decoded = "EXERCISMISAWESOME"
+      Expect.value(RailFenceCipher.decode(message, 5)).toEqual(decoded)
     }
 
     skip.test("decode with six rails") {
-      Expect.value(RailFenceCipher.decode("133714114238148966225439541018335470986172518171757571896261", 6)).toEqual("112358132134558914423337761098715972584418167651094617711286")
+      var message = "133714114238148966225439541018335470986172518171757571896261"
+      var decoded = "112358132134558914423337761098715972584418167651094617711286"
+      Expect.value(RailFenceCipher.decode(message, 6)).toEqual(decoded)
     }
   }
 }
