@@ -1,6 +1,6 @@
 class RotationalCipher {
-  static rotate(text, shiftKey) {
-    var rotateCodePoint = Fn.new {|codePoint|
+  static rotateBy(shiftKey) {
+    return Fn.new {|codePoint|
       if ((65..90).contains(codePoint)) {
         codePoint = (codePoint - 65 + shiftKey) % 26 + 65
       } else if ((97..122).contains(codePoint)) {
@@ -8,6 +8,7 @@ class RotationalCipher {
       }
       return String.fromCodePoint(codePoint)
     }
-    return text.codePoints.map(rotateCodePoint).join()
   }
+
+  static rotate(text, shiftKey) { text.codePoints.map(rotateBy(shiftKey)).join() }
 }
