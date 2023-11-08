@@ -17,20 +17,11 @@ class CryptoSquare {
   }
 
   static ciphertext(plaintext) {
-    var toLower = Fn.new {|codePoint|
-      if ((65..90).contains(codePoint)) {
-        codePoint = codePoint + 32
-      }
-      return codePoint
-    }
+    var toLower = Fn.new {|codePoint| ((65..90).contains(codePoint)) ? codePoint + 32 : codePoint }
 
-    var isAlphanumeric = Fn.new {|codePoint|
-      return (48..57).contains(codePoint) || (65..90).contains(codePoint) || (97..122).contains(codePoint)
-    }
+    var isAlphanumeric = Fn.new {|codePoint| (48..57).contains(codePoint) || (65..90).contains(codePoint) || (97..122).contains(codePoint) }
 
-    var toString = Fn.new {|codePoint|
-      return String.fromCodePoint(codePoint)
-    }
+    var toString = Fn.new {|codePoint| String.fromCodePoint(codePoint) }
 
     var codePoints = plaintext.codePoints.map(toLower).where(isAlphanumeric).toList
 
