@@ -369,6 +369,14 @@
         "difficulty": 3
       },
       {
+        "slug": "pythagorean-triplet",
+        "name": "Pythagorean Triplet",
+        "uuid": "a65ab235-da29-4c87-94dd-3f6419bf8175",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "sieve",
         "name": "Sieve",
         "uuid": "fc6898b7-ff9d-45d3-bf42-da72f108b0c1",
