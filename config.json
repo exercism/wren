@@ -566,6 +566,14 @@
         "difficulty": 5
       },
       {
+        "slug": "knapsack",
+        "name": "Knapsack",
+        "uuid": "ea27dbc5-7f68-4d84-9a24-72f3f5dd9e09",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "linked-list",
         "name": "Linked List",
         "uuid": "1d19b079-83f2-4d52-9a8b-e95e1087c1a4",
