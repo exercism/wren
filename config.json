@@ -219,6 +219,14 @@
         "difficulty": 2
       },
       {
+        "slug": "pangram",
+        "name": "Pangram",
+        "uuid": "f951e52c-f9fd-401c-a400-615dfb44bb55",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "word-count",
         "name": "Word Count",
         "uuid": "201df340-0f73-4d0a-b4b9-090ed219d11a",
