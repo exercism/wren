@@ -510,6 +510,14 @@
         ]
       },
       {
+        "slug": "killer-sudoku-helper",
+        "name": "Killer Sudoku Helper",
+        "uuid": "50450ae3-e276-48ed-aa8b-a60f2a843b1c",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "circular-buffer",
         "name": "Circular Buffer",
         "uuid": "6050d1e5-f68d-4cf7-b29c-1a07c4b31dda",
