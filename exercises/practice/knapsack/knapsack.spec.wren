@@ -1,4 +1,4 @@
-import "./knapsack" for Knapsack, Item
+import "./knapsack" for Knapsack
 import "wren-testie/testie" for Testie, Expect
 
 Testie.test("Knapsack") { |do, skip|
@@ -9,74 +9,74 @@ Testie.test("Knapsack") { |do, skip|
 
   skip.test("one item, too heavy") {
     var items = [
-      Item.new(100, 1),
+      {"weight": 100, "value": 1},
     ]
     Expect.value(Knapsack.maximumValue(10, items)).toEqual(0)
   }
 
   skip.test("five items (cannot be greedy by weight)") {
     var items = [
-      Item.new(2, 5),
-      Item.new(2, 5),
-      Item.new(2, 5),
-      Item.new(2, 5),
-      Item.new(10, 21),
+      {"weight": 2, "value": 5},
+      {"weight": 2, "value": 5},
+      {"weight": 2, "value": 5},
+      {"weight": 2, "value": 5},
+      {"weight": 10, "value": 21},
     ]
     Expect.value(Knapsack.maximumValue(10, items)).toEqual(21)
   }
 
   skip.test("five items (cannot be greedy by value)") {
     var items = [
-      Item.new(2, 20),
-      Item.new(2, 20),
-      Item.new(2, 20),
-      Item.new(2, 20),
-      Item.new(10, 50),
+      {"weight": 2, "value": 20},
+      {"weight": 2, "value": 20},
+      {"weight": 2, "value": 20},
+      {"weight": 2, "value": 20},
+      {"weight": 10, "value": 50},
     ]
     Expect.value(Knapsack.maximumValue(10, items)).toEqual(80)
   }
 
   skip.test("example knapsack") {
     var items = [
-      Item.new(5, 10),
-      Item.new(4, 40),
-      Item.new(6, 30),
-      Item.new(4, 50),
+      {"weight": 5, "value": 10},
+      {"weight": 4, "value": 40},
+      {"weight": 6, "value": 30},
+      {"weight": 4, "value": 50},
     ]
     Expect.value(Knapsack.maximumValue(10, items)).toEqual(90)
   }
 
   skip.test("8 items") {
     var items = [
-      Item.new(25, 350),
-      Item.new(35, 400),
-      Item.new(45, 450),
-      Item.new(5, 20),
-      Item.new(25, 70),
-      Item.new(3, 8),
-      Item.new(2, 5),
-      Item.new(2, 5),
+      {"weight": 25, "value": 350},
+      {"weight": 35, "value": 400},
+      {"weight": 45, "value": 450},
+      {"weight": 5, "value": 20},
+      {"weight": 25, "value": 70},
+      {"weight": 3, "value": 8},
+      {"weight": 2, "value": 5},
+      {"weight": 2, "value": 5},
     ]
     Expect.value(Knapsack.maximumValue(104, items)).toEqual(900)
   }
 
   skip.test("15 items") {
     var items = [
-      Item.new(70, 135),
-      Item.new(73, 139),
-      Item.new(77, 149),
-      Item.new(80, 150),
-      Item.new(82, 156),
-      Item.new(87, 163),
-      Item.new(90, 173),
-      Item.new(94, 184),
-      Item.new(98, 192),
-      Item.new(106, 201),
-      Item.new(110, 210),
-      Item.new(113, 214),
-      Item.new(115, 221),
-      Item.new(118, 229),
-      Item.new(120, 240),
+      {"weight": 70, "value": 135},
+      {"weight": 73, "value": 139},
+      {"weight": 77, "value": 149},
+      {"weight": 80, "value": 150},
+      {"weight": 82, "value": 156},
+      {"weight": 87, "value": 163},
+      {"weight": 90, "value": 173},
+      {"weight": 94, "value": 184},
+      {"weight": 98, "value": 192},
+      {"weight": 106, "value": 201},
+      {"weight": 110, "value": 210},
+      {"weight": 113, "value": 214},
+      {"weight": 115, "value": 221},
+      {"weight": 118, "value": 229},
+      {"weight": 120, "value": 240},
     ]
     Expect.value(Knapsack.maximumValue(750, items)).toEqual(1458)
   }
