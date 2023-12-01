@@ -28,9 +28,14 @@ class ResistorColorTrio {
     return (colorCode_(_tens)*10 + colorCode_(_ones)) * multiplier
   }
   toString {
-    return (resistance > ONE_KILOOHM) ?
-      "%((resistance/ONE_KILOOHM).floor) kiloohms" :
-      "%(resistance) ohms"
+    var value = resistance
+    var prefix = ["", "kilo", "mega", "giga"]
+    var idx = 0
+    while (value > 0 && value % 1000 == 0) {
+      value = value / 1000
+      idx = idx + 1
+    }
+    return "%(value) %(prefix[idx])ohms"
   }
   multiplier { 10.pow(colorCode_(_zeros)) }
   colorCode_(color) { COLORS.indexOf(color) }
