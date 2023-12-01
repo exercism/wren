@@ -1,7 +1,7 @@
 class Collatz {
   static isEven(n) { n % 2 == 0 }
   static steps(n) {
-    if (n <= 0) Fiber.abort("Only positive numbers are allowed")
+    if (n <= 0) Fiber.abort("Only positive integers are allowed")
     var steps = 0
 
     // If n is even, divide n by 2 to get n / 2. If n is
