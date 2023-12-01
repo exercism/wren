@@ -122,6 +122,11 @@ Testie.test("CustomSet") { |do, skip|
       var actual = CustomSet.new([1, 2, 3]).eql(CustomSet.new([1, 2, 3, 4]))
       Expect.value(actual).toBe(false)
     }
+
+    skip.test("set is equal to a set constructed from an array with duplicates") {
+      var actual = CustomSet.new([1]).eql(CustomSet.new([1, 1]))
+      Expect.value(actual).toBe(true)
+    }
   }
 
   do.describe("add: unique elements can be added to a set") {
