@@ -17,6 +17,10 @@ var Round = Fn.new() { |n,o|
 
 class Space {
   static age(planet, seconds) {
+    if (! EARTH_TO_OTHER_PLANETS.containsKey(planet)) {
+      Fiber.abort("not a planet")
+    }
+
     var earthYears = seconds / 31557600
     var years = earthYears / EARTH_TO_OTHER_PLANETS[planet]
 
