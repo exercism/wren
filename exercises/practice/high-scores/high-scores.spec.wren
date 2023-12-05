@@ -57,6 +57,18 @@ Testie.test("High scores") { |do, skip|
       Expect.value(hs.scores).toEqual([30, 50, 20, 70])
     }
 
+    skip.test("Latest score after personal best") {
+      var hs = HighScores.new([20, 70, 15, 25, 30])
+      var best = hs.personalBest
+      Expect.value(hs.latest).toEqual(30)
+    }
+
+    skip.test("Scores after personal best") {
+      var hs = HighScores.new([20, 70, 15, 25, 30])
+      var best = hs.personalBest
+      Expect.value(hs.scores).toEqual([20, 70, 15, 25, 30])
+    }
+
     skip.test("Altering the input list does not alter the scores") {
       var input = [30, 50, 20, 70]
       var hs = HighScores.new(input)

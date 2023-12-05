@@ -54,12 +54,24 @@ Testie.test("Matching Brackets") { |do, skip|
     Expect.value(Brackets.isPaired("[({]})")).toEqual(false)
   }
 
+  skip.test("paired and wrong nested brackets but innermost are correct") {
+    Expect.value(Brackets.isPaired("[({}])")).toEqual(false)
+  }
+
   skip.test("paired and incomplete brackets") {
     Expect.value(Brackets.isPaired("{}[")).toEqual(false)
   }
 
   skip.test("too many closing brackets") {
     Expect.value(Brackets.isPaired("[]]")).toEqual(false)
+  }
+
+  skip.test("early unexpected brackets") {
+    Expect.value(Brackets.isPaired(")()")).toEqual(false)
+  }
+
+  skip.test("early mismatched brackets") {
+    Expect.value(Brackets.isPaired("{)()")).toEqual(false)
   }
 
   skip.test("math expression") {

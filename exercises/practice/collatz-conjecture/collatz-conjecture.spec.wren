@@ -21,12 +21,12 @@ Testie.test("Collatz.steps()") { |do, skip|
   skip.test("zero is an error") {
     Expect.that {
       Collatz.steps(0)
-    }.abortsWith("Only positive numbers are allowed")
+    }.abortsWith("Only positive integers are allowed")
   }
 
   skip.test("negative value is an error") {
     Expect.that {
       Collatz.steps(-15)
-    }.abortsWith("Only positive numbers are allowed")
+    }.abortsWith("Only positive integers are allowed")
   }
 }
