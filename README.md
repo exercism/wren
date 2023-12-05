@@ -1,7 +1,7 @@
 # Exercism Wren Track
 
-[![configlet](https://github.com/exercism/wren/workflows/configlet/badge.svg)](https://github.com/exercism/wren/actions?query=workflow%3Aconfiglet)
-[![wren / main](https://github.com/exercism/wren/workflows/wren%20/%20main/badge.svg)](https://github.com/exercism/wren/actions?query=workflow%3A%22wren+%2F+main%22)
+[![Configlet](https://github.com/exercism/wren/actions/workflows/configlet.yml/badge.svg)](https://github.com/exercism/wren/actions/workflows/configlet.yml)
+[![wren / main](https://github.com/exercism/wren/actions/workflows/ci.yml/badge.svg)](https://github.com/exercism/wren/actions/workflows/ci.yml)
 
 
 **Exercism exercises in Wren**
