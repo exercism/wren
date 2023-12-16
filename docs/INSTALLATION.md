@@ -38,7 +38,7 @@ It's also possible to [build from source][build-from-source] using Visual Studio
 
 #### Linux
 
-You can to [download the latest release][releases] from GitHub or [build from source][build-from-source].
+You can [download the latest release][releases] from GitHub or [build from source][build-from-source].
 
 ```sh
 wget -c https://github.com/joshgoebel/wren-console/releases/download/v0.3.1/wren-console-v0.3.1-linux.tar.gz
