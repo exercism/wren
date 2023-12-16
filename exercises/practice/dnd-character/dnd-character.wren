@@ -1,9 +1,7 @@
-// export const abilityModifier = () => {
-//   throw new Error('Remove this statement and implement this function');
-// };
-
-var abilityModifier = Fn.new { |n|
-  Fiber.abort("Remove this statement and implement this function")
+class Util {
+  static abilityModifier(n) {
+    Fiber.abort("Remove this statement and implement this function")
+  }
 }
 
 class Character {
