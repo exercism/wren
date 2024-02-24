@@ -1,0 +1,35 @@
+#!/bin/bash
+# This is taken from scripts/ci
+# Validate a single exercise during development.
+
+set -e
+
+die() { echo "$*" >&2; exit 1; }
+
+[[ -d $1 ]] || die "usage: $0 path/to/exercise"
+cd "$1"
+slug=$(basename "$PWD")
+
+echo "Running $slug ..."
+
+# validate package name
+name="exercism/$slug"
+if ! grep -qE "^ *name .+\"$name\"" package.wren; then
+    die "package.wren: wrong name, should be: $name"
+fi
+
+# test it
+solution=$(jq -r ".files .solution[0]" .meta/config.json)
+example=$(jq -r ".files .example[0]" .meta/config.json)
+spec=$(jq -r ".files .test[0]" .meta/config.json)
+
+mkdir -p .tmp
+cd .tmp
+cp ../*.wren .
+sed -i'' -e 's/skip.test/do.test/' "$spec"
+cp "../$example" "$solution"
+ln -s ../../../../vendor vendor
+wrenc "$spec"
+cd ..
+rm -rf .tmp
+cd ..

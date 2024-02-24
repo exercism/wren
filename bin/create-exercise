@@ -1,0 +1,135 @@
+#!/usr/bin/env bash
+set -e
+
+die() { echo "$*" >&2; exit 1; }
+
+if [[ $PWD != $(realpath "$(dirname "$0")/..") ]]; then
+    die "You must be in the track root directory."
+fi
+if [[ -z $1 ]]; then
+    die "usage: $0 exercise_slug"
+fi
+
+slug=$1
+
+existing=$( jq --arg slug "${slug}" '.exercises.practice[] | select(.slug == $slug)' config.json )
+if [[ -n ${existing} ]]; then
+    die "${slug} already exists in config.json"
+fi
+
+pascal=${slug^}
+while [[ ${pascal} =~ (.*)-(.*) ]]; do
+    pascal=${BASH_REMATCH[1]}${BASH_REMATCH[2]^}
+done
+
+bin/fetch-configlet
+bin/configlet create --practice-exercise "${slug}"
+
+shDir=./exercises/shared/new-exercise-templates
+exDir=./exercises/practice/${slug}
+
+############################################################
+cat <<'__LICENSE__' > "${exDir}/LICENSE"
+MIT License
+
+Copyright (c) 2023 Exercism
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+__LICENSE__
+
+############################################################
+sed -e "s/%{slug}/${slug}/g" <<'__PACKAGE_WREN__' > "${exDir}/package.wren"
+import "wren-package" for WrenPackage, Dependency
+import "os" for Process
+
+class Package is WrenPackage {
+  construct new() {}
+  name { "exercism/%{slug}" }
+  dependencies {
+    return [
+      Dependency.new("wren-testie", "0.3.0", "https://github.com/joshgoebel/wren-testie.git")
+    ]
+  }
+}
+
+Package.new().default()
+__PACKAGE_WREN__
+
+############################################################
+sed -e "s/%{slug}/${slug}/g" \
+    -e "s/%{PascalSlug}/${pascal}/g" <<'__STUB_WREN__' > "${exDir}/${slug}.wren"
+class %{PascalSlug} {
+  construct new() {
+    Fiber.abort("Remove this statement and implement this function")
+  }
+}
+__STUB_WREN__
+
+############################################################
+sed -e "s/%{slug}/${slug}/g" \
+    -e "s/%{PascalSlug}/${pascal}/g" <<'__SPEC_WREN__' > "${exDir}/${slug}.spec.wren"
+import "./%{slug}" for %{PascalSlug}
+import "wren-testie/testie" for Testie, Expect
+
+Testie.test("%{PascalSlug}") { |do, skip|
+  do.test("first test") {
+    Expect.value(%{PascalSlug}.isPangram("")).toEqual(false)
+  }
+
+  skip.test("subsequent tests") {
+    Expect.value(%{PascalSlug}.isPangram("abcdefghijklmnopqrstuvwxyz")).toEqual(true)
+  }
+}
+__SPEC_WREN__
+
+# throw the canonical data into the spec
+specDir=${XDG_CACHE_DIR:-${HOME}/.cache}/exercism/configlet/problem-specifications
+cat "${specDir}/exercises/${slug}/canonical-data.json" >> "${exDir}/${slug}.spec.wren"
+
+############################################################
+sed -e "s/%{slug}/${slug}/g" \
+    -e "s/%{PascalSlug}/${pascal}/g" <<'__PROOF_WREN__' > "${exDir}/.meta/proof.ci.wren"
+class %{PascalSlug} {
+  // implement me!
+}
+__PROOF_WREN__
+
+############################################################
+
+read -p "What's your github handle? "
+if [[ -n ${REPLY} ]]; then
+    conf=${exDir}/.meta/config.json
+    tmp=$(mktemp)
+    jq --arg who "${REPLY}" '.authors += [$who]' "${conf}" > "${tmp}" \
+    && mv "${tmp}" "${conf}"
+fi
+
+read -p "What's the (likely) difficult for ${slug}? "
+if [[ -n ${REPLY} && ${REPLY} == +([0-9]) ]]; then
+    tmp=$(mktemp)
+    jq --argjson diff "${REPLY}" --arg slug "${slug}" '
+        .exercises.practice |= map(
+            if (.slug == $slug)
+            then .difficulty = $diff
+            else .
+            end
+        )
+    ' config.json > "${tmp}" \
+    && mv "${tmp}" config.json
+fi
