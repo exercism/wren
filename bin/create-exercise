@@ -32,7 +32,7 @@ exDir=./exercises/practice/${slug}
 cat <<'__LICENSE__' > "${exDir}/LICENSE"
 MIT License
 
-Copyright (c) 2023 Exercism
+Copyright (c) 2024 Exercism
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -89,11 +89,17 @@ import "wren-testie/testie" for Testie, Expect
 
 Testie.test("%{PascalSlug}") { |do, skip|
   do.test("first test") {
-    Expect.value(%{PascalSlug}.isPangram("")).toEqual(false)
+    // "someFunction" can be a static method on %{PascalSlug}
+    // or create an instance and use an instance method.
+    var actual = someFunction(inputData)
+    var expected = "some value"
+    Expect.value(actual).toEqual(expected)
   }
 
-  skip.test("subsequent tests") {
-    Expect.value(%{PascalSlug}.isPangram("abcdefghijklmnopqrstuvwxyz")).toEqual(true)
+  skip.test("subsequent tests are skipped") {
+    var actual = someFunction(otherInputData)
+    var expected = "some other value"
+    Expect.value(actual).toEqual(expected)
   }
 }
 __SPEC_WREN__
@@ -112,7 +118,7 @@ __PROOF_WREN__
 
 ############################################################
 
-read -p "What's your github handle? "
+read -p "What's your GitHub handle? "
 if [[ -n ${REPLY} ]]; then
     conf=${exDir}/.meta/config.json
     tmp=$(mktemp)
