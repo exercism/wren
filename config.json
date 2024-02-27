@@ -18,6 +18,20 @@
   "test_runner": {
     "average_run_time": 2
   },
+  "files": {
+    "solution": [
+      "%{kebab_slug}.wren"
+    ],
+    "test": [
+      "%{kebab_slug}.spec.wren"
+    ],
+    "example": [
+      ".meta/proof.ci.wren"
+    ],
+    "exemplar": [
+      ".meta/exemplar.wren"
+    ]
+  },
   "exercises": {
     "practice": [
       {
@@ -682,6 +696,14 @@
         "slug": "list-ops",
         "name": "List Ops",
         "uuid": "3640472b-5d3d-4ed1-a6ab-122ad2e0cb66",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 7
+      },
+      {
+        "slug": "parallel-letter-frequency",
+        "name": "Parallel Letter Frequency",
+        "uuid": "9f322f6a-26e7-4595-9a13-36965657bac6",
         "practices": [],
         "prerequisites": [],
         "difficulty": 7
