@@ -27,5 +27,6 @@ Testie.test("Roman Numerals") { |do, skip|
   skip.test("converts 1024") { Expect.value(Number.toRoman(1024)).toEqual("MXXIV") }
   skip.test("converts 3000") { Expect.value(Number.toRoman(3000)).toEqual("MMM") }
   skip.test("converts 3001") { Expect.value(Number.toRoman(3001)).toEqual("MMMI") }
+  skip.test("converts 3888") { Expect.value(Number.toRoman(3888)).toEqual("MMMDCCCLXXXVIII") }
   skip.test("converts 3999") { Expect.value(Number.toRoman(3999)).toEqual("MMMCMXCIX") }
 }

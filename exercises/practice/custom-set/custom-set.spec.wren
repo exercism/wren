@@ -211,6 +211,12 @@ Testie.test("CustomSet") { |do, skip|
       var expected = CustomSet.new([1, 3])
       Expect.value(actual.eql(expected)).toBe(true)
     }
+
+    skip.test("difference removes all duplicates in the first set") {
+      var actual = CustomSet.new([1, 1]).difference(CustomSet.new([1]))
+      var expected = CustomSet.new([])
+      Expect.value(actual.eql(expected)).toBe(true)
+    }
   }
 
   do.describe("union: returns a set of all elements in either set") {
