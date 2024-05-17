@@ -39,8 +39,7 @@ description = "ignore numbers"
 [aa9f97ac-3961-4af1-88e7-6efed1bfddfd]
 description = "Unicode letters"
 include = false
-comment = "wren doesn't have a lot of string manipulation functionality"
-comment = "it can't lowercase an arbitrary unicode letter"
+comment = "wren doesn't have a lot of string manipulation functionality; it can't lowercase an arbitrary unicode letter"
 
 [7b1da046-701b-41fc-813e-dcfb5ee51813]
 description = "combination of lower- and uppercase letters, punctuation and white space"
