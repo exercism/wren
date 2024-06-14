@@ -281,6 +281,14 @@
         "difficulty": 2
       },
       {
+        "slug": "yacht",
+        "name": "Yacht",
+        "uuid": "9b606b4d-26e3-4b05-8c98-39ac6ecd09d2",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "binary",
         "name": "Binary",
         "uuid": "51ca10a3-0b01-440c-adec-a604366b12c5",
