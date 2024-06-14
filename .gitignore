@@ -3,4 +3,4 @@
 bin/configlet
 bin/configlet.exe
 .tmp
-/wren_modules
+wren_modules/
