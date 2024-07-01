@@ -739,6 +739,14 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 7
+      },
+      {
+        "slug": "zebra-puzzle",
+        "name": "Zebra Puzzle",
+        "uuid": "be437e7f-5dc0-4c99-a4e0-1eb5b7cdbc1a",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 9
       }
     ],
     "foregone": [
