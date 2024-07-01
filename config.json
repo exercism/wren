@@ -740,6 +740,9 @@
         "prerequisites": [],
         "difficulty": 7
       }
+    ],
+    "foregone": [
+      "meetup"
     ]
   },
   "key_features": [
