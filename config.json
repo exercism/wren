@@ -567,6 +567,14 @@
         "difficulty": 4
       },
       {
+        "slug": "food-chain",
+        "name": "Food Chain",
+        "uuid": "24277aaf-7ecb-47ce-b8a9-e309695d020f",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "simple-linked-list",
         "name": "Simple Linked List",
         "uuid": "c2f6b48a-0d38-45ac-917f-5a1293d1f0b4",
