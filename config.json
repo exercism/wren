@@ -241,6 +241,14 @@
         "difficulty": 2
       },
       {
+        "slug": "strain",
+        "name": "Strain",
+        "uuid": "af541ed6-4112-4b61-99dd-fd29424ae859",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "matching-brackets",
         "name": "Matching Brackets",
         "uuid": "8a7da033-311e-4ffd-8b69-ce192672564a",
