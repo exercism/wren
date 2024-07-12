@@ -10,7 +10,7 @@ class Strain {
   }
 
   static discard(list, predicate) {
-    return keep(list, Fn.new { |x| !predicate.call(x) })
+    return keep(list) { |x| !predicate.call(x) }
   }
 }
 
