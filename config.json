@@ -75,6 +75,14 @@
         "difficulty": 1
       },
       {
+        "slug": "strain",
+        "name": "Strain",
+        "uuid": "af541ed6-4112-4b61-99dd-fd29424ae859",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      },
+      {
         "slug": "high-scores",
         "name": "High Scores",
         "uuid": "e445ca5d-539d-4a5a-a3c0-3543c86bef42",
@@ -236,14 +244,6 @@
         "slug": "space-age",
         "name": "Space Age",
         "uuid": "c5de7d07-63ea-41a1-a413-26884f69584c",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2
-      },
-      {
-        "slug": "strain",
-        "name": "Strain",
-        "uuid": "af541ed6-4112-4b61-99dd-fd29424ae859",
         "practices": [],
         "prerequisites": [],
         "difficulty": 2
