@@ -60,7 +60,7 @@ class ZebraPuzzle {
           nationalities[es] = "Spanish"
           nationalities[ja] = "Japanese"
           nationalities[no] = "Norwegian"
-          nationalities[uk] = "Ukranian"
+          nationalities[uk] = "Ukrainian"
 
           if (en == red && no == FIRST && nextTo(no, blue)) {
 
