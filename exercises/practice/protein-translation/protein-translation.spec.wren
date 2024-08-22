@@ -71,6 +71,13 @@ Testie.test("ProteinTranslation") { |do, skip|
         "Tyrosine",
       ])
     }
+
+    skip.test("Sequence of two non-STOP codons does not translate to a STOP codon") {
+      Expect.value(Tools.translate("AUGAUG")).toEqual([
+        "Methionine",
+        "Methionine"
+      ])
+    }
   }
 
   do.describe("Unexpected strands") {
