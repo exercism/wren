@@ -22,8 +22,13 @@ while [[ ${pascal} =~ (.*)-(.*) ]]; do
     pascal=${BASH_REMATCH[1]}${BASH_REMATCH[2]^}
 done
 
+if [[ -z $author ]]; then
+    echo
+    read -rp "What's your GitHub handle? " author
+fi
+
 bin/fetch-configlet
-bin/configlet create --practice-exercise "${slug}"
+bin/configlet create --practice-exercise "${slug}" --author "${author}"
 
 shDir=./exercises/shared/new-exercise-templates
 exDir=./exercises/practice/${slug}
@@ -117,14 +122,6 @@ class %{PascalSlug} {
 __PROOF_WREN__
 
 ############################################################
-
-read -p "What's your GitHub handle? "
-if [[ -n ${REPLY} ]]; then
-    conf=${exDir}/.meta/config.json
-    tmp=$(mktemp)
-    jq --arg who "${REPLY}" '.authors += [$who]' "${conf}" > "${tmp}" \
-    && mv "${tmp}" "${conf}"
-fi
 
 read -p "What's the (likely) difficult for ${slug}? "
 if [[ -n ${REPLY} && ${REPLY} == +([0-9]) ]]; then
