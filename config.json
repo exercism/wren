@@ -487,6 +487,14 @@
         ]
       },
       {
+        "slug": "sublist",
+        "name": "Sublist",
+        "uuid": "03a62c09-1e55-4676-b649-4fb870361e0e",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "twelve-days",
         "name": "Twelve Days",
         "uuid": "3f0a598a-bad5-4a68-a845-ffaa1b1fe51f",
