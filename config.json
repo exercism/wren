@@ -417,6 +417,14 @@
         "difficulty": 3
       },
       {
+        "slug": "prime-factors",
+        "name": "Prime Factors",
+        "uuid": "1ec2519a-9c0d-4c02-b80f-b22b0ad2725d",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "pythagorean-triplet",
         "name": "Pythagorean Triplet",
         "uuid": "a65ab235-da29-4c87-94dd-3f6419bf8175",
