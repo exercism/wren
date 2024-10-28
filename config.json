@@ -663,6 +663,14 @@
         "difficulty": 5
       },
       {
+        "slug": "game-of-life",
+        "name": "Conway's Game of Life",
+        "uuid": "25825370-3447-4d7f-892a-752a1fc43ad2",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "grade-school",
         "name": "Grade School",
         "uuid": "bfdd78fd-0f15-4e4a-90ce-34cf4276d688",
