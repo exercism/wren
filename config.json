@@ -725,6 +725,14 @@
         "difficulty": 5
       },
       {
+        "slug": "state-of-tic-tac-toe",
+        "name": "State of Tic-Tac-Toe",
+        "uuid": "0071fa85-76f6-4077-b6a5-d714d235f9dd",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "two-bucket",
         "name": "Two Bucket",
         "uuid": "e411acb7-8812-4c31-b901-2f0c0eb637c8",
