@@ -1,14 +1,35 @@
 #!/usr/bin/env bash
-set -e
+
+usage() { die "usage: $0 [-a author] [-d difficulty] exercise_slug"; }
 
 die() { echo "$*" >&2; exit 1; }
+
+toPascalCase() {
+    # "some-kebab-case-word" => "SomeKebabCaseWord"
+    local word=${1^}
+    while [[ ${word} =~ (.*)-(.*) ]]; do
+        word=${BASH_REMATCH[1]}${BASH_REMATCH[2]^}
+    done
+    echo "${word}"
+}
 
 if [[ $PWD != $(realpath "$(dirname "$0")/..") ]]; then
     die "You must be in the track root directory."
 fi
-if [[ -z $1 ]]; then
-    die "usage: $0 exercise_slug"
-fi
+
+author=
+difficulty=
+
+while getopts :a:d: opt; do
+    case ${opt} in
+        a) author=${OPTARG} ;;
+        d) difficulty=${OPTARG} ;;
+        *) usage ;;
+    esac
+done
+shift $((OPTIND - 1))
+
+[[ -n ${1} ]] || usage
 
 slug=$1
 
@@ -17,16 +38,17 @@ if [[ -n ${existing} ]]; then
     die "${slug} already exists in config.json"
 fi
 
-pascal=${slug^}
-while [[ ${pascal} =~ (.*)-(.*) ]]; do
-    pascal=${BASH_REMATCH[1]}${BASH_REMATCH[2]^}
-done
+[[ -n ${author} ]]     || read -rp "What's your GitHub handle? " author
+[[ -n ${difficulty} ]] || read -rp "What's the (likely) difficult for ${slug}? " difficulty
 
 bin/fetch-configlet
-bin/configlet create --practice-exercise "${slug}"
+bin/configlet create \
+        --author "${author}" \
+        --difficulty "${difficulty}" \
+        --practice-exercise "${slug}"
 
-shDir=./exercises/shared/new-exercise-templates
 exDir=./exercises/practice/${slug}
+pascal=$(toPascalCase "${slug}")
 
 ############################################################
 cat <<'__LICENSE__' > "${exDir}/LICENSE"
@@ -106,7 +128,19 @@ __SPEC_WREN__
 
 # throw the canonical data into the spec
 specDir=${XDG_CACHE_DIR:-${HOME}/.cache}/exercism/configlet/problem-specifications
-cat "${specDir}/exercises/${slug}/canonical-data.json" >> "${exDir}/${slug}.spec.wren"
+canonData="${specDir}/exercises/${slug}/canonical-data.json"
+if [[ -f "${canonData}" ]]; then
+    {
+        echo
+        echo "// canonical data"
+        cat "${canonData}" 
+    } >> "${exDir}/${slug}.spec.wren"
+else
+    {
+        echo
+        echo "// no canonical data for ${slug}"
+    } >> "${exDir}/${slug}.spec.wren"
+fi
 
 ############################################################
 sed -e "s/%{slug}/${slug}/g" \
@@ -115,27 +149,3 @@ class %{PascalSlug} {
   // implement me!
 }
 __PROOF_WREN__
-
-############################################################
-
-read -p "What's your GitHub handle? "
-if [[ -n ${REPLY} ]]; then
-    conf=${exDir}/.meta/config.json
-    tmp=$(mktemp)
-    jq --arg who "${REPLY}" '.authors += [$who]' "${conf}" > "${tmp}" \
-    && mv "${tmp}" "${conf}"
-fi
-
-read -p "What's the (likely) difficult for ${slug}? "
-if [[ -n ${REPLY} && ${REPLY} == +([0-9]) ]]; then
-    tmp=$(mktemp)
-    jq --argjson diff "${REPLY}" --arg slug "${slug}" '
-        .exercises.practice |= map(
-            if (.slug == $slug)
-            then .difficulty = $diff
-            else .
-            end
-        )
-    ' config.json > "${tmp}" \
-    && mv "${tmp}" config.json
-fi
