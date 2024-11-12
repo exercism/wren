@@ -567,6 +567,14 @@
         "difficulty": 4
       },
       {
+        "slug": "house",
+        "name": "House",
+        "uuid": "84b8a12c-c79e-4358-810f-be234ef88a8d",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "nth-prime",
         "name": "Nth Prime",
         "uuid": "b904e358-d446-41b2-a168-0be20a4c9df8",
