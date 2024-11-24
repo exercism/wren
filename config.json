@@ -789,6 +789,14 @@
         "difficulty": 6
       },
       {
+        "slug": "palindrome-products",
+        "name": "Palindrome Products",
+        "uuid": "b73c893c-7ecb-4195-af8a-d8fd91b35bd2",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 6
+      },
+      {
         "slug": "rail-fence-cipher",
         "name": "Rail Fence Cipher",
         "uuid": "f077af2b-f168-4e0b-9346-4a52e7490c67",
