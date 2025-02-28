@@ -88,7 +88,8 @@
         "uuid": "7a8cd1a3-6e95-43f6-a98c-53e837557bbb",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 2
+        "difficulty": 2,
+        "status": "deprecated"
       },
       {
         "slug": "acronym",
@@ -334,7 +335,8 @@
         "uuid": "4d7c3f7e-16f8-439f-ad01-e89446267d2d",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 3
+        "difficulty": 3,
+        "status": "deprecated"
       },
       {
         "slug": "binary",
@@ -342,7 +344,8 @@
         "uuid": "51ca10a3-0b01-440c-adec-a604366b12c5",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 3
+        "difficulty": 3,
+        "status": "deprecated"
       },
       {
         "slug": "bob",
