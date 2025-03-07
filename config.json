@@ -857,7 +857,9 @@
       }
     ],
     "foregone": [
-      "meetup"
+      "gigasecond",
+      "meetup",
+      "swift-scheduling"
     ]
   },
   "key_features": [
