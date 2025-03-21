@@ -44,6 +44,10 @@ Testie.test("Pig Latin") {|do, skip|
     skip.test("word beginning with q without a following u") {
       Expect.value(PigLatin.translate("qat")).toEqual("atqay")
     }
+
+    skip.test("word beginning with consonant and vowel containing qu") {
+      Expect.value(PigLatin.translate("liquid")).toEqual("iquidlay")
+    }
   }
 
   do.describe("some letter clusters are treated like a single consonant") {
