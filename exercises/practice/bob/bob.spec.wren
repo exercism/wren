@@ -33,17 +33,17 @@ Testie.test("Bob") { |do, skip|
   }
 
   skip.test("talking forcefully") {
-    var result = Bob.hey("Let's go make out behind the gym!")
+    var result = Bob.hey("Hi there!")
     Expect.value(result).toEqual("Whatever.")
   }
 
   skip.test("using acronyms in regular speech") {
-    var result = Bob.hey("It's OK if you don't want to go to the DMV.")
+    var result = Bob.hey("It's OK if you don't want to go work for NASA.")
     Expect.value(result).toEqual("Whatever.")
   }
 
   skip.test("forceful question") {
-    var result = Bob.hey("WHAT THE HELL WERE YOU THINKING?")
+    var result = Bob.hey("WHAT'S GOING ON?")
     Expect.value(result).toEqual("Calm down, I know what I'm doing!")
   }
 
@@ -68,12 +68,12 @@ Testie.test("Bob") { |do, skip|
   }
 
   skip.test("shouting with no exclamation mark") {
-    var result = Bob.hey("I HATE YOU")
+    var result = Bob.hey("I HATE THE DENTIST")
     Expect.value(result).toEqual("Whoa, chill out!")
   }
 
   skip.test("statement containing question mark") {
-    var result = Bob.hey("Ending with a ? means a question.")
+    var result = Bob.hey("Ending with ? means a question.")
     Expect.value(result).toEqual("Whatever.")
   }
 
@@ -102,11 +102,6 @@ Testie.test("Bob") { |do, skip|
     Expect.value(result).toEqual("Fine. Be that way!")
   }
 
-  skip.test("multiple line question") {
-    var result = Bob.hey("\nDoes this cryogenic chamber make me look fat?\nno")
-    Expect.value(result).toEqual("Whatever.")
-  }
-
   skip.test("starting with whitespace") {
     var result = Bob.hey("         hmmmmmmm...")
     Expect.value(result).toEqual("Whatever.")
@@ -125,5 +120,10 @@ Testie.test("Bob") { |do, skip|
   skip.test("non-question ending with whitespace") {
     var result = Bob.hey("This is a statement ending with whitespace      ")
     Expect.value(result).toEqual("Whatever.")
+  }
+
+  skip.test("multiple line question") {
+    var result = Bob.hey("\nDoes this cryogenic chamber make\n me look fat?")
+    Expect.value(result).toEqual("Sure.")
   }
 }
