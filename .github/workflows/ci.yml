@@ -22,7 +22,6 @@ jobs:
         with:
           repository: joshgoebel/wren-console
           path: wren-console
-          ref: v0.3.1
       - name: Pin dependencies
         shell: bash
         run: |
