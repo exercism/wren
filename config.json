@@ -51,17 +51,17 @@
         "difficulty": 1
       },
       {
-        "slug": "rna-transcription",
-        "name": "RNA Transcription",
-        "uuid": "91e29b22-5d7f-480a-b9de-28a56bd2638d",
+        "slug": "resistor-color",
+        "name": "Resistor Color",
+        "uuid": "82cb5edb-7b4c-4d61-8760-9c07848d0ee4",
         "practices": [],
         "prerequisites": [],
         "difficulty": 1
       },
       {
-        "slug": "resistor-color",
-        "name": "Resistor Color",
-        "uuid": "82cb5edb-7b4c-4d61-8760-9c07848d0ee4",
+        "slug": "rna-transcription",
+        "name": "RNA Transcription",
+        "uuid": "91e29b22-5d7f-480a-b9de-28a56bd2638d",
         "practices": [],
         "prerequisites": [],
         "difficulty": 1
@@ -132,14 +132,6 @@
         "difficulty": 2
       },
       {
-        "slug": "dnd-character",
-        "name": "D&D Character",
-        "uuid": "99b38a7f-dd6c-4daa-bc39-dd285a8ffdd6",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2
-      },
-      {
         "slug": "darts",
         "name": "Darts",
         "uuid": "7a07b5b4-49ea-4ebb-bbe9-a9428548aa84",
@@ -162,9 +154,9 @@
         ]
       },
       {
-        "slug": "etl",
-        "name": "ETL",
-        "uuid": "f3f3d1d9-5f1e-4bcf-8ae3-3f0de1019483",
+        "slug": "dnd-character",
+        "name": "D&D Character",
+        "uuid": "99b38a7f-dd6c-4daa-bc39-dd285a8ffdd6",
         "practices": [],
         "prerequisites": [],
         "difficulty": 2
@@ -173,6 +165,14 @@
         "slug": "eliuds-eggs",
         "name": "Eliud's Eggs",
         "uuid": "989a6428-166e-4ee6-8dda-660ebdebf878",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
+        "slug": "etl",
+        "name": "ETL",
+        "uuid": "f3f3d1d9-5f1e-4bcf-8ae3-3f0de1019483",
         "practices": [],
         "prerequisites": [],
         "difficulty": 2
@@ -779,6 +779,14 @@
         "slug": "grep",
         "name": "Grep",
         "uuid": "c1d9b9ef-5d22-4ca8-b941-6f7ce70b911b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 6
+      },
+      {
+        "slug": "intergalactic-transmission",
+        "name": "Intergalactic Transmission",
+        "uuid": "bce68ea8-6555-41b3-9e9a-854e21569373",
         "practices": [],
         "prerequisites": [],
         "difficulty": 6
