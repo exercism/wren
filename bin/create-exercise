@@ -47,6 +47,9 @@ bin/configlet create \
         --difficulty "${difficulty}" \
         --practice-exercise "${slug}"
 
+filter='.exercises.practice = (.exercises.practice | sort_by(.difficulty, .slug))'
+jq "${filter}" config.json > config.sorted && mv config.sorted config.json
+
 exDir=./exercises/practice/${slug}
 pascal=$(toPascalCase "${slug}")
 
