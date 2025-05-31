@@ -44,7 +44,7 @@ Testie.test("CryptoSquare.ciphertext()") { |do, skip|
     Expect.value(CryptoSquare.ciphertext(phrase)).toEqual(expect)
   }
 
-  skip.test("54 character plaintext results in 7 chunks, the last two with trailing spaces") {
+  skip.test("54 character plaintext results in 8 chunks, the last two with trailing spaces") {
     var phrase = "If man was meant to stay on the ground, god would have given us roots."
     var expect = "imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn  sseoau "
     Expect.value(CryptoSquare.ciphertext(phrase)).toEqual(expect)
