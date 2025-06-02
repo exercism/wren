@@ -7,7 +7,7 @@ class Series {
       Fiber.abort("span must not be negative")
     }
     if (_span > series.count) {
-      Fiber.abort("span must be smaller than string length")
+      Fiber.abort("span must not exceed string length")
     }
     if (_digits.any {|d| d < 0 || d > 9}) {
       Fiber.abort("digits input must only contain digits")
