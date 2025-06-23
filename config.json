@@ -784,6 +784,14 @@
         "difficulty": 5
       },
       {
+        "slug": "flower-field",
+        "name": "Flower Field",
+        "uuid": "6d20256f-cfe9-4ec0-9608-1f81126154c8",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 6
+      },
+      {
         "slug": "grep",
         "name": "Grep",
         "uuid": "c1d9b9ef-5d22-4ca8-b941-6f7ce70b911b",
@@ -805,7 +813,8 @@
         "uuid": "012a9733-c2fe-4521-a4c3-458b6fa4caa8",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 6
+        "difficulty": 6,
+        "status": "deprecated"
       },
       {
         "slug": "palindrome-products",
