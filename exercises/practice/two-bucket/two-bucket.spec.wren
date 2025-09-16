@@ -22,14 +22,24 @@ Testie.test("Two Bucket") { |do, skip|
     Expect.value(result).toEqual({"moves": 18, "goalBucket": "two", "otherBucket": 7})
   }
 
-  skip.test("Measure one step using bucket one of size 2 and bucket two of size 3 - start with bucket two") {
-    var result = TwoBucket.measure({"bucketOne": 2, "bucketTwo": 3, "goal": 3, "startBucket": "two"})
+  skip.test("Measure one step using bucket one of size 1 and bucket two of size 3 - start with bucket two") {
+    var result = TwoBucket.measure({"bucketOne": 1, "bucketTwo": 3, "goal": 3, "startBucket": "two"})
     Expect.value(result).toEqual({"moves": 1, "goalBucket": "two", "otherBucket": 0})
   }
 
   skip.test("Measure using bucket one of size 2 and bucket two of size 3 - start with bucket one and end with bucket two") {
     var result = TwoBucket.measure({"bucketOne": 2, "bucketTwo": 3, "goal": 3, "startBucket": "one"})
     Expect.value(result).toEqual({"moves": 2, "goalBucket": "two", "otherBucket": 2})
+  }
+
+  skip.test("Measure using bucket one much bigger than bucket two") {
+    var result = TwoBucket.measure({"bucketOne": 5, "bucketTwo": 1, "goal": 2, "startBucket": "one"})
+    Expect.value(result).toEqual({"moves": 6, "goalBucket": "one", "otherBucket": 1})
+  }
+
+  skip.test("Measure using bucket one much smaller than bucket two") {
+    var result = TwoBucket.measure({"bucketOne": 3, "bucketTwo": 15, "goal": 9, "startBucket": "one"})
+    Expect.value(result).toEqual({"moves": 6, "goalBucket": "two", "otherBucket": 0})
   }
 
   skip.test("Not possible to reach the goal") {
