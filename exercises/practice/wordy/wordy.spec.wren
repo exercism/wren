@@ -6,8 +6,24 @@ Testie.test("Wordy") { |do, skip|
     Expect.value(Wordy.answer("What is 5?")).toEqual(5)
   }
 
+  skip.test("just a zero") {
+    Expect.value(Wordy.answer("What is 0?")).toEqual(0)
+  }
+
+  skip.test("just a negative number") {
+    Expect.value(Wordy.answer("What is -123?")).toEqual(-123)
+  }
+
   skip.test("addition") {
     Expect.value(Wordy.answer("What is 1 plus 1?")).toEqual(2)
+  }
+
+  skip.test("addition with a left hand zero") {
+    Expect.value(Wordy.answer("What is 0 plus 2?")).toEqual(2)
+  }
+
+  skip.test("addition with a right hand zero") {
+    Expect.value(Wordy.answer("What is 3 plus 0?")).toEqual(3)
   }
 
   skip.test("more addition") {
