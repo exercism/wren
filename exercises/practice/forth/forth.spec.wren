@@ -37,6 +37,11 @@ Testie.test("Forth") { |do, skip|
         FORTH.evaluate("1 +")
       }.abortsWith("Stack empty")
     }
+
+    skip.test("more than two values on the stack") {
+      FORTH.evaluate("1 2 3 +")
+      Expect.value(FORTH.stack).toEqual([1, 5])
+    }
   }
 
   do.describe("subtraction") {
@@ -56,6 +61,11 @@ Testie.test("Forth") { |do, skip|
         FORTH.evaluate("1 -")
       }.abortsWith("Stack empty")
     }
+
+    skip.test("more than two values on the stack") {
+      FORTH.evaluate("1 12 3 -")
+      Expect.value(FORTH.stack).toEqual([1, 9])
+    }
   }
 
   do.describe("multiplication") {
@@ -74,6 +84,11 @@ Testie.test("Forth") { |do, skip|
       Expect.that {
         FORTH.evaluate("1 *")
       }.abortsWith("Stack empty")
+    }
+
+    skip.test("more than two values on the stack") {
+      FORTH.evaluate("1 2 3 *")
+      Expect.value(FORTH.stack).toEqual([1, 6])
     }
   }
 
@@ -105,7 +120,12 @@ Testie.test("Forth") { |do, skip|
         FORTH.evaluate("1 /")
       }.abortsWith("Stack empty")
     }
-  }
+  
+    skip.test("more than two values on the stack") {
+      FORTH.evaluate("1 12 3 /")
+      Expect.value(FORTH.stack).toEqual([1, 4])
+    }
+}
 
   do.describe("combined arithmetic") {
     skip.test("addition and subtraction") {
@@ -116,6 +136,16 @@ Testie.test("Forth") { |do, skip|
     skip.test("multiplication and division") {
       FORTH.evaluate("2 4 * 3 /")
       Expect.value(FORTH.stack).toEqual([2])
+    }
+
+    skip.test("multiplication and addition") {
+      FORTH.evaluate("1 3 4 * +")
+      Expect.value(FORTH.stack).toEqual([13])
+    }
+
+    skip.test("addition and multiplication ") {
+      FORTH.evaluate("1 3 4 + *")
+      Expect.value(FORTH.stack).toEqual([7])
     }
   }
 
