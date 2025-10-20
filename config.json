@@ -594,6 +594,14 @@
         "difficulty": 4
       },
       {
+        "slug": "micro-blog",
+        "name": "Micro Blog",
+        "uuid": "463c04ec-a1c8-4013-bac0-e648d8db3b5e",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "nth-prime",
         "name": "Nth Prime",
         "uuid": "b904e358-d446-41b2-a168-0be20a4c9df8",
