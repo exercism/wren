@@ -913,6 +913,14 @@
         "difficulty": 7
       },
       {
+        "slug": "dominoes",
+        "name": "Dominoes",
+        "uuid": "855094cb-efcb-4546-8cb8-67df6153c733",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      },
+      {
         "slug": "zebra-puzzle",
         "name": "Zebra Puzzle",
         "uuid": "be437e7f-5dc0-4c99-a4e0-1eb5b7cdbc1a",
