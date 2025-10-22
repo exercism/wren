@@ -776,6 +776,14 @@
         "difficulty": 5
       },
       {
+        "slug": "saddle-points",
+        "name": "Saddle Points",
+        "uuid": "1bb350ab-65c5-404b-a8a0-e906d6bb13f8",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "simple-linked-list",
         "name": "Simple Linked List",
         "uuid": "c2f6b48a-0d38-45ac-917f-5a1293d1f0b4",
