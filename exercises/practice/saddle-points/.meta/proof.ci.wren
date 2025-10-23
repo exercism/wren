@@ -1,12 +1,3 @@
-class Point {
-  construct new(row, column) {
-    _row = row
-    _column = column
-  }
-  row { _row }
-  column { _column }
-}
-
 class Matrix {
   construct new(values) {
     _values = values
@@ -46,7 +37,7 @@ class Matrix {
     for (i in 0...m) {
       for (j in 0...n) {
         if (_values[i][j] == tallest[i] && _values[i][j] == shortest[j]) {
-          result.add(Point.new(i + 1, j + 1))
+          result.add({"row": i + 1, "column": j + 1})
         }
       }
     }
