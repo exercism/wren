@@ -1,5 +1,5 @@
 class BeerSong {
-  static recite(a, b) {
+  static recite(startBottles, takeDown) {
     Fiber.abort("Remove this statement and implement this function")
   }
 }
