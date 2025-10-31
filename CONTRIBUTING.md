@@ -4,22 +4,44 @@ Firstly, thanks for helping to improve the track.
 
 ## Add a new exercise
 
-- get familiar with the [Building Exercism][building] docs, particularly:
+- Get familiar with the [Building Exercism][building] docs, particularly:
     - [Add a Practice Exercise][add-practice]
     - [config.json][config]
 
-- use the `bin/create-exercise` script to bootstrap the new exercise.
+- Use the `bin/create-exercise` script to bootstrap the new exercise.
 
-- edit the exercise's spec file: the canonical tests have been put there for reference.
-    - if any of the canonical tests don't apply for wren, update the [`.meta/tests.toml`][tests-toml] file to exclude them
+- Edit the exercise's spec file: the canonical tests have been put there for reference.
+    - If any of the canonical tests don't apply for wren, update the [`.meta/tests.toml`][tests-toml] file to exclude them
 
-- create the `.meta/proof.ci.wren` solution file that proves the exercise can be solved.
-    - use `scripts/ci $exercise_slug` to validate your proof.
-    - before you run that, you have to run `wrenc package.wren install` from the track root directory.
+- Create the `.meta/proof.ci.wren` solution file that proves the exercise can be solved.
+    - Use `scripts/ci $exercise_slug` to validate your proof.
+    - Before you run that, you have to run `wrenc package.wren install` from the track root directory.
+      If you don't, you'll see this:
 
-- if the given instructions need to be modified, [append to the instructions][instr-append] to explain why the wren exercise deviates.
+      ```
+      $ ./scripts/ci micro-blog
+      Running micro-blog ...
+      Could not load module 'wren-testie/testie'.
+      at (script) (./micro-blog.spec.wren line 2)
+      ```
 
-- if you decide to change the difficulty in config.json, we keep it sorted in a particular order:
+      But then:
+      ```
+      $ wrenc package.wren install
+       - installing wren-testie 0.3.0
+       - [R] git clone -q https://github.com/joshgoebel/wren-testie.git wren_modules/wren-testie
+       - [R] git checkout --detach 0.3.0
+      HEAD is now at e6c7f7a version 0.3
+       * 1 dependency(s). All good.
+
+      $ ./scripts/ci micro-blog
+      ...
+      Tests:  💯 ✓ 12 passed, 12 total
+      ```
+
+- If the given instructions need to be modified, [append to the instructions][instr-append] to explain why the wren exercise deviates.
+
+- If you decide to change the difficulty in config.json, we keep it sorted in a particular order:
 
     ```bash
     tmp=$(mktemp)
@@ -29,7 +51,7 @@ Firstly, thanks for helping to improve the track.
     ' config.json > "$tmp" && mv "$tmp" config.json
     ```
 
-- run a final validation check: `bin/configlet lint`
+- Run a final validation check: `bin/configlet lint`
 
 ## Other contributions?
 
