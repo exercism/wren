@@ -24,7 +24,7 @@ Testie.test("FlowerField") { |do, skip|
     Expect.value(FlowerField.annotate(input)).toEqual(expected)
   }
 
-  skip.test("handles garden with only flowers") {
+  skip.test("handles garden full of flowers") {
     var input = [
       "***",
       "***",
@@ -155,7 +155,17 @@ Testie.test("FlowerField") { |do, skip|
       " 123*2",
       "112*4*",
       "1*22*2",
-      "111111",
+      "111111"
+    ]
+    Expect.value(FlowerField.annotate(input)).toEqual(expected)
+  }
+
+  skip.test("handles multiple adjacent flowers") {
+    var input = [
+      " ** "
+    ]
+    var expected = [
+      "1**1"
     ]
     Expect.value(FlowerField.annotate(input)).toEqual(expected)
   }
