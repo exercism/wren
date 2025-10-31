@@ -12,14 +12,6 @@ The track currently consists only of _practice_ exercises at the moment (no conc
 You can find this in the [`config.json`][file-config].
 
 
-<!--
-TODO: need CONTRIBUTING.md
-## Tools
-
-See [CONTRIBUTING.md][file-contributing] for a list of requirements to contribute to this track.
-It also has a list of tools you can use, of which the `test` tool is one of them.
--->
-
 ## Running the test suite
 
 **Prerequisites**
