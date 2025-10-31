@@ -15,6 +15,7 @@ Firstly, thanks for helping to improve the track.
 
 - create the `.meta/proof.ci.wren` solution file that proves the exercise can be solved.
     - use `scripts/ci $exercise_slug` to validate your proof.
+    - before you run that, you have to run `wrenc package.wren install` from the track root directory.
 
 - if the given instructions need to be modified, [append to the instructions][instr-append] to explain why the wren exercise deviates.
 
