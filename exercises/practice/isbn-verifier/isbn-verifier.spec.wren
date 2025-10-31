@@ -10,7 +10,7 @@ Testie.test("ISBN Verifier") { |do, skip|
     Expect.value(ISBN.new("3-598-21508-9").isValid).toEqual(false)
   }
 
-  skip.test("valid isbn number with a check digit of 10") {
+  skip.test("valid isbn with a check digit of 10") {
     Expect.value(ISBN.new("3-598-21507-X").isValid).toEqual(true)
   }
 
@@ -22,12 +22,20 @@ Testie.test("ISBN Verifier") { |do, skip|
     Expect.value(ISBN.new("4-598-21507-B").isValid).toEqual(false)
   }
 
-  skip.test("invalid character in isbn") {
+  skip.test("invalid character in isbn is not treated as zero") {
     Expect.value(ISBN.new("3-598-P1581-X").isValid).toEqual(false)
   }
 
   skip.test("X is only valid as a check digit") {
     Expect.value(ISBN.new("3-598-2X507-9").isValid).toEqual(false)
+  }
+
+  skip.test("only one check digit is allowed") {
+    Expect.value(ISBN.new("3-598-21508-96").isValid).toEqual(false)
+  }
+
+  skip.test("X is not substituted by the value 10") {
+    Expect.value(ISBN.new("3-598-2X507-5").isValid).toEqual(false)
   }
 
   skip.test("valid isbn without separating dashes") {
