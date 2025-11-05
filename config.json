@@ -929,6 +929,14 @@
         "difficulty": 8
       },
       {
+        "slug": "meetup",
+        "name": "Meetup",
+        "uuid": "42cbad22-dad8-4865-b656-462b7e263d51",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      },
+      {
         "slug": "connect",
         "name": "Connect",
         "uuid": "976aa8f2-05dc-437f-88f1-2055feabf798",
@@ -947,7 +955,6 @@
     ],
     "foregone": [
       "gigasecond",
-      "meetup",
       "swift-scheduling"
     ]
   },
