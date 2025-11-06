@@ -571,4 +571,16 @@ Testie.test("Meetup") { |do, skip|
     var received = Meetup.date("the first Friday of December 2012")
     Expect.value(received).toEqual(expected)
   }
+
+  skip.test("when last Thursday in February in a non-leap year is not the 29th") {
+    var expected = "February 22, 2300"
+    var received = Meetup.date("the last Thursday of February 2300")
+    Expect.value(received).toEqual(expected)
+  }
+
+  skip.test("when fourth Monday is the 23nd, the second day of the fourth week") {
+    var expected = "January 23, 2468"
+    var received = Meetup.date("the fourth Monday of January 2468")
+    Expect.value(received).toEqual(expected)
+  }
 }
