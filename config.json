@@ -865,6 +865,14 @@
         "difficulty": 6
       },
       {
+        "slug": "piecing-it-together",
+        "name": "Piecing It Together",
+        "uuid": "99744467-da7f-4cf3-9feb-9ad6e6ca4fb6",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 6
+      },
+      {
         "slug": "rail-fence-cipher",
         "name": "Rail Fence Cipher",
         "uuid": "f077af2b-f168-4e0b-9346-4a52e7490c67",
