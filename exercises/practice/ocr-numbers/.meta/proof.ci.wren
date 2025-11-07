@@ -64,7 +64,7 @@ var TEMPLATES = [
 class OcrNumbers {
   static convert(rows) {
     if (rows.count == 0) {
-      return 0
+      return ""
     }
     if (rows.count % 4 != 0) {
       Fiber.abort("Number of input lines is not a multiple of four")
