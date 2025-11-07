@@ -816,6 +816,14 @@
         "difficulty": 5
       },
       {
+        "slug": "transpose",
+        "name": "Transpose",
+        "uuid": "c8f7b39b-233b-46bb-9731-5c14f7f47912",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "wordy",
         "name": "Wordy",
         "uuid": "2feba255-9200-4d47-839b-646c2ac5c83c",
