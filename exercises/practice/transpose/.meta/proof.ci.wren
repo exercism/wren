@@ -4,30 +4,28 @@ class Transpose {
   }
 
   toString {
-    if (_lines == "") {
-      return ""
-    }
-    var lines = _lines.split("\n")
-    var result = ""
-    var skipped = 0
-    var column = -1
-    while (skipped != lines.count) {
-      column = column + 1
-      skipped = 0
-      result = result + "\n"
-
-      for (row in 0...(lines.count)) {
-        if (column >= lines[row].count) {
+    var result = []
+    var column = 0
+    while (true) {
+      var str = ""
+      var skipped = 0
+      for (row in 0...(_lines.count)) {
+        if (column >= _lines[row].count) {
           skipped = skipped + 1
           continue
         }
         while (skipped > 0) {
-          result = result + " "
+          str = str + " "
           skipped = skipped - 1
         }
-        result = result + lines[row][column]
+        str = str + _lines[row][column]
       }
+      if (str == "") {
+        break
+      }
+      result.add(str)
+      column = column + 1
     }
-    return result[1...-1]
+    return result
   }
 }
