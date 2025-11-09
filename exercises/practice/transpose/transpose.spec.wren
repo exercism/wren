@@ -5,7 +5,7 @@ Testie.test("Transpose") { |do, skip|
   do.test("empty string") {
     var lines = []
     var expected = []
-    Expect.value(Transpose.new(lines).toString).toEqual(expected)
+    Expect.value(Transpose.new(lines).transpose).toEqual(expected)
   }
 
   skip.test("two characters in a row") {
@@ -16,7 +16,7 @@ Testie.test("Transpose") { |do, skip|
       "A",
       "1",
     ]
-    Expect.value(Transpose.new(lines).toString).toEqual(expected)
+    Expect.value(Transpose.new(lines).transpose).toEqual(expected)
   }
 
   skip.test("two characters in a column") {
@@ -27,7 +27,7 @@ Testie.test("Transpose") { |do, skip|
     var expected = [
       "A1",
     ]
-    Expect.value(Transpose.new(lines).toString).toEqual(expected)
+    Expect.value(Transpose.new(lines).transpose).toEqual(expected)
   }
 
   skip.test("simple") {
@@ -40,7 +40,7 @@ Testie.test("Transpose") { |do, skip|
       "B2",
       "C3",
     ]
-    Expect.value(Transpose.new(lines).toString).toEqual(expected)
+    Expect.value(Transpose.new(lines).transpose).toEqual(expected)
   }
 
   skip.test("single line") {
@@ -61,7 +61,7 @@ Testie.test("Transpose") { |do, skip|
       "e",
       ".",
     ]
-    Expect.value(Transpose.new(lines).toString).toEqual(expected)
+    Expect.value(Transpose.new(lines).transpose).toEqual(expected)
   }
 
   skip.test("first line longer than second line") {
@@ -87,7 +87,7 @@ Testie.test("Transpose") { |do, skip|
       "e.",
       ".",
     ]
-    Expect.value(Transpose.new(lines).toString).toEqual(expected)
+    Expect.value(Transpose.new(lines).transpose).toEqual(expected)
   }
 
   skip.test("second line longer than first line") {
@@ -113,7 +113,7 @@ Testie.test("Transpose") { |do, skip|
       ".e",
       " .",
     ]
-    Expect.value(Transpose.new(lines).toString).toEqual(expected)
+    Expect.value(Transpose.new(lines).transpose).toEqual(expected)
   }
 
   skip.test("mixed line length") {
@@ -142,7 +142,7 @@ Testie.test("Transpose") { |do, skip|
       "e",
       ".",
     ]
-    Expect.value(Transpose.new(lines).toString).toEqual(expected)
+    Expect.value(Transpose.new(lines).transpose).toEqual(expected)
   }
 
   skip.test("square") {
@@ -160,7 +160,7 @@ Testie.test("Transpose") { |do, skip|
       "RESIN",
       "TREND",
     ]
-    Expect.value(Transpose.new(lines).toString).toEqual(expected)
+    Expect.value(Transpose.new(lines).transpose).toEqual(expected)
   }
 
   skip.test("rectangle") {
@@ -180,7 +180,7 @@ Testie.test("Transpose") { |do, skip|
       "RENT",
       "EDGE",
     ]
-    Expect.value(Transpose.new(lines).toString).toEqual(expected)
+    Expect.value(Transpose.new(lines).transpose).toEqual(expected)
   }
 
   skip.test("triangle") {
@@ -200,7 +200,7 @@ Testie.test("Transpose") { |do, skip|
       "    ER",
       "     R",
     ]
-    Expect.value(Transpose.new(lines).toString).toEqual(expected)
+    Expect.value(Transpose.new(lines).transpose).toEqual(expected)
   }
 
   skip.test("jagged triangle") {
@@ -220,6 +220,6 @@ Testie.test("Transpose") { |do, skip|
       "    56",
       "    5",
     ]
-    Expect.value(Transpose.new(lines).toString).toEqual(expected)
+    Expect.value(Transpose.new(lines).transpose).toEqual(expected)
   }
 }

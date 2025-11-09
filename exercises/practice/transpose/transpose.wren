@@ -3,7 +3,7 @@ class Transpose {
     Fiber.abort("Remove this statement and implement this class")
   }
 
-  toString {
+  transpose {
     Fiber.abort("Remove this statement and implement this function")
   }
 }

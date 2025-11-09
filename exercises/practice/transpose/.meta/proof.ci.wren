@@ -3,7 +3,7 @@ class Transpose {
     _lines = lines
   }
 
-  toString {
+  transpose {
     var result = []
     var column = 0
     while (true) {
