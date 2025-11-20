@@ -937,14 +937,6 @@
         "difficulty": 7
       },
       {
-        "slug": "forth",
-        "name": "Forth",
-        "uuid": "36a62783-86d7-4c6e-a419-8fbebf54047d",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 7
-      },
-      {
         "slug": "parallel-letter-frequency",
         "name": "Parallel Letter Frequency",
         "uuid": "9f322f6a-26e7-4595-9a13-36965657bac6",
@@ -956,6 +948,14 @@
         "slug": "dominoes",
         "name": "Dominoes",
         "uuid": "855094cb-efcb-4546-8cb8-67df6153c733",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      },
+      {
+        "slug": "forth",
+        "name": "Forth",
+        "uuid": "36a62783-86d7-4c6e-a419-8fbebf54047d",
         "practices": [],
         "prerequisites": [],
         "difficulty": 8
