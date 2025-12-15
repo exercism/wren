@@ -70,4 +70,69 @@ Testie.test("Satellite") { |do, skip|
       Satellite.treeFromTraversals(preorder, inorder)
     }.abortsWith("traversals must contain unique items")
   }
+
+  skip.test("A degenerate binary tree") {
+    var preorder = ["a", "b", "c", "d"]
+    var inorder = ["d", "c", "b", "a"]
+    var tree = Satellite.treeFromTraversals(preorder, inorder)
+    Expect.value(tree.data).toEqual({
+      "data": "a",
+      "left": {
+        "data": "b",
+        "left": {
+          "data": "c",
+          "left": { "data": "d", "left": null, "right": null },
+          "right": null
+        },
+        "right": null
+      },
+      "right": null
+    })
+  }
+
+  skip.test("Another degenerate binary tree") {
+    var preorder = ["a", "b", "c", "d"]
+    var inorder = ["a", "b", "c", "d"]
+    var tree = Satellite.treeFromTraversals(preorder, inorder)
+    Expect.value(tree.data).toEqual({
+      "data": "a",
+      "left": null,
+      "right": {
+        "data": "b",
+        "left": null,
+        "right": {
+          "data": "c",
+          "left": null,
+          "right": { "data": "d", "left": null, "right": null }
+        }
+      }
+    })
+  }
+
+  skip.test("Tree with many more items") {
+    var preorder = ["a", "b", "d", "g", "h", "c", "e", "f", "i"]
+    var inorder = ["g", "d", "h", "b", "a", "e", "c", "i", "f"]
+    var tree = Satellite.treeFromTraversals(preorder, inorder)
+    Expect.value(tree.data).toEqual({
+      "data": "a",
+      "left": {
+        "data": "b",
+        "left": {
+          "data": "d",
+          "left": { "data": "g", "left": null, "right": null },
+          "right": { "data": "h", "left": null, "right": null }
+        },
+        "right": null
+      },
+      "right": {
+        "data": "c",
+        "left": { "data": "e", "left": null, "right": null },
+        "right": {
+          "data": "f",
+          "left": { "data": "i", "left": null, "right": null },
+          "right": null
+        }
+      }
+    })
+  }
 }
