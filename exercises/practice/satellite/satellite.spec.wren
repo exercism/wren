@@ -81,7 +81,11 @@ Testie.test("Satellite") { |do, skip|
         "data": "b",
         "left": {
           "data": "c",
-          "left": { "data": "d", "left": null, "right": null },
+          "left": {
+            "data": "d",
+            "left": null,
+            "right": null
+          },
           "right": null
         },
         "right": null
@@ -103,7 +107,11 @@ Testie.test("Satellite") { |do, skip|
         "right": {
           "data": "c",
           "left": null,
-          "right": { "data": "d", "left": null, "right": null }
+          "right": {
+            "data": "d",
+            "left": null,
+            "right": null
+          }
         }
       }
     })
@@ -119,17 +127,33 @@ Testie.test("Satellite") { |do, skip|
         "data": "b",
         "left": {
           "data": "d",
-          "left": { "data": "g", "left": null, "right": null },
-          "right": { "data": "h", "left": null, "right": null }
+          "left": {
+            "data": "g",
+            "left": null,
+            "right": null
+          },
+          "right": {
+            "data": "h",
+            "left": null,
+            "right": null
+          }
         },
         "right": null
       },
       "right": {
         "data": "c",
-        "left": { "data": "e", "left": null, "right": null },
+        "left": {
+          "data": "e",
+          "left": null,
+          "right": null
+        },
         "right": {
           "data": "f",
-          "left": { "data": "i", "left": null, "right": null },
+          "left": {
+            "data": "i",
+            "left": null,
+            "right": null
+          },
           "right": null
         }
       }
