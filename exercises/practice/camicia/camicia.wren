@@ -1,5 +1,5 @@
 class Camicia {
-  construct new() {
+  static simulateGame(playerA, playerB) {
     Fiber.abort("Remove this statement and implement this function")
   }
 }
