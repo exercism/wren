@@ -698,6 +698,14 @@
         "difficulty": 5
       },
       {
+        "slug": "camicia",
+        "name": "Camicia",
+        "uuid": "65570b57-743b-4476-9bbe-41dc97eab5bf",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "circular-buffer",
         "name": "Circular Buffer",
         "uuid": "6050d1e5-f68d-4cf7-b29c-1a07c4b31dda",
