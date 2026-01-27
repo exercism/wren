@@ -26,6 +26,10 @@ Testie.test("PerfectNumbers.classify()") { |do, skip|
     Expect.value(PerfectNumbers.classify(33550335)).toEqual("abundant")
   }
 
+  skip.test("Perfect square abundant number is classified correctly") {
+    Expect.value(PerfectNumbers.classify(196)).toEqual("abundant")
+  }
+
   skip.test("Smallest prime deficient number is classified correctly") {
     Expect.value(PerfectNumbers.classify(2)).toEqual("deficient")
   }
@@ -46,11 +50,15 @@ Testie.test("PerfectNumbers.classify()") { |do, skip|
     Expect.value(PerfectNumbers.classify(1)).toEqual("deficient")
   }
 
-  Expect.that {
-    PerfectNumbers.classify(0)
-  }.abortsWith("Classification is only possible for positive integers.")
+  skip.test("Zero is rejected (as it is not a positive integer)") {
+    Expect.that {
+      PerfectNumbers.classify(0)
+    }.abortsWith("Classification is only possible for positive integers.")
+  }
 
-  Expect.that {
-    PerfectNumbers.classify(-1)
-  }.abortsWith("Classification is only possible for positive integers.")
+  skip.test("Negative integer is rejected (as it is not a positive integer)") {
+    Expect.that {
+      PerfectNumbers.classify(-1)
+    }.abortsWith("Classification is only possible for positive integers.")
+  }
 }
