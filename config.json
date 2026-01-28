@@ -816,6 +816,14 @@
         "difficulty": 5
       },
       {
+        "slug": "relative-distance",
+        "name": "Relative Distance",
+        "uuid": "8d253624-d962-473c-acc8-3273df3bbebc",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "split-second-stopwatch",
         "name": "Split-Second Stopwatch",
         "uuid": "cb45c213-612d-4b27-823c-3a48063af20c",
