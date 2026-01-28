@@ -50,39 +50,57 @@ Testie.test("AllYourBase.rebase()") { |do, skip|
     Expect.value(AllYourBase.rebase(7, [0, 6, 0], 10)).toEqual([4, 2])
   }
 
-  Expect.that {
-    AllYourBase.rebase(1, [0], 10)
-  }.abortsWith("input base must be >= 2")
+  skip.test("input base is one") {
+    Expect.that {
+      AllYourBase.rebase(1, [0], 10)
+    }.abortsWith("input base must be >= 2")
+  }
 
-  Expect.that {
-    AllYourBase.rebase(0, [], 10)
-  }.abortsWith("input base must be >= 2")
+  skip.test("input base is zero") {
+    Expect.that {
+      AllYourBase.rebase(0, [], 10)
+    }.abortsWith("input base must be >= 2")
+  }
 
-  Expect.that {
-    AllYourBase.rebase(-2, [1], 10)
-  }.abortsWith("input base must be >= 2")
+  skip.test("input base is negative") {
+    Expect.that {
+      AllYourBase.rebase(-2, [1], 10)
+    }.abortsWith("input base must be >= 2")
+  }
 
-  Expect.that {
-    AllYourBase.rebase(2, [1, -1, 1, 0, 1, 0], 10)
-  }.abortsWith("all digits must satisfy 0 <= d < input base")
+  skip.test("negative digit") {
+    Expect.that {
+      AllYourBase.rebase(2, [1, -1, 1, 0, 1, 0], 10)
+    }.abortsWith("all digits must satisfy 0 <= d < input base")
+  }
 
-  Expect.that {
-    AllYourBase.rebase(2, [1, 2, 1, 0, 1, 0], 10)
-  }.abortsWith("all digits must satisfy 0 <= d < input base")
+  skip.test("invalid positive digit") {
+    Expect.that {
+      AllYourBase.rebase(2, [1, 2, 1, 0, 1, 0], 10)
+    }.abortsWith("all digits must satisfy 0 <= d < input base")
+  }
 
-  Expect.that {
-    AllYourBase.rebase(2, [1, 0, 1, 0, 1, 0], 1)
-  }.abortsWith("output base must be >= 2")
+  skip.test("output base is one") {
+    Expect.that {
+      AllYourBase.rebase(2, [1, 0, 1, 0, 1, 0], 1)
+    }.abortsWith("output base must be >= 2")
+  }
 
-  Expect.that {
-    AllYourBase.rebase(10, [7], 0)
-  }.abortsWith("output base must be >= 2")
+  skip.test("output base is zero") {
+    Expect.that {
+      AllYourBase.rebase(10, [7], 0)
+    }.abortsWith("output base must be >= 2")
+  }
 
-  Expect.that {
-    AllYourBase.rebase(2, [1], -7)
-  }.abortsWith("output base must be >= 2")
+  skip.test("output base is negative") {
+    Expect.that {
+      AllYourBase.rebase(2, [1], -7)
+    }.abortsWith("output base must be >= 2")
+  }
 
-  Expect.that {
-    AllYourBase.rebase(-2, [1], -7)
-  }.abortsWith("input base must be >= 2")
+  skip.test("both bases are negative") {
+    Expect.that {
+      AllYourBase.rebase(-2, [1], -7)
+    }.abortsWith("input base must be >= 2")
+  }
 }

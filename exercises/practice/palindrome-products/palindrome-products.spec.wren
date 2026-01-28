@@ -62,13 +62,17 @@ Testie.test("PalindromeProducts") { |do, skip|
     Expect.value(result.factors).toEqual([])
   }
 
-  Expect.that {
-    PalindromeProducts.smallest(10000, 1)
-  }.abortsWith("min must be <= max")
+  skip.test("error result for smallest if min is more than max") {
+    Expect.that {
+      PalindromeProducts.smallest(10000, 1)
+    }.abortsWith("min must be <= max")
+  }
 
-  Expect.that {
-    PalindromeProducts.largest(2, 1)
-  }.abortsWith("min must be <= max")
+  skip.test("error result for largest if min is more than max") {
+    Expect.that {
+      PalindromeProducts.largest(2, 1)
+    }.abortsWith("min must be <= max")
+  }
 
   skip.test("smallest product does not use the smallest factor") {
     var result = PalindromeProducts.smallest(3215, 4000)
