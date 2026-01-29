@@ -22,7 +22,9 @@ Testie.test("NthPrime.prime()") { |do, skip|
     Expect.value(NthPrime.prime(10001)).toEqual(104743)
   }
 
-  Expect.that {
-    NthPrime.prime(0)
-  }.abortsWith("there is no zeroth prime")
+  skip.test("there is no zeroth prime") {
+    Expect.that {
+      NthPrime.prime(0)
+    }.abortsWith("there is no zeroth prime")
+  }
 }
