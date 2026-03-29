@@ -70,6 +70,26 @@ Testie.test("Connect") { |do, skip|
     Expect.value(Connect.new(board).winner).toEqual("X")
   }
 
+  skip.test("X wins with left-hand dead end fork") {
+    var board = [
+      ". . X .",
+      " X X . .",
+      "  . X X X",
+      "   O O O O",
+    ]
+    Expect.value(Connect.new(board).winner).toEqual("X")
+  }
+
+  skip.test("X wins with right-hand dead end fork") {
+    var board = [
+      ". . X X",
+      " X X . .",
+      "  . X X .",
+      "   O O O O",
+    ]
+    Expect.value(Connect.new(board).winner).toEqual("X")
+  }
+
   skip.test("O wins crossing from top to bottom") {
     var board = [
       ". O . .",
