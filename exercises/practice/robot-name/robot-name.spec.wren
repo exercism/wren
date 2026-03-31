@@ -69,17 +69,23 @@ var testSuite = Testie.test("Robot Name") { |do, skip|
     Expect.value(seenNames.count).toEqual(iterations)
   }
 
-  skip.test("generate all robots") {
-    Robot.resetNames()
-    var iterations = 676000
-    var seenNames = {}
-    for (i in (1..iterations)) {
-      var robot = Robot.new()
-      seenNames[robot.name] = 1
-    }
-    Expect.value(seenNames.count).toEqual(iterations)
+  // This test is optional. For some implementations, it can be too time-consuming.
+  // Change `runBonus` to `true` to run it.
+  var runBonus = false
 
-    // generate the 676,001st robot
-    Expect.that {Robot.new()}.abortsWith("All names consumed")
+  if (runBonus) {
+    skip.test("generate all robots") {
+      Robot.resetNames()
+      var iterations = 26 * 26 * 1000
+      var seenNames = {}
+      for (i in (1..iterations)) {
+        var robot = Robot.new()
+        seenNames[robot.name] = 1
+      }
+      Expect.value(seenNames.count).toEqual(iterations)
+
+      // generate the 676,001st robot
+      Expect.that {Robot.new()}.abortsWith("All names consumed")
+    }
   }
 }
