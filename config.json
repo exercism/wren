@@ -634,6 +634,14 @@
         "difficulty": 4
       },
       {
+        "slug": "save-the-cow",
+        "name": "Save the Cow",
+        "uuid": "8e160ef4-ae39-489b-89d5-807a11ea8792",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "simple-cipher",
         "name": "Simple Cipher",
         "uuid": "9124fd2e-7527-49b4-968e-f1feeff9f303",
@@ -819,14 +827,6 @@
         "slug": "relative-distance",
         "name": "Relative Distance",
         "uuid": "8d253624-d962-473c-acc8-3273df3bbebc",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 5
-      },
-      {
-        "slug": "save-the-cow",
-        "name": "Save the Cow",
-        "uuid": "8e160ef4-ae39-489b-89d5-807a11ea8792",
         "practices": [],
         "prerequisites": [],
         "difficulty": 5
