@@ -824,6 +824,14 @@
         "difficulty": 5
       },
       {
+        "slug": "save-the-cow",
+        "name": "Save the Cow",
+        "uuid": "8e160ef4-ae39-489b-89d5-807a11ea8792",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "split-second-stopwatch",
         "name": "Split-Second Stopwatch",
         "uuid": "cb45c213-612d-4b27-823c-3a48063af20c",
