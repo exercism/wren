@@ -634,6 +634,14 @@
         "difficulty": 4
       },
       {
+        "slug": "save-the-cow",
+        "name": "Save the Cow",
+        "uuid": "8e160ef4-ae39-489b-89d5-807a11ea8792",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "simple-cipher",
         "name": "Simple Cipher",
         "uuid": "9124fd2e-7527-49b4-968e-f1feeff9f303",
