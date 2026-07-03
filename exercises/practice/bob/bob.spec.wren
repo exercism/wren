@@ -2,9 +2,9 @@ import "wren-testie/testie" for Testie, Expect
 import "./bob" for Bob
 
 Testie.test("Bob") { |do, skip|
-  do.test("stating something") {
-    var result = Bob.hey("Tom-ay-to, tom-aaaah-to.")
-    Expect.value(result).toEqual("Whatever.")
+  do.test("asking a question") {
+    var result = Bob.hey("Does this cryogenic chamber make me look fat?")
+    Expect.value(result).toEqual("Sure.")
   }
 
   skip.test("shouting") {
@@ -12,14 +12,19 @@ Testie.test("Bob") { |do, skip|
     Expect.value(result).toEqual("Whoa, chill out!")
   }
 
-  skip.test("shouting gibberish") {
-    var result = Bob.hey("FCECDFCAAB")
-    Expect.value(result).toEqual("Whoa, chill out!")
+  skip.test("forceful question") {
+    var result = Bob.hey("WHAT'S GOING ON?")
+    Expect.value(result).toEqual("Calm down, I know what I'm doing!")
   }
 
-  skip.test("asking a question") {
-    var result = Bob.hey("Does this cryogenic chamber make me look fat?")
-    Expect.value(result).toEqual("Sure.")
+  skip.test("silence") {
+    var result = Bob.hey("")
+    Expect.value(result).toEqual("Fine. Be that way!")
+  }
+
+  skip.test("stating something") {
+    var result = Bob.hey("Tom-ay-to, tom-aaaah-to.")
+    Expect.value(result).toEqual("Whatever.")
   }
 
   skip.test("asking a numeric question") {
@@ -32,49 +37,9 @@ Testie.test("Bob") { |do, skip|
     Expect.value(result).toEqual("Sure.")
   }
 
-  skip.test("talking forcefully") {
-    var result = Bob.hey("Hi there!")
-    Expect.value(result).toEqual("Whatever.")
-  }
-
-  skip.test("using acronyms in regular speech") {
-    var result = Bob.hey("It's OK if you don't want to go work for NASA.")
-    Expect.value(result).toEqual("Whatever.")
-  }
-
-  skip.test("forceful question") {
-    var result = Bob.hey("WHAT'S GOING ON?")
-    Expect.value(result).toEqual("Calm down, I know what I'm doing!")
-  }
-
-  skip.test("shouting numbers") {
-    var result = Bob.hey("1, 2, 3 GO!")
-    Expect.value(result).toEqual("Whoa, chill out!")
-  }
-
-  skip.test("no letters") {
-    var result = Bob.hey("1, 2, 3")
-    Expect.value(result).toEqual("Whatever.")
-  }
-
   skip.test("question with no letters") {
     var result = Bob.hey("4?")
     Expect.value(result).toEqual("Sure.")
-  }
-
-  skip.test("shouting with special characters") {
-    var result = Bob.hey("ZOMG THE \%^*@#$(*^ ZOMBIES ARE COMING!!11!!1!")
-    Expect.value(result).toEqual("Whoa, chill out!")
-  }
-
-  skip.test("shouting with no exclamation mark") {
-    var result = Bob.hey("I HATE THE DENTIST")
-    Expect.value(result).toEqual("Whoa, chill out!")
-  }
-
-  skip.test("statement containing question mark") {
-    var result = Bob.hey("Ending with ? means a question.")
-    Expect.value(result).toEqual("Whatever.")
   }
 
   skip.test("non-letters with question") {
@@ -87,9 +52,39 @@ Testie.test("Bob") { |do, skip|
     Expect.value(result).toEqual("Sure.")
   }
 
-  skip.test("silence") {
-    var result = Bob.hey("")
-    Expect.value(result).toEqual("Fine. Be that way!")
+  skip.test("ending with whitespace") {
+    var result = Bob.hey("Okay if like my  spacebar  quite a bit?   ")
+    Expect.value(result).toEqual("Sure.")
+  }
+
+  skip.test("multiple line question") {
+    var result = Bob.hey("\nDoes this cryogenic chamber make\n me look fat?")
+    Expect.value(result).toEqual("Sure.")
+  }
+
+  skip.test("shouting gibberish") {
+    var result = Bob.hey("FCECDFCAAB")
+    Expect.value(result).toEqual("Whoa, chill out!")
+  }
+
+  skip.test("shouting a statement containing a question mark") {
+    var result = Bob.hey("DO LIONS EAT PEOPLE? AHHHHH.")
+    Expect.value(result).toEqual("Whoa, chill out!")
+  }
+
+  skip.test("shouting numbers") {
+    var result = Bob.hey("1, 2, 3 GO!")
+    Expect.value(result).toEqual("Whoa, chill out!")
+  }
+
+  skip.test("shouting with special characters") {
+    var result = Bob.hey("ZOMG THE \%^*@#$(*^ ZOMBIES ARE COMING!!11!!1!")
+    Expect.value(result).toEqual("Whoa, chill out!")
+  }
+
+  skip.test("shouting with no exclamation mark") {
+    var result = Bob.hey("I HATE THE DENTIST")
+    Expect.value(result).toEqual("Whoa, chill out!")
   }
 
   skip.test("prolonged silence") {
@@ -102,28 +97,38 @@ Testie.test("Bob") { |do, skip|
     Expect.value(result).toEqual("Fine. Be that way!")
   }
 
-  skip.test("starting with whitespace") {
-    var result = Bob.hey("         hmmmmmmm...")
-    Expect.value(result).toEqual("Whatever.")
-  }
-
-  skip.test("ending with whitespace") {
-    var result = Bob.hey("Okay if like my  spacebar  quite a bit?   ")
-    Expect.value(result).toEqual("Sure.")
-  }
-
   skip.test("other whitespace") {
     var result = Bob.hey("\n\r \t")
     Expect.value(result).toEqual("Fine. Be that way!")
   }
 
-  skip.test("non-question ending with whitespace") {
-    var result = Bob.hey("This is a statement ending with whitespace      ")
+  skip.test("talking forcefully") {
+    var result = Bob.hey("Hi there!")
     Expect.value(result).toEqual("Whatever.")
   }
 
-  skip.test("multiple line question") {
-    var result = Bob.hey("\nDoes this cryogenic chamber make\n me look fat?")
-    Expect.value(result).toEqual("Sure.")
+  skip.test("using acronyms in regular speech") {
+    var result = Bob.hey("It's OK if you don't want to go work for NASA.")
+    Expect.value(result).toEqual("Whatever.")
+  }
+
+  skip.test("no letters") {
+    var result = Bob.hey("1, 2, 3")
+    Expect.value(result).toEqual("Whatever.")
+  }
+
+  skip.test("statement containing question mark") {
+    var result = Bob.hey("Ending with ? means a question.")
+    Expect.value(result).toEqual("Whatever.")
+  }
+
+  skip.test("starting with whitespace") {
+    var result = Bob.hey("         hmmmmmmm...")
+    Expect.value(result).toEqual("Whatever.")
+  }
+
+  skip.test("non-question ending with whitespace") {
+    var result = Bob.hey("This is a statement ending with whitespace      ")
+    Expect.value(result).toEqual("Whatever.")
   }
 }
