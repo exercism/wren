@@ -30,7 +30,7 @@ class StateOfTicTacToe {
     var winO = isWin(bitsetO)
 
     if (winX || winO) {
-      if (winX && winO) {
+      if ((winX && winO) || (winX && (countO == countX)) || (winO && (countX == countO + 1))) {
         Fiber.abort("Impossible board: game should have ended after the game was won")
       }
 

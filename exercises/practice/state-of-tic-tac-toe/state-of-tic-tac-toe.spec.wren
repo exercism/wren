@@ -225,4 +225,24 @@ Testie.test("StateOfTicTacToe") { |do, skip|
     ])
     }.abortsWith("Impossible board: game should have ended after the game was won")
   }
+
+  skip.test("Invalid boards -> Invalid board: O kept playing after X wins") {
+    Expect.that {
+      StateOfTicTacToe.gamestate([
+      "OO ",
+      "XXX",
+      " O "
+    ])
+    }.abortsWith("Impossible board: game should have ended after the game was won")
+  }
+
+  skip.test("Invalid boards -> Invalid board: X kept playing after O wins") {
+    Expect.that {
+      StateOfTicTacToe.gamestate([
+      "XX ",
+      "OOO",
+      " XX"
+    ])
+    }.abortsWith("Impossible board: game should have ended after the game was won")
+  }
 }
