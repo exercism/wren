@@ -132,7 +132,6 @@ Testie.test("ListOps") { |do, skip|
     }
   }
 
-
   do.describe("return a list of elements whose values equal the list value transformed by the mapping function") {
     skip.test("empty list") {
       var list1 = ListOps.new()
@@ -168,7 +167,6 @@ Testie.test("ListOps") { |do, skip|
     }
   }
 
-
   do.describe("folds (reduces) the given list from the right with a function") {
     // Note the order of the arguments to the given functions!
 
@@ -198,9 +196,14 @@ Testie.test("ListOps") { |do, skip|
       Expect.value(list1.reverse().toList).toEqual([])
     }
 
-    skip.test("non-empty list") {
+    skip.test("non-empty even-length list") {
       var list1 = ListOps.new([1, 3, 5, 7])
       Expect.value(list1.reverse().toList).toEqual([7, 5, 3, 1])
+    }
+
+    skip.test("non-empty odd-length list") {
+      var list1 = ListOps.new([1, 3, 5, 7, 9, 11, 13])
+      Expect.value(list1.reverse().toList).toEqual([13, 11, 9, 7, 5, 3, 1])
     }
 
     skip.test("list of lists is not flattened") {
