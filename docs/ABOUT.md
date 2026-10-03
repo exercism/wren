@@ -31,7 +31,7 @@ You can even embed Wren inside your own projects.  For Exercism purposes the hos
 
 ### Why Wren?
 
-Wren was originally created by [Bob Nystrom](http://journal.stuffwithstuff.com) of [Crafting Interpreters](http://craftinginterpreters.com) fame.  He has more than a few languages under his belt, but he explains specifically what led to the creation of Wren:
+Wren was originally created by [Bob Nystrom](https://journal.stuffwithstuff.com) of [Crafting Interpreters](https://craftinginterpreters.com) fame.  He has more than a few languages under his belt, but he explains specifically what led to the creation of Wren:
 
 > There are a few scripting languages used for embedding in applications. Lua is the main one. TCL used to be. There’s also Guile, increasingly JavaScript, and some applications embed Python. I’m an ex-game developer, so when I think “scripting”, I tend to think “game scripting”.
 
