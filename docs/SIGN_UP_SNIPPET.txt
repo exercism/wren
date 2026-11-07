@@ -1,0 +1,11 @@
+class Words {
+  static mostCommon(text) {
+    var counts = {}
+    var best = ""
+    for (word in text.split(" ")) {
+      counts[word] = (counts[word] || 0) + 1
+      if (counts[word] > (counts[best] || 0)) best = word
+    }
+    return "\"%(best)\" appears %(counts[best]) times"
+  }
+}
