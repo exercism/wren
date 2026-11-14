@@ -102,7 +102,7 @@ Testie.test("Pig Latin") {|do, skip|
 
   do.describe("phrases are translated") {
     skip.test("a whole phrase") {
-      Expect.value(PigLatin.translate("quick fast run")).toEqual("ickquay astfay unray")
+      Expect.value(PigLatin.translate("why do squids enjoy xrays")).toEqual("ywhay oday idssquay enjoyay xraysay")
     }
   }
 }
